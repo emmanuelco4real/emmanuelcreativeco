@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Started</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="phone.css" />
+    <link rel="stylesheet" href="tablet.css" />
+    <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
+    <style>
+      #get-started form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .form-group {
+        border: 1px solid #444;
+        border-radius: 5px;
+
+        overflow: hidden;
+      }
+      .toggle {
+        width: 100%;
+        background: #111;
+        color: white;
+        padding: 1rem;
+        text-align: left;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+      .toggle:hover {
+        background-color: orange;
+        color: black;
+      }
+      .content {
+        display: none;
+        padding: 1rem;
+        background: #1a1a1a;
+      }
+      .content textarea,
+      .content input[type="text"],
+      .content input[type="email"],
+      .content input[type="date"] {
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 0.5rem;
+        background: #000;
+        color: rgb(255, 196, 0);
+        border: 1px solid #333;
+        border-radius: 5px;
+      }
+      .content input[type="file"] {
+        margin-top: 0.5rem;
+        background: #111;
+        color: #fff;
+        border: none;
+      }
+      #get-started button[type="submit"] {
+        padding: 0.75rem;
+        background: white;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a href="#"
+            ><img src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt=""
+          /></a>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#"><img src="IMG/Logo.svg" class="logo" /></a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html">Home</a></li>
+        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
+        <li class="hideOnMoble"><a href="service.html">Service</a></li>
+        <li class="hideOnMoble">
+          <a href="testimonials.html">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+        <li class="showOnMoble" onclick="showSidebar()">
+          <a href="#"
+            ><img
+              src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+              class="icon-close-menu"
+          /></a>
+        </li>
+      </ul>
+    </nav>
+
+    <section
+      id="get-started"
+      style="padding: 4rem 1rem; background: (209, 208, 208); color: #fff"
+    >
+      <div style="max-width: 700px; margin: 0 auto">
+        <h2 style="text-align: center; margin-bottom: 2rem">Get Started</h2>
+
+        <form
+          name="get-started"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          enctype="multipart/form-data"
+          onsubmit="handleGetStartedSubmit(event)"
+        >
+          <input type="hidden" name="form-name" value="get-started" />
+          <p style="display: none">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <!-- Collapsible Field Template -->
+          <div class="form-group">
+            <button type="button" class="toggle" onclick="toggleSection(this)">
+              Your Vision
+            </button>
+            <div class="content">
+              <p>
+                A clear idea of your brand's purpose, target audience, and
+                long-term goals.
+              </p>
+              <textarea name="vision" required></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="button" class="toggle" onclick="toggleSection(this)">
+              Inspiration
+            </button>
+            <div class="content">
+              <p>Any references, moodboards, or styles you admire.</p>
+              <textarea name="inspiration" required></textarea>
+              <label style="margin-top: 0.5rem; display: block"
+                >Upload image or moodboard (optional):
+                <input
+                  type="file"
+                  name="inspiration_file"
+                  accept="image/*,.pdf,.zip"
+                />
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="button" class="toggle" onclick="toggleSection(this)">
+              Brand Details
+            </button>
+            <div class="content">
+              <p>
+                Existing logos, color codes, fonts (if any), or previous
+                materials.
+              </p>
+              <textarea name="brand_details" required></textarea>
+              <label style="margin-top: 0.5rem; display: block"
+                >Upload existing brand materials (optional):
+                <input
+                  type="file"
+                  name="brand_file"
+                  accept="image/*,.pdf,.zip"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="button" class="toggle" onclick="toggleSection(this)">
+              Project Scope
+            </button>
+            <div class="content">
+              <p>What exactly you need designed.</p>
+              <textarea name="project_scope" required></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="button" class="toggle" onclick="toggleSection(this)">
+              Timeline & Budget
+            </button>
+            <div class="content">
+              <p>When you need it done and your budget range.</p>
+              <input type="date" name="timeline" required />
+              <input
+                type="text"
+                name="budget"
+                placeholder="e.g. $500 - $1000"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="button" class="toggle" onclick="toggleSection(this)">
+              Communication
+            </button>
+            <div class="content">
+              <p>A way to keep in touch — email or preferred platform.</p>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email address"
+                required
+              />
+              <input
+                type="text"
+                name="platform"
+                placeholder="Preferred contact method (e.g. WhatsApp, Email)"
+              />
+            </div>
+          </div>
+
+          <button type="submit" id="get-started-btn">Submit</button>
+        </form>
+
+        <div
+          id="get-started-thank-you"
+          style="display: none; text-align: center; margin-top: 2rem"
+        >
+          <h3 style="color: orange">
+            Thanks for getting<br />
+            started!
+          </h3>
+          <p>I'll be in touch with <br />you shortly.</p>
+        </div>
+      </div>
+
+      <script>
+        function toggleSection(button) {
+          const content = button.nextElementSibling;
+          content.style.display =
+            content.style.display === "block" ? "none" : "block";
+        }
+
+        function handleGetStartedSubmit(e) {
+          e.preventDefault();
+          const form = e.target;
+          const btn = document.getElementById("get-started-btn");
+          btn.disabled = true;
+          btn.innerText = "Submitting...";
+
+          const formData = new FormData(form);
+
+          fetch("/", {
+            method: "POST",
+            body: formData,
+          })
+            .then(() => {
+              form.style.display = "none";
+              document.getElementById("get-started-thank-you").style.display =
+                "block";
+            })
+            .catch((error) => {
+              alert("Something went wrong. Please try again later.");
+              btn.disabled = false;
+              btn.innerText = "Submit";
+            });
+        }
+      </script>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
