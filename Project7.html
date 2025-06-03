@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="tablet.css" />
     <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
     <style>
+      body {
+        margin-top: 70px;
+      }
+
       #all-project {
         display: block;
         justify-self: center;
@@ -16,8 +20,8 @@
       .lines {
         margin-top: 50px;
         margin-left: 50px;
-        height: 2px;
-        width: 1230px;
+        height: 3px;
+        width: 90%;
         background-color: white;
       }
       .project-title {
@@ -38,33 +42,29 @@
         margin-left: 50px;
       }
       .project-container {
+        display: flex;
+        justify-self: center;
         margin: 30px;
-        width: 1280px;
+        width: 800px;
         height: fit-content;
         overflow: hidden;
-        border-radius: 30px;
+        border-radius: 20px;
       }
 
       .p1 {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: grayscale(100%) brightness(90%);
         transform: scale(1);
         transition: filter 0s ease, transform 0.5s ease-out;
       }
-      .p1:hover {
-        filter: grayscale(0%);
-        transform: scale(1.1);
-        transition: filter 0.1s ease, transform 0.5s ease-out;
-        filter: grayscale(0%);
-      }
+
       .numberonne {
         display: flex;
         justify-content: center;
         padding-top: 20px;
       }
-      @media (max-width: 480px) {
+      @media (max-width: 600px) {
         #all-project {
           margin: 0;
           padding: 0;
@@ -124,10 +124,7 @@
           transform: scale(1);
           transition: filter 0s ease, transform 0.5s ease-out;
         }
-        .p1:hover {
-          transform: scale(1.1);
-          transition: filter 0.1s ease, transform 0.5s ease-out;
-        }
+
         .numberonne {
           display: flex;
           justify-content: center;
@@ -194,10 +191,7 @@
           transform: scale(1);
           transition: filter 0s ease, transform 0.5s ease-out;
         }
-        .p1:hover {
-          transform: scale(1.1);
-          transition: filter 0.1s ease, transform 0.5s ease-out;
-        }
+
         .numberonne {
           display: flex;
           justify-content: center;
@@ -242,19 +236,22 @@
     </nav>
     <section id="all-project">
       <div class="lines"></div>
-      <h1 class="project-title">E-commerce Website For Glow Essence</h1>
+      <h1 class="project-title">E-Commerce Website UI Design</h1>
       <div class="lines"></div>
+
       <div class="numberonne">
-        <a href="contact.html"><button class="btn">Contact Me</button></a>
+        <a href="contact.html">
+          <button class="btn">Contact Me</button>
+        </a>
       </div>
       <div class="project-container">
-        <img src="project7/Untitled design (1).png" class="p2" />
+        <img src="project7/Untitled design (1).png" class="p1" />
       </div>
       <div class="project-container">
-        <img src="project7/Untitled design.png" class="p2" />
+        <img src="project7/Untitled design.png" class="p1" />
       </div>
       <div class="project-container">
-        <img src="project7/hd.png" class="p3" />
+        <img src="project7/hd.png" class="p1" />
       </div>
     </section>
     <script src="script.js"></script>

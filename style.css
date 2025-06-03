@@ -363,12 +363,14 @@ section.about {
   border-radius: 999px;
   transition: 1000ms;
 }
-.animation1:hover .Loadbar-content {
-  width: 480px;
-  background-color: #ffae00;
-  height: 10px;
-  margin-top: 10px;
-  border-radius: 999px;
+@media (max-width: 600px) and (min-width: 900px) {
+  .animation1:hover .Loadbar-content {
+    width: 480px;
+    background-color: #ffae00;
+    height: 10px;
+    margin-top: 10px;
+    border-radius: 999px;
+  }
 }
 .animation2 {
   margin-top: 4.2%;
@@ -393,12 +395,14 @@ section.about {
   border-radius: 999px;
   transition: 1000ms;
 }
-.animation2:hover .Loadbar-content {
-  width: 460px;
-  background-color: #ffae00;
-  height: 10px;
-  margin-top: 10px;
-  border-radius: 999px;
+@media (max-width: 600px) and (min-width: 900px) {
+  .animation2:hover .Loadbar-content {
+    width: 460px;
+    background-color: #ffae00;
+    height: 10px;
+    margin-top: 10px;
+    border-radius: 999px;
+  }
 }
 .animation3 {
   margin-top: 4.2%;
@@ -423,12 +427,14 @@ section.about {
   border-radius: 999px;
   transition: 1000ms;
 }
-.animation3:hover .Loadbar-content {
-  width: 440px;
-  background-color: #ffae00;
-  height: 10px;
-  margin-top: 10px;
-  border-radius: 999px;
+@media (max-width: 600px) and (min-width: 900px) {
+  .animation3:hover .Loadbar-content {
+    width: 440px;
+    background-color: #ffae00;
+    height: 10px;
+    margin-top: 10px;
+    border-radius: 999px;
+  }
 }
 .animation4 {
   margin-top: 4.2%;
@@ -453,12 +459,14 @@ section.about {
   border-radius: 999px;
   transition: 1000ms;
 }
-.animation4:hover .Loadbar-content {
-  width: 390px;
-  background-color: #ffae00;
-  height: 10px;
-  margin-top: 10px;
-  border-radius: 999px;
+@media (max-width: 600px) and (min-width: 900px) {
+  .animation4:hover .Loadbar-content {
+    width: 390px;
+    background-color: #ffae00;
+    height: 10px;
+    margin-top: 10px;
+    border-radius: 999px;
+  }
 }
 .about-bottom {
   display: flex;
@@ -476,10 +484,11 @@ section.about {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transition: 0.3s ease;
 }
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(83, 83, 83, 0.281);
+@media (max-width: 600px) and (min-width: 900px) {
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(83, 83, 83, 0.281);
+  }
 }
 
 .card h3 {

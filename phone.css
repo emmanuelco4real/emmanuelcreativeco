@@ -242,10 +242,6 @@
     padding: 30px 25px;
     flex: 1 1 100px;
   }
-  .card:hover {
-    transform: translateY(0px);
-    box-shadow: 0 15px 35px rgba(83, 83, 83, 0);
-  }
 
   .card h3 {
     font-size: 20px;

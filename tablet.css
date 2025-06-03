@@ -45,7 +45,7 @@
     position: absolute;
     position: absolute;
     bottom: 1.5%;
-    left: 2.4%;
+    left: 1.2%;
     width: 92%;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.445);
@@ -214,6 +214,7 @@
   .animation4 .Loadbar-content {
     width: 84%;
   }
+
   .about-bottom {
     display: flex;
     flex-wrap: wrap;
@@ -227,10 +228,6 @@
     border-radius: 16px;
     padding: 30px 25px;
     flex: 1 1 100px;
-  }
-  .card:hover {
-    transform: translateY(0px);
-    box-shadow: 0 15px 35px rgba(83, 83, 83, 0);
   }
 
   .card h3 {

@@ -2,20 +2,35 @@ function showSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "flex";
 }
+
 function hideSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "none";
 }
+
 const video = document.querySelector(".p1");
 
-video.addEventListener("mouseenter", () => {
-  video.play();
-});
+// Make sure video is muted and looping
+video.muted = true;
+video.loop = true;
 
-video.addEventListener("mouseleave", () => {
-  video.pause();
-  video.currentTime = 0; // optional: resets video to start
-});
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  },
+  {
+    threshold: 0.5, // Adjust as needed
+  }
+);
+
+observer.observe(video);
+
 function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
