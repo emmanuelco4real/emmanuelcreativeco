@@ -297,4 +297,202 @@
   .contact-container {
     flex-direction: column;
   }
+  .My-Design-Process {
+    padding: 20px 10px;
+    margin: auto;
+  }
+  .mydesign {
+    text-align: left;
+    font-size: 40px;
+    font-weight: lighter;
+    padding: 12px;
+  }
+  .mydesignnn {
+    text-align: left;
+    padding: 12px;
+  }
+
+  .process {
+    max-width: 450px;
+    margin-top: 1%;
+    margin-left: -2%;
+  }
+  .btn2 {
+    justify-self: start;
+  }
+  .image-wrapperhand {
+    margin-top: 9%;
+    margin-left: 5%;
+
+    overflow: hidden;
+    width: 400px;
+    height: 550px;
+    border-radius: 20px;
+    transition: all 0, 5s ease-out;
+  }
+  .handd {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(90%);
+    transform: scale(1);
+    transition: filter 0s ease, transform 0.5s ease-out;
+  }
+  .handd:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    transition: filter 0.1s ease, transform 0.5s ease-out;
+    filter: grayscale(0%);
+  }
+  section.about {
+    padding: 20px 10px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  /*what is needed*/
+  .what-i-need-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+
+  .need {
+    flex: 1 1 300px;
+    background-color: #1a1a1a;
+    height: 780px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    color: #999;
+    font-size: 18px;
+    overflow: hidden;
+  }
+  .need-image {
+    height: 100%;
+    filter: grayscale(100);
+    transform: scale(1);
+    transition: 900ms;
+  }
+  .need-image:hover {
+    height: 100%;
+    filter: grayscale(0);
+    transform: scale(1.1);
+  }
+
+  .about-text {
+    flex: 1 1 400px;
+  }
+
+  .about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  /* Skills as non-clickable buttons */
+  .needed-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .needed-list-in {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    flex: 1;
+    min-width: 280px;
+  }
+  #client-reviews {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .review-container {
+    width: 600px;
+    height: 400px;
+    border-radius: 13px;
+    margin-top: 100px;
+    margin-left: -145px;
+    overflow: hidden;
+  }
+
+  .reviews {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    object-fit: cover;
+    transition: filter 0s ease, transform 0.5s ease-out;
+  }
+
+  .reviews:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    transition: filter 0.5s ease, transform 0.5s ease-out;
+  }
+  .clientreviews {
+    margin-left: 500px;
+    margin-top: -40%;
+    text-align: left;
+    font-size: 60px;
+    font-weight: lighter;
+    padding: 20px 10px;
+  }
+  .clientreviewspp {
+    margin-left: 500px;
+    text-align: left;
+    font-size: 15px;
+    padding: 20px 10px;
+    line-height: 20px;
+  }
+  .client-reviews-btn {
+    margin-left: 51%;
+    padding: 20px 0px;
+  }
+  .scroll-container {
+    width: 1200px;
+    overflow: hidden;
+    cursor: grab;
+    white-space: nowrap;
+    position: relative;
+    left: -125px;
+  }
+
+  .scroll-content {
+    display: inline-block;
+  }
+
+  .scroll-container img {
+    display: inline-block;
+    user-select: none;
+    pointer-events: none;
+    margin-top: 120px;
+    height: 300px;
+    width: auto;
+  }
+
+  .ronn {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    margin-top: 12%;
+    margin-left: -1%;
+  }
+
+  .ron {
+    width: 100%;
+  }
 }
