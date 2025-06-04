@@ -1,12 +1,12 @@
 @media (max-width: 600px) {
   nav {
-    background-color: #ffffff0e;
+    background-color: #ffffff07;
     backdrop-filter: blur(10);
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 10000;
+    z-index: 100000;
   }
   .hideOnMoble {
     display: none;
@@ -415,8 +415,213 @@
     flex: 1;
     min-width: 280px;
   }
-  #client-reviews {
+  /*For the process section begining */
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-top: 500px;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .left h1 {
+    margin: 0 0 4px 0;
+    font-size: 60px;
+    font-weight: 400;
+  }
+
+  .left p.description {
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    max-width: 400px;
+  }
+
+  /*For the process section*/
+  .cards-process {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 20px;
+    max-width: 700px;
+    height: 650px;
+    margin-top: 25px;
+  }
+
+  .card1 {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  }
+
+  .card-icon {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .card1 h3 {
+    margin: 0 0 8px 0;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+
+  .card1 p {
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.4;
+  }
+
+  .delivery {
+    grid-column: 1 / -1;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .delivery-icon {
+    font-size: 1.4rem;
+  }
+
+  .delivery p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+
+  .right {
+    flex: 1;
+    max-width: 450px;
+  }
+
+  .image-wrapper {
     display: none;
+  }
+  /* Icons as inline SVG or Unicode */
+  .icon-bell::before {
+    content: "🔔";
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .icon-strategy::before {
+    content: "🔗";
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .icon-design::before {
+    content: "🎨";
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .icon-feedback::before {
+    content: "💬";
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .icon-delivery::before {
+    content: "📦";
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .container {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .right {
+      max-width: 100%;
+    }
+    .cards-process {
+      grid-template-columns: 1fr;
+    }
+  }
+  /*For What i need section */
+
+  /*what is needed*/
+  .what-i-need-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 140px;
+  }
+  section.needed {
+    padding: 20px 10px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 450px;
+  }
+  .need {
+    flex: 1 1 300px;
+    background-color: #1a1a1a;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    color: #999;
+    font-size: 18px;
+    overflow: hidden;
+  }
+  .need-image {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100);
+    transform: scale(1);
+    transition: 900ms;
+  }
+  .need-image:hover {
+    height: 100%;
+    filter: grayscale(0);
+    transform: scale(1.1);
+  }
+
+  .about-text {
+    flex: 1 1 400px;
+  }
+
+  .about-text p {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  /* Skills as non-clickable buttons */
+  .needed-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .needed-list-in {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    flex: 1;
+    min-width: 480px;
+  }
+  #client-reviews {
     width: 100%;
     margin: 0 auto;
     max-width: 1000px;
@@ -448,7 +653,7 @@
     margin-top: -40%;
     text-align: left;
     font-size: 60px;
-    font-weight: lighter;
+    font-weight: 400;
     padding: 20px 10px;
   }
   .clientreviewspp {
