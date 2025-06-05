@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character Encoding -->
     <meta charset="UTF-8" />
+
+    <!-- Mobile Responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Started</title>
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Emmanuel Creative & Co. | Get Started
+    </title>
+    <meta
+      name="title"
+      content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design"
+    />
+    <meta
+      name="description"
+      content="Emmanuel Creative & Co. is led by Excellent Emmanuel, a passionate Brand Identity Designer, Graphic Designer, UI/UX expert, and Frontend Developer creating visual solutions that connect brands with people."
+    />
+
+    <!-- Keywords for SEO -->
+    <meta
+      name="keywords"
+      content="Excellent Emmanuel, Emmanuel Creative & Co, emmanuelcreativeco, brand identity, logo design, UI/UX design, frontend developer, graphic design, portfolio, branding, Nigeria designer, visual identity, Figma, Web design, responsive websites, creative agency, design expert"
+    />
+
+    <!-- Author -->
+    <meta name="author" content="Excellent Emmanuel" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emmanuelcreativeco.netlify.app/" />
+    <meta
+      property="og:title"
+      content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design"
+    />
+    <meta
+      property="og:description"
+      content="Creative studio led by Excellent Emmanuel. We offer visual branding, UI/UX design, web design and front-end development."
+    />
+    <meta
+      property="og:image"
+      content="https://emmanuelcreativeco.netlify.app/IMG/social-preview.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://emmanuelcreativeco.netlify.app/"
+    />
+    <meta
+      property="twitter:title"
+      content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design"
+    />
+    <meta
+      property="twitter:description"
+      content="Creative studio led by Excellent Emmanuel. We offer visual branding, UI/UX design, web design and front-end development."
+    />
+    <meta
+      property="twitter:image"
+      content="https://emmanuelcreativeco.netlify.app/IMG/social-preview.png"
+    />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="IMG/Favicon.svg" type="image/svg+xml" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Z+z0UZRX..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="phone.css" />
     <link rel="stylesheet" href="tablet.css" />
-    <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
     <style>
       #get-started form {
         display: flex;
@@ -70,6 +142,13 @@
     </style>
   </head>
   <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="preloader-content">
+        <img src="IMG/Favicon.svg" alt="Loading..." class="preloader-logo" />
+        <div class="spinner"></div>
+      </div>
+    </div>
     <nav>
       <ul class="sidebar">
         <li onclick="hideSidebar()">
@@ -103,6 +182,30 @@
         </li>
       </ul>
     </nav>
+    <div class="header">
+      <!--  Background iframe -->
+      <div class="spline-background">
+        <!-- Paste your Spline iframe src below -->
+        <iframe
+          src="https://my.spline.design/claritystream-Mi908C93Y6g8aSV5eDeUEItA/"
+          frameborder="0"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </div>
+      <h1 class="header-title" style="font-size: 60px; font-weight: lighter">
+        Get Started
+      </h1>
+      <p class="title1">
+      Let's Work Together. To Get your amaizing project started, please do fill the form and I will get back to you shortly, <br><i>and remember every great brand today started by taking a step.</i>    
+      </p>
+      <div class="btn1">
+        <a href="get-started.html"
+          ><button class="btn">Let's Work Together</button></a
+        >
+      </div>
+    </div>
+    <div class="box"></div>
 
     <section
       id="get-started"
@@ -225,51 +328,73 @@
           <button type="submit" id="get-started-btn">Submit</button>
         </form>
 
-        <div
-          id="get-started-thank-you"
-          style="display: none; text-align: center; margin-top: 2rem"
-        >
-          <h3 style="color: orange">
-            Thanks for getting<br />
-            started!
-          </h3>
-          <p>I'll be in touch with <br />you shortly.</p>
+        <!-- footer-->
+    <footer class="site-footer">
+        <!-- Social Media -->
+        <div class="footer-social">
+          <a href="https://facebook.com/share/1AeBcp45D4/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."><i class="fab fa-whatsapp"></i></a>
+          <a href="https://x.com/emmanuelcreate?s=09"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/excellent-emmanuel-374255331"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
-      <script>
-        function toggleSection(button) {
-          const content = button.nextElementSibling;
-          content.style.display =
-            content.style.display === "block" ? "none" : "block";
-        }
-
-        function handleGetStartedSubmit(e) {
-          e.preventDefault();
-          const form = e.target;
-          const btn = document.getElementById("get-started-btn");
-          btn.disabled = true;
-          btn.innerText = "Submitting...";
-
-          const formData = new FormData(form);
-
-          fetch("/", {
-            method: "POST",
-            body: formData,
-          })
-            .then(() => {
-              form.style.display = "none";
-              document.getElementById("get-started-thank-you").style.display =
-                "block";
-            })
-            .catch((error) => {
-              alert("Something went wrong. Please try again later.");
-              btn.disabled = false;
-              btn.innerText = "Submit";
-            });
-        }
-      </script>
-    </section>
+      <p class="footer-bottom">
+        &copy; 2025 Emmanuel Creative & Co. All rights reserved.
+      </p>
+    </footer>
+    
     <script src="script.js"></script>
+    <script>
+  // FAQ toggle logic
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const icon = question.querySelector('.faq-icon');
+
+      // Toggle answer open class
+      const isOpen = answer.classList.contains('open');
+
+      if (isOpen) {
+        answer.classList.remove('open');
+        icon.classList.remove('open');
+      } else {
+        answer.classList.add('open');
+        icon.classList.add('open');
+      }
+    });
+  });
+</script>
+<script>
+  const scrollContainer = document.getElementById('scrollContainer');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  scrollContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    scrollContainer.classList.add('active');
+    startX = e.pageX - scrollContainer.offsetLeft;
+    scrollLeft = scrollContainer.scrollLeft;
+  });
+
+  scrollContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    scrollContainer.classList.remove('active');
+  });
+
+  scrollContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    scrollContainer.classList.remove('active');
+  });
+
+  scrollContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainer.offsetLeft;
+    const walk = (x - startX);
+    scrollContainer.scrollLeft = scrollLeft - walk;
+  });
+</script>
   </body>
 </html>

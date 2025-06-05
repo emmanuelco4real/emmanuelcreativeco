@@ -230,7 +230,7 @@ nav li:first-child {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates 3 columns */
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
   gap: 20px; /* Space between grid items */
   max-width: 1200px; /* Optional: Set a maximum width for the grid */
   margin: 0 auto; /* Center the grid horizontally */
@@ -1005,8 +1005,8 @@ section.needed {
   margin-top: 0.5rem;
 }
 .social-icon .icon-svg {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   transition: filter 0.3s ease;
 }
 

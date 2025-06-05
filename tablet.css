@@ -43,11 +43,11 @@
 
   .view-project-button {
     position: absolute;
-    position: absolute;
     bottom: 1.5%;
     left: 1.2%;
-    width: 92%;
-    border-radius: 10px;
+    right: 1.2%;
+    width: 94.8%;
+    border-radius: 100px;
     background-color: rgba(0, 0, 0, 0.445);
     backdrop-filter: blur(20px);
     color: white;
@@ -68,7 +68,7 @@
 
   .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates 1 columns */
+    grid-template-columns: repeat(1, 1fr); /* Creates 1 columns */
     gap: 20px; /* Space between grid items */
     margin: 0 auto; /* Center the grid horizontally */
     padding: 15px;
