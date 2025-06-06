@@ -1664,13 +1664,21 @@ section.needed {
     justify-self: center;
     width: 100%;
     height: fit-content;
-    margin: 1%;
+    margin: 3% 2% 4% 2%;
   }
 
   .ron {
     width: 100%;
   }
+
+  .selected {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 30px;
+    font-weight: lighter;
+  }
 }
+
 @media (min-width: 600px) and (max-width: 900px) {
   .hideOnMoble {
     display: none;
