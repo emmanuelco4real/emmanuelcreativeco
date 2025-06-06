@@ -455,13 +455,95 @@
       <img src="IMG/reviewwws.png" alt="Long horizontal image">
     </div>
   </div>
+<section id="faq-section">
+ <div class="faq-container">
+  <h2 class="faq-title">Frequently Asked Questions</h2>
 
-  <div class="ronn">
-    <img src="IMG/Review on number.png" class="ron">
+  <div class="faq-item">
+    <div class="faq-question">
+      <span class="faq-text">What is your design process like?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      My process includes discovery (research & briefing), strategy, concept development, design execution, revisions, and final delivery.
+    </div>
   </div>
- </section>
-     
 
+  <div class="faq-item">
+    <div class="faq-question">
+      <span class="faq-text">How long does a typical project take?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Depending on the project scope:<br />
+      Logos: 3–5 days<br />
+      Brand Identity: 1–2 weeks<br />
+      UI/UX Projects: 1–3 weeks<br />
+      Front-End Development: 1-9 weeks depending on complexity<br />
+      Full Branding + UI/UX: 2–4 weeks
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span class="faq-text">What do you need from me to get started?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      A completed brief, business goals, brand name, any references/inspiration, and content (text/images, if available).
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span class="faq-text">How many revisions are included?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      6 revisions on final concept or agreement. More can be negotiated.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <span class="faq-text">Do you offer post-project support?</span>
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      Yes, I offer post-project support but only after 5 weeks of project completion. I provide 14–21 days of free support after project completion, and extended support can be discussed if needed.
+    </div>
+  </div>
+</div>
+</section>
+ <section class="contact-section">
+  <H1 style="font-size: 40px; font-weight: lighter; text-align: center; padding: 40px; margin-top: -10%;" >Get In Touch</H1>
+  <div class="contact-wrapper">
+    <!-- Left side: Contact boxes -->
+    <div class="contact-info">
+      <div class="info-box">
+        <h3><a href="https://www.linkedin.com/in/excellent-emmanuel-374255331" target="_blank">LinkedIn</a></h3>
+        <p>Excellent Emmanuel</p>
+      </div>
+      <div class="info-box">
+        <h3><a href="mailto:emmanuelcreativecompany.com" target="_blank">Email</a></h3>
+        <p>emmanuelcreativecompany</p>
+      </div>
+      <div class="info-box">
+        <h3><a href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together.">WhatsApp</a></h3>
+        <p>+234 802 370 8056</p>
+      </div>
+    </div>
+
+    <!-- Right side: Contact form -->
+    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Subject" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
     <!-- footer-->
     <footer class="site-footer">
         <!-- Social Media -->
@@ -479,26 +561,7 @@
     </footer>
     
     <script src="script.js"></script>
-    <script>
-  // FAQ toggle logic
-  document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-      const answer = question.nextElementSibling;
-      const icon = question.querySelector('.faq-icon');
-
-      // Toggle answer open class
-      const isOpen = answer.classList.contains('open');
-
-      if (isOpen) {
-        answer.classList.remove('open');
-        icon.classList.remove('open');
-      } else {
-        answer.classList.add('open');
-        icon.classList.add('open');
-      }
-    });
-  });
-</script>
+  
 <script>
   const scrollContainer = document.getElementById('scrollContainer');
   let isDown = false;
@@ -529,6 +592,19 @@
     const walk = (x - startX);
     scrollContainer.scrollLeft = scrollLeft - walk;
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+      item.classList.toggle("active");
+    });
+  });
+});
+
 </script>
   </body>
 </html>

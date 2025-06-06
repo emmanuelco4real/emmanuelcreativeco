@@ -329,7 +329,7 @@
         </form>
 
         <!-- footer-->
-    <footer class="site-footer">
+    <footer class="site-footer" style="margin-top: 10%;">
         <!-- Social Media -->
         <div class="footer-social">
           <a href="https://facebook.com/share/1AeBcp45D4/"><i class="fab fa-facebook-f"></i></a>
@@ -343,7 +343,6 @@
         &copy; 2025 Emmanuel Creative & Co. All rights reserved.
       </p>
     </footer>
-    
     <script src="script.js"></script>
     <script>
   // FAQ toggle logic
@@ -394,6 +393,24 @@
     const walk = (x - startX);
     scrollContainer.scrollLeft = scrollLeft - walk;
   });
+</script>
+<!-- JS (script.js) -->
+<script>
+function toggleSection(button) {
+  const content = button.nextElementSibling;
+  const allToggles = document.querySelectorAll('.toggle');
+  const allContents = document.querySelectorAll('.content');
+
+  if (button.classList.contains('active')) {
+    button.classList.remove('active');
+    content.style.display = 'none';
+  } else {
+    allToggles.forEach(btn => btn.classList.remove('active'));
+    allContents.forEach(div => (div.style.display = 'none'));
+    button.classList.add('active');
+    content.style.display = 'block';
+  }
+}
 </script>
 <script src="script.js"></script>
   </body>

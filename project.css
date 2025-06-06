@@ -70,7 +70,7 @@ body {
   .lines {
     margin-top: 15px;
     margin-left: 15px;
-    height: 3px;
+    height: 1.5px;
     width: 90%;
     background-color: white;
   }
