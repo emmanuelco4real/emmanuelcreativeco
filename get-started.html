@@ -142,13 +142,7 @@
     </style>
   </head>
   <body>
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="preloader-content">
-        <img src="IMG/Favicon.svg" alt="Loading..." class="preloader-logo" />
-        <div class="spinner"></div>
-      </div>
-    </div>
+    
     <nav>
       <ul class="sidebar">
         <li onclick="hideSidebar()">
@@ -328,9 +322,17 @@
           <button type="submit" id="get-started-btn">Submit</button>
         </form>
 
-        <!-- footer-->
-    <footer class="site-footer" style="margin-top: 10%;">
-        <!-- Social Media -->
+   <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- Left Column -->
+      <div class="footer-left">
+        <img src="IMG/Logo.svg" alt="Emmanuel Creative Logo" class="logo"/>
+        <p>
+          Emmanuel Creative & Co. is a strategic branding agency helping ambitious brands stand out through compelling design, clear messaging, and purposeful visual identities.
+        </p>
+
         <div class="footer-social">
           <a href="https://facebook.com/share/1AeBcp45D4/"><i class="fab fa-facebook-f"></i></a>
           <a href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."><i class="fab fa-whatsapp"></i></a>
@@ -339,10 +341,33 @@
         </div>
       </div>
 
-      <p class="footer-bottom">
-        &copy; 2025 Emmanuel Creative & Co. All rights reserved.
-      </p>
-    </footer>
+      <!-- Middle Column -->
+      <div class="footer-center">
+        <h3>Section</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Column -->
+      <div class="footer-right">
+        <h3>Get In Touch</h3>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Jatau Road, Kaduna, Nigeria 800104</li>
+          <li><i class="fas fa-phone"></i>+234 802 370 8056</li>
+          <li><i class="fas fa-mobile-alt"></i>+234 703 957 5837</li>
+          <li><i class="fas fa-envelope"></i> emmanuelcreativecompany@gmail.com</li> 
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer-bottom">
+      &copy; 2025 Emmanuel Creative & Co. | Powered by Emmanuel Creative
+    </p>
+  </footer>
     <script src="script.js"></script>
     <script>
   // FAQ toggle logic
