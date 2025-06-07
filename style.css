@@ -648,7 +648,7 @@ section.needed {
 .need {
   flex: 1 1 300px;
   background-color: #1a1a1a;
-  height: 790px;
+  height: 820px;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -928,13 +928,13 @@ section.needed {
   }
   .faq-container {
     justify-self: center;
-    width: 400px;
+    width: 100%;
     margin-bottom: 6%;
     margin-top: 6%;
-    padding: 4rem;
-    background-color: #181818;
+    padding: 2rem;
+    background-color: #161616;
     color: #ffffff;
-    border-radius: 35px;
+    border-radius: 20px;
   }
 }
 
@@ -985,7 +985,6 @@ section.needed {
     width: 93.4%;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.445);
-
     backdrop-filter: blur(20px);
     color: white;
     text-align: center;
@@ -2562,7 +2561,7 @@ section.needed {
     justify-self: center;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 90vw;
     padding: 80px 20px 20px;
     color: #ddd;
   }

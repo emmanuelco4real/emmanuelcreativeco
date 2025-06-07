@@ -88,15 +88,28 @@
       }
 
       /* Responsive */
-      @media (max-width: 768px) {
+      @media (max-width: 800px) {
+        #services {
+          margin-top: 900px;
+        }
         .services-grid {
           grid-template-columns: 1fr;
         }
         .services-grid {
-          margin-top: 42%;
+          margin-top: -200%;
         }
       }
-
+      @media (min-width: 600px) and (max-width: 900px) {
+        #services {
+          margin-top: 1500px;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        .site-footer {
+          margin-top: -80% !important;
+        }
+      }
       .site-footer {
         margin-top: 150%;
       }
@@ -160,7 +173,7 @@
         >
       </div>
     </div>
-    <div class="box"></div>
+
     <!----- Service Section----->
 
     <section id="services">
