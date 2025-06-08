@@ -45,39 +45,43 @@
   </head>
   <body>
  
-    <nav>
-      <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="#"
-            ><img src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt=""
-          /></a>
-        </li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
-      </ul>
-      <ul>
-        <li>
-          <a href="#"><img src="IMG/Logo.svg" class="logo" /></a>
-        </li>
-        <li class="hideOnMoble"><a href="index.html">Home</a></li>
-        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
-        <li class="hideOnMoble"><a href="service.html">Service</a></li>
-        <li class="hideOnMoble">
-          <a href="testimonials.html">Testimonials</a>
-        </li>
-        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
-        <li class="showOnMoble" onclick="showSidebar()">
-          <a href="#"
-            ><img
-              src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              class="icon-close-menu"
-          /></a>
-        </li>
-      </ul>
-    </nav>
+   <nav>
+  <ul class="sidebar">
+    <li onclick="hideSidebar()">
+      <a href="javascript:void(0)">
+        <img src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+      </a>
+    </li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="service.html">Service</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html">Contact Me</a></li>
+  </ul>
+  <ul>
+    <li>
+      <a href="javascript:void(0)">
+        <img src="IMG/Logo.svg" class="logo" />
+      </a>
+    </li>
+    <li class="hideOnMoble"><a href="index.html">Home</a></li>
+    <li class="hideOnMoble"><a href="about.html">About Me</a></li>
+    <li class="hideOnMoble"><a href="service.html">Service</a></li>
+    <li class="hideOnMoble">
+      <a href="testimonials.html">Testimonials</a>
+    </li>
+    <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+    <li class="showOnMoble" onclick="showSidebar()">
+      <a href="javascript:void(0)">
+        <img
+          src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+          class="icon-close-menu"
+        />
+      </a>
+    </li>
+  </ul>
+</nav>
+
     <div class="header">
       <!--  Background iframe -->
       <div class="spline-background">
@@ -242,7 +246,7 @@
         <div class="about-text">
           <h2>About Me</h2>
           <p>
-                       I’m Excellent, a passionate Brand Identity, UXUX Designer, Graphic
+            I’m Excellent, a passionate Brand Identity, UXUX Designer, Graphic
             Designer and Front-End Developer based in Nigeria. I specialize in crafting bold Visual
             Identities and UIUX solutions that captivate and inspire, blending
             creativity with strategy to build and elevate brands.
@@ -317,6 +321,7 @@
     <!-- Process Section -->
     <div class="container">
       <div class="left">
+        <div class="text-process">
         <h1>My Design <br />Process</h1>
         <p class="description">
           Crafting bold solutions that inspires and elevate brand with thought
@@ -325,7 +330,7 @@
        <a href="get-started.html"
           ><button class="btn">Let's Work Together</button></a
         >
-
+        </div>
         <div class="cards-process">
           <div class="card1">
             <div class="card-icon icon-bell"></div>
@@ -511,7 +516,7 @@
 </div>
 </section>
  <section class="contact-section">
-  <H1 style="font-size: 40px; font-weight: normal; text-align: center; padding: 40px; margin-top: -10%;" >Get In Touch</H1>
+  <H1 class="text-in-touch">Get In Touch</H1>
   <div class="contact-wrapper">
     <!-- Left side: Contact boxes -->
     <div class="contact-info">
@@ -535,7 +540,7 @@
       <input type="email" name="email" placeholder="Your Email" required />
       <input type="text" name="subject" placeholder="Subject" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
+      <button type="submit" class="btnn">Send Message</button>
     </form>
   </div>
 </section>
@@ -543,7 +548,7 @@
   <!-- banner Section -->
    <div class="banner">
       <!--  Background frame -->
-      <h1 class="banner-title" style="font-size: 35px;">Hire Me Now</h1>
+      <h1 class="banner-title">Hire Me Now</h1>
        
       <div class="hire-me-img"><img src="IMG/2149731381.jpg" class="hire-me"></div>
       <div class="btn-head">
