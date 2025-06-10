@@ -763,7 +763,7 @@ section.needed {
   display: block;
   user-select: none;
   pointer-events: none;
-  width: 2000px; /* Make sure the image is wider than the container */
+  width: 11000px; /* Make sure the image is wider than the container */
 }
 #faq-section {
   margin: 0;
@@ -1741,7 +1741,7 @@ section.needed {
     display: block;
     user-select: none;
     pointer-events: none;
-    width: 2000px; /* Make sure the image is wider than the container */
+    width: 9000px; /* Make sure the image is wider than the container */
   }
 
   .selected {
@@ -2540,7 +2540,7 @@ section.needed {
     display: block;
     user-select: none;
     pointer-events: none;
-    width: 2000px; /* Make sure the image is wider than the container */
+    width: 10000px; /* Make sure the image is wider than the container */
   }
   #faq-section {
     margin: 0;
