@@ -1407,7 +1407,7 @@ section.needed {
 
   .the-whole-animation {
     position: relative;
-    margin-top: -29% !important;
+    margin-top: -25% !important;
     margin-left: -6%;
   }
   .animation1,
@@ -1689,7 +1689,7 @@ section.needed {
   }
   .review-container {
     width: 98%;
-    height: 400px;
+    height: 300px;
     border-radius: 13px;
     margin-left: 1%;
     overflow: hidden;
