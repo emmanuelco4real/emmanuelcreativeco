@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmanuel Creative & Co.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project.css" />
+    <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
+  </head>
+  <body>
+    <nav>
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a href="javascript:void(0)">
+            <img
+              src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="javascript:void(0)">
+            <img src="IMG/Logo.svg" class="logo" />
+          </a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html">Home</a></li>
+        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
+        <li class="hideOnMoble"><a href="service.html">Service</a></li>
+        <li class="hideOnMoble">
+          <a href="testimonials.html">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+        <li class="showOnMoble" onclick="showSidebar()">
+          <a href="javascript:void(0)">
+            <img
+              src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+              class="icon-close-menu"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <section id="all-project">
+      <div class="lines"></div>
+      <h1 class="project-title">
+        Front-End Development For Emmanuel Creative & Co.
+      </h1>
+      <div class="lines"></div>
+
+      <div class="numberonne">
+        <a href="contact.html">
+          <button class="btn">Contact Me</button>
+        </a>
+      </div>
+      <div class="project-container">
+        <img src="project11/MacBook_Mockup_1 (1).jpg" class="p1" />
+      </div>
+      <div class="project-container">
+        <img
+          src="project11/iPad-Proand-iPhone-Pro-Showcase-Screens-Free-psd-Mockup.jpg"
+          class="p1"
+        />
+      </div>
+      <div class="web-tab">
+         <div class="web-thumbnail">
+          <img src="Project11/iPad-Proand-iPhone-Pro-Showcase-Screens-Free-psd-Mockup.jpg" class="web-image"></div>
+          <h1 class="web-title">Emmanuel Creative & Co.</h1>
+          <p class="web-paragraph">Creative studio led by Excellent Emmanuel. We offer visual branding, UI/UX design, web design and front-end development.</p>
+          <a href="https://emmanuelcreativeco.netlify.app/"><p class="web-paragraph"><button class="button">View Website</button></p></a>
+      </div>
+    <p class="footer-bottom">
+      &copy; 2025 Emmanuel Creative & Co. | Designed and developed by Excellent
+      Emmanuel at Emmanuel Creative & Co.
+    </p>
+
+    <script src="script.js"></script>
+  </body>
+</html>

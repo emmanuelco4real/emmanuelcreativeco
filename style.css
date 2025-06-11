@@ -305,8 +305,9 @@ section.about {
 
 .skill-pill {
   background-color: #1a1a1a;
+  margin-top: -20px;
   color: #fff;
-  padding: 10px 16px;
+  padding: 6px 16px;
   border-radius: 30px;
   font-size: 15px;
   transition: all 0.3s ease;
@@ -1897,6 +1898,14 @@ section.needed {
   .services-section {
     margin-top: 35%;
   }
+  .skill-pill {
+    background-color: #1a1a1a;
+    margin-top: 0px;
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+  }
 }
 /* Responsive tweaks tablet */
 /* Responsive tweaks tablet */
@@ -2091,9 +2100,9 @@ section.needed {
 
   .skill-pill {
     background-color: #1a1a1a;
+    margin-top: 0px;
     color: #fff;
     padding: 10px 16px;
-    border-radius: 30px;
     font-size: 15px;
     transition: all 0.3s ease;
   }
