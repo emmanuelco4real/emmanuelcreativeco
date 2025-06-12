@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Site Verification -->
+    <meta
+      name="google-site-verification"
+      content="De93OjhY_d2hyd5m_iMPCkwaiHUAHh_bwqTntDxeANc"
+    />
+
     <!-- Character Encoding -->
     <meta charset="UTF-8" />
 
@@ -8,7 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
-    <title>Emmanuel Creative & Co. | About Me</title>
+    <title>
+      Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design
+    </title>
     <meta
       name="title"
       content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design"
@@ -76,8 +84,6 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="phone.css" />
-    <link rel="stylesheet" href="tablet.css" />
   </head>
   <body>
     <nav>
@@ -119,6 +125,7 @@
         </li>
       </ul>
     </nav>
+
     <div class="header">
       <!-- Background iframe -->
       <div class="spline-background">
@@ -130,16 +137,14 @@
         ></iframe>
       </div>
 
-      <!-- Centered Text Block -->
+      <!-- Centered Text Content -->
       <div class="text-header">
-        <h1 class="header-title">About Me</h1>
-
+        <h1 class="header-title">About Us</h1>
         <p class="title1">
-          I’m Emmanuel, a passionate Brand Identity Designer, UI/UX Designer,
-          Graphic Designer, and Front-End Developer based in Nigeria. I
-          specialize in crafting bold visual identities and UI/UX solutions that
-          captivate and inspire, blending creativity with strategy to build and
-          elevate brands.
+          Emmanuel Creative & Co. is a multi-disciplinary design studio led by
+          Excellent Emmanuel — We partner with ambitious businesses to fuel
+          their growth through strategic visuals, user-centered design, and
+          modern digital experiences.
         </p>
 
         <div class="btn1">
@@ -149,7 +154,6 @@
         </div>
       </div>
     </div>
-
     <section class="about">
       <!-- Top Section -->
       <div class="about-top">
@@ -158,14 +162,11 @@
         </div>
         <div class="about-text">
           <h2>About Emmanuel Creative & Co.</h2>
-          <p>
+          <p style="width: 100%">
             I’m <strong>Excellent Emmanuel</strong> — the Founder and Lead
             Creative at <strong>Emmanuel Creative & Co.</strong>, a
-            design-focused studio based in Nigeria. I specialize in
-            <strong>Brand Identity</strong>, <strong>UI/UX Design</strong>,
-            <strong>Graphic Design</strong>, and
-            <strong>Front-End Development</strong>, helping brands craft bold
-            visuals and intuitive user experiences that resonate.
+            design-focused studio based in Nigeria. helping brands craft bold
+            visuals and intuitive user experiences that resonate deeply.
           </p>
 
           <!-- Skills as button pills -->
@@ -179,25 +180,25 @@
       </div>
       <div class="the-whole-animation">
         <div class="animation1">
-          <h3>Brand Identity 96%</h3>
+          <h3 class="h3-loadbar">Brand Identity 96%</h3>
           <div class="Loadbar">
             <div class="Loadbar-content"></div>
           </div>
         </div>
         <div class="animation2">
-          <h3>Logo Design 94%</h3>
+          <h3 class="h3-loadbar">Logo Design & Graphic Design 94%</h3>
           <div class="Loadbar">
             <div class="Loadbar-content"></div>
           </div>
         </div>
         <div class="animation3">
-          <h3>UI/UX 91%</h3>
+          <h3 class="h3-loadbar">UI/UX 91%</h3>
           <div class="Loadbar">
             <div class="Loadbar-content"></div>
           </div>
         </div>
         <div class="animation4">
-          <h3>Web Development 84%</h3>
+          <h3 class="h3-loadbar">Web Development 84%</h3>
           <div class="Loadbar">
             <div class="Loadbar-content"></div>
           </div>
@@ -228,13 +229,15 @@
           <h3>Junior Graphics Volunteer</h3>
           <div class="date">2022</div>
           <p>
-            Created social media posters, learned design principles hands-on,
-            and built confidence in layout, typography, and creative thinking.
+            Created social media content, applied design principles practically,
+            and gained hands-on experience in layout and typography and creative
+            thinking.
           </p>
         </div>
       </div>
     </section>
-    <!-- Process Section -->
+
+    <!-- Unique Process Section -->
     <section class="process-section-xyz">
       <div class="process-container-xyz">
         <div class="process-left-xyz">
@@ -337,7 +340,7 @@
             </div>
             <div class="needed-list-in">
               Inspiration
-              <p>Any references, mood boards, or styles you admire.</p>
+              <p>Any references, moodboards, or styles you admire.</p>
             </div>
             <div class="needed-list-in">
               Brand Details
@@ -362,7 +365,6 @@
         </div>
       </div>
     </section>
-
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-container">
@@ -428,26 +430,6 @@
 
     <script src="script.js"></script>
     <script>
-      // FAQ toggle logic
-      document.querySelectorAll(".faq-question").forEach((question) => {
-        question.addEventListener("click", () => {
-          const answer = question.nextElementSibling;
-          const icon = question.querySelector(".faq-icon");
-
-          // Toggle answer open class
-          const isOpen = answer.classList.contains("open");
-
-          if (isOpen) {
-            answer.classList.remove("open");
-            icon.classList.remove("open");
-          } else {
-            answer.classList.add("open");
-            icon.classList.add("open");
-          }
-        });
-      });
-    </script>
-    <script>
       const scrollContainer = document.getElementById("scrollContainer");
       let isDown = false;
       let startX;
@@ -476,6 +458,18 @@
         const x = e.pageX - scrollContainer.offsetLeft;
         const walk = x - startX;
         scrollContainer.scrollLeft = scrollLeft - walk;
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+
+          question.addEventListener("click", () => {
+            item.classList.toggle("active");
+          });
+        });
       });
     </script>
   </body>
