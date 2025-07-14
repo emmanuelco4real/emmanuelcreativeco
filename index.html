@@ -1,679 +1,1749 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="De93OjhY_d2hyd5m_iMPCkwaiHUAHh_bwqTntDxeANc" />
-
-    <!-- Character Encoding -->
     <meta charset="UTF-8" />
-
-    <!-- Mobile Responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excellent Emmanuel | Brand Identity & UI/UX Designer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="IMG/Favicon.svg" type="image/x-icon" />
+    <style>
+      :root {
+        --primary: #ffffff;
+        --secondary: #000000;
+        --accent: #ff4d4d;
+        --bg: #111111;
+        --card-bg: #1a1a1a;
+        --text-muted: #888;
+      }
 
-    <!-- Primary Meta Tags -->
-    <title>Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design</title>
-    <meta name="title" content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design">
-    <meta name="description" content="Emmanuel Creative & Co. is led by Excellent Emmanuel, a passionate Brand Identity Designer, Graphic Designer, UI/UX expert, and Frontend Developer creating visual solutions that connect brands with people.">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-    <!-- Keywords for SEO -->
-    <meta name="keywords" content="Excellent Emmanuel, Emmanuel Creative & Co, emmanuelcreativeco, brand identity, logo design, UI/UX design, frontend developer, graphic design, portfolio, branding, Nigeria designer, visual identity, Figma, Web design, responsive websites, creative agency, design expert">
+      body {
+        background-color: var(--bg);
+        color: var(--primary);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
 
-    <!-- Author -->
-    <meta name="author" content="Excellent Emmanuel">
+      /* Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 20px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://emmanuelcreativeco.netlify.app/">
-    <meta property="og:title" content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design">
-    <meta property="og:description" content="Creative studio led by Excellent Emmanuel. We offer visual branding, UI/UX design, web design and front-end development.">
-    <meta property="og:image" content="https://emmanuelcreativeco.netlify.app/IMG/social-preview.png">
+      header.scrolled {
+        padding: 15px 5%;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      }
 
-    <!-- Twitter Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://emmanuelcreativeco.netlify.app/">
-    <meta property="twitter:title" content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design">
-    <meta property="twitter:description" content="Creative studio led by Excellent Emmanuel. We offer visual branding, UI/UX design, web design and front-end development.">
-    <meta property="twitter:image" content="https://emmanuelcreativeco.netlify.app/IMG/social-preview.png">
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="IMG/Favicon.svg" type="image/svg+xml" />
+      .logo span {
+        color: var(--accent);
+      }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Z+z0UZRX..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+      .logo .cube {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        background: var(--accent);
+        transform-style: preserve-3d;
+        animation: rotate 8s infinite linear;
+        position: relative;
+      }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css" />
-  
+      @keyframes rotate {
+        0% {
+          transform: rotateX(0) rotateY(0);
+        }
+        100% {
+          transform: rotateX(360deg) rotateY(360deg);
+        }
+      }
+
+      .cube:before,
+      .cube:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 77, 77, 0.7);
+      }
+
+      .cube:before {
+        transform: rotateX(90deg) translateZ(15px);
+      }
+
+      .cube:after {
+        transform: rotateY(90deg) translateZ(15px);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 30px;
+      }
+
+      .nav-links a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      .nav-links a:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover:after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      /* Hero Section */
+      section {
+        min-height: 100vh;
+        padding: 100px 5%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #hero {
+        background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        justify-content: center;
+      }
+
+      .hero-content {
+        max-width: 600px;
+        z-index: 2;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      .hero-content h1 span {
+        color: var(--accent);
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero-content h1 span:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background: var(--accent);
+        bottom: 10px;
+        left: 0;
+        z-index: -1;
+        opacity: 0.5;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: var(--text-muted);
+        text-align: center;
+      }
+      .hero-btns {
+        display: flex;
+        justify-content: center;
+      }
+      .btn {
+        padding: 15px 35px;
+        background: var(--accent);
+        color: var(--primary);
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255, 77, 77, 0.4);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--accent);
+        margin-left: 15px;
+      }
+
+      .btn-outline:hover {
+        background: var(--accent);
+      }
+
+      .hero-image {
+        position: absolute;
+        right: 5%;
+        width: 40%;
+        max-width: 600px;
+        height: auto;
+        z-index: 1;
+      }
+
+      .floating-cube {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotateX(0) rotateY(0);
+        }
+        50% {
+          transform: translateY(-20px) rotateX(10deg) rotateY(10deg);
+        }
+      }
+
+      .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        border: 2px solid var(--accent);
+      }
+
+      .face-front {
+        transform: translateZ(100px);
+        background: rgba(255, 77, 77, 0.1);
+      }
+      .face-back {
+        transform: rotateY(180deg) translateZ(100px);
+        background: rgba(255, 77, 77, 0.1);
+      }
+      .face-right {
+        transform: rotateY(90deg) translateZ(100px);
+        background: rgba(255, 77, 77, 0.1);
+      }
+      .face-left {
+        transform: rotateY(-90deg) translateZ(100px);
+        background: rgba(255, 77, 77, 0.1);
+      }
+      .face-top {
+        transform: rotateX(90deg) translateZ(100px);
+        background: rgba(255, 77, 77, 0.1);
+      }
+      .face-bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+        background: rgba(255, 77, 77, 0.1);
+      }
+
+      .cube-1 {
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .cube-2 {
+        bottom: 15%;
+        right: 15%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 1s;
+      }
+
+      .cube-3 {
+        top: 60%;
+        left: 25%;
+        width: 100px;
+        height: 100px;
+        animation-delay: 2s;
+      }
+
+      /* About Section */
+      #about {
+        background-color: var(--secondary);
+        color: var(--primary);
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background: var(--accent);
+        bottom: -10px;
+        left: 0;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        margin-bottom: 15px;
+        color: var(--text-muted);
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .skill {
+        padding: 8px 15px;
+        background: var(--card-bg);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .skill:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .about-image {
+        flex: 1;
+        position: relative;
+        height: 400px;
+      }
+
+      .about-cube {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        animation: rotate 20s infinite linear;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .about-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        border: 1px solid var(--accent);
+      }
+
+      /* Services Section */
+      #services {
+        background-color: var(--bg);
+      }
+
+      .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .service-card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, var(--accent), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      .service-card:hover:before {
+        opacity: 0.1;
+      }
+
+      .service-icon {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+      }
+
+      /* Portfolio Section */
+      #portfolio {
+        background-color: var(--secondary);
+      }
+
+      .portfolio-filter {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+
+      .filter-btn {
+        padding: 8px 20px;
+        background: transparent;
+        border: 1px solid var(--text-muted);
+        color: var(--primary);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+        gap: 20px; /* Adjust gap as needed */
+      }
+
+      @media (max-width: 992px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        }
+      }
+
+      @media (max-width: 576px) {
+        .portfolio-grid {
+          grid-template-columns: 1fr; /* 1 column on mobile */
+        }
+      }
+
+      .portfolio-item {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 300px;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+
+      .portfolio-overlay h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-overlay p {
+        color: var(--text-muted);
+        transform: translateY(20px);
+        transition: transform 0.3s ease 0.1s;
+      }
+
+      .portfolio-item:hover .portfolio-overlay h3,
+      .portfolio-item:hover .portfolio-overlay p {
+        transform: translateY(0);
+      }
+
+      /* Testimonials Section */
+      #testimonials {
+        background-color: var(--bg);
+      }
+
+      .testimonials-container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .testimonial-slide {
+        background: var(--card-bg);
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        display: none;
+        animation: fade 0.5s ease;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .testimonial-slide.active {
+        display: block;
+      }
+
+      .client-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 20px;
+        border: 3px solid var(--accent);
+      }
+
+      .client-rating {
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .client-rating i {
+        margin: 0 2px;
+      }
+
+      .client-testimonial {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: var(--text-muted);
+      }
+
+      .client-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .client-info p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .testimonial-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 10px;
+      }
+
+      .testimonial-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-dot.active {
+        background: var(--accent);
+        transform: scale(1.2);
+      }
+
+      /* Contact Section */
+      #contact {
+        background-color: var(--secondary);
+      }
+
+      .contact-container {
+        display: flex;
+        gap: 50px;
+      }
+
+      .contact-info {
+        flex: 1;
+      }
+
+      .contact-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .contact-info p {
+        color: var(--text-muted);
+        margin-bottom: 30px;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--card-bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--accent);
+      }
+
+      .contact-text h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+
+      .contact-text p,
+      .contact-text a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-text a:hover {
+        color: var(--accent);
+      }
+
+      .contact-form {
+        flex: 1;
+        background: var(--card-bg);
+        padding: 40px;
+        border-radius: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        color: var(--primary);
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.2);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #000;
+        padding: 30px 5%;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--card-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      .copyright {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* 3D Floating Elements */
+      .floating-shape {
+        position: absolute;
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      .shape-1 {
+        top: 20%;
+        left: 5%;
+        width: 100px;
+        height: 100px;
+        background: var(--accent);
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .shape-2 {
+        bottom: 15%;
+        right: 10%;
+        width: 150px;
+        height: 150px;
+        background: var(--accent);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        animation: float 10s ease-in-out infinite reverse;
+      }
+
+      .shape-3 {
+        top: 60%;
+        left: 15%;
+        width: 80px;
+        height: 80px;
+        background: var(--accent);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        animation: float 7s ease-in-out infinite 2s;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .hero-content h1 {
+          font-size: 2.8rem;
+        }
+
+        .about-content {
+          flex-direction: column;
+        }
+
+        .about-image {
+          width: 100%;
+          margin-top: 40px;
+        }
+
+        .contact-container {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 80px);
+          background: var(--secondary);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+          transition: left 0.3s ease;
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .nav-links li {
+          margin-left: 0;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .hero-content {
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .hero-btns {
+          display: flex;
+          justify-content: center;
+        }
+
+        .hero-image {
+          display: none;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .portfolio-filter {
+          gap: 10px;
+        }
+
+        .filter-btn {
+          padding: 6px 15px;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero-btns {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .btn-outline {
+          margin-left: 0;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .service-card {
+          padding: 20px;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-form {
+          padding: 30px 20px;
+        }
+      }
+    </style>
   </head>
   <body>
- 
-   <nav>
-  <ul class="sidebar">
-    <li onclick="hideSidebar()">
-      <a href="javascript:void(0)">
-        <img src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+    <!-- Header -->
+    <header id="header">
+      <a href="#hero" class="logo">
+        <img src="IMG/Logo.svg" style="width: 9rem" />
       </a>
-    </li>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
-    <li><a href="service.html">Service</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact Me</a></li>
-  </ul>
-  <ul>
-    <li>
-      <a href="javascript:void(0)">
-        <img src="IMG/Logo.svg" class="logo" />
-      </a>
-    </li>
-    <li class="hideOnMoble"><a href="index.html">Home</a></li>
-    <li class="hideOnMoble"><a href="about.html">About Me</a></li>
-    <li class="hideOnMoble"><a href="service.html">Service</a></li>
-    <li class="hideOnMoble">
-      <a href="testimonials.html">Testimonials</a>
-    </li>
-    <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
-    <li class="showOnMoble" onclick="showSidebar()">
-      <a href="javascript:void(0)">
-        <img
-          src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-          class="icon-close-menu"
-        />
-      </a>
-    </li>
-  </ul>
-</nav>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
 
-    <div class="header">
-  <!-- Background iframe -->
-  <div class="spline-background">
-    <iframe
-      src="https://my.spline.design/claritystream-Mi908C93Y6g8aSV5eDeUEItA/"
-      frameborder="0"
-      width="100%"
-      height="100%"
-    ></iframe>
-  </div>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <h1>I'm Excellent <span>Emmanuel</span></h1>
+        <p>
+          Brand Identity Designer & UI/UX Specialist creating memorable digital
+          experiences that connect brands with their audiences.
+        </p>
+        <div class="hero-btns">
+          <a href="#portfolio" class="btn">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Hire Me</a>
+        </div>
+      </div>
 
-  <!-- Centered Text Content -->
-  <div class="text-header">
-    <h1 class="header-title">
-      Designing Possibilities,<br /> Building Brands
-     
-    </h1>
-    <p class="title1">
-  Hi am Excellent Emmanuel — a seasoned creative strategist specializing in Brand Identity, UI/UX & Graphic Design, and Front-End Development. I partner with ambitious businesses to fuel their growth through strategic visuals, user-centered design, and modern digital experiences.</p>
-    <div class="btn1">
-      <a href="get-started.html">
-        <button class="btn">Let's Work Together</button>
-      </a>
-    </div>
-  </div>
-</div>
+      <!-- 3D Floating Cubes -->
+      <div class="floating-cube cube-1">
+        <div class="face face-front"></div>
+        <div class="face face-back"></div>
+        <div class="face face-right"></div>
+        <div class="face face-left"></div>
+        <div class="face face-top"></div>
+        <div class="face face-bottom"></div>
+      </div>
+      <div class="floating-cube cube-2">
+        <div class="face face-front"></div>
+        <div class="face face-back"></div>
+        <div class="face face-right"></div>
+        <div class="face face-left"></div>
+        <div class="face face-top"></div>
+        <div class="face face-bottom"></div>
+      </div>
+      <div class="floating-cube cube-3">
+        <div class="face face-front"></div>
+        <div class="face face-back"></div>
+        <div class="face face-right"></div>
+        <div class="face face-left"></div>
+        <div class="face face-top"></div>
+        <div class="face face-bottom"></div>
+      </div>
+    </section>
 
- 
-    <section id="projects">
-      <!-- or whatever ID makes sense for your layout -->
-      <h2 class="selected">Selected Project</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="IMG/Folder_Mockup_1.jpg"
-              alt="Project Thumbnail 11"
-              class="thumbnail"
-            />
-          </div>
-          <a href="Project1.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
-        </div>
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="project10/MacBook_Mockup_2.jpg"
-              alt="Project Thumbnail 11"
-              class="thumbnail"
-            />
-          </div>
-          <a href="Project10.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
-        </div>
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="IMG/thumb1.png"
-              alt="Project Thumbnail 1"
-              class="thumbnail"
-            />
-          </div>
-          <a href="Project2.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
-        </div>
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Designing Experiences That Matter</h3>
+            <p>
+              With over 3 years of experience in brand identity and UI/UX
+              design, I've helped numerous clients establish powerful visual
+              identities and intuitive digital experiences.
+            </p>
+            <p>
+              My approach combines strategic thinking with creative execution,
+              ensuring that every design decision serves both the brand's
+              objectives and the user's needs.
+            </p>
+            <p>
+              When I'm not designing, you can find me exploring new
+              technologies, mentoring aspiring designers, or contributing to
+              open-source design projects.
+            </p>
 
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="IMG/pawma.jpg"
-              alt="Project Thumbnail 2"
-              class="thumbnail"
-            />
+            <div class="skills">
+              <span class="skill">Branding</span>
+              <span class="skill">Brand Identity</span>
+              <span class="skill">UI/UX Design</span>
+              <span class="skill">Graphic Design</span>
+              <span class="skill">Visual Identity/Logo Design</span>
+              <span class="skill">Frontend Development</span>
+            </div>
           </div>
-          <a href="Project3.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
+          <div class="about-image">
+            <div class="about-cube">
+              <div class="about-face face-front"></div>
+              <div class="about-face face-back"></div>
+              <div class="about-face face-right"></div>
+              <div class="about-face face-left"></div>
+              <div class="about-face face-top"></div>
+              <div class="about-face face-bottom"></div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="IMG/thumb 3.png"
-              alt="Project Thumbnail 3"
-              class="thumbnail"
-            />
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">My <span>Services</span></h2>
+        <div class="services-container">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Brand Identity</h3>
+            <p>
+              Comprehensive branding solutions including logo design, color
+              palettes, typography systems, and brand guidelines to establish a
+              cohesive visual identity.
+            </p>
           </div>
-          <a href="Project4.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>
+              User-centered interface design with intuitive navigation, seamless
+              interactions, and beautiful visuals that enhance user experience
+              and engagement.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Web Development</h3>
+            <p>
+              Custom website development with clean, semantic code that's
+              optimized for performance, accessibility, and search engine
+              visibility.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Responsive Design</h3>
+            <p>
+              Designs that adapt flawlessly to all screen sizes, ensuring
+              optimal viewing experience across desktops, tablets, and mobile
+              devices.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cube"></i>
+            </div>
+            <h3>Graphic Design</h3>
+            <p>
+              Logo, Flyer, and Banner services for product, Services,
+              presentations.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Design Strategy</h3>
+            <p>
+              Strategic design consulting to align your visual identity with
+              business goals, target audience, and market positioning.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="IMG/thumb4.png"
-              alt="Project Thumbnail 4"
-              class="thumbnail"
-            />
-          </div>
-          <a href="Project5.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
-        </div>
+      <!-- Floating Shapes -->
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+    </section>
 
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="IMG/thumb5.png"
-              alt="Project Thumbnail 5"
-              class="thumbnail"
-            />
-          </div>
-          <a href="Project6.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="section-title">My <span>Portfolio</span></h2>
+        <div class="portfolio-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Project
+          </button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+          <button class="filter-btn" data-filter="graphic">
+            Graphic Design
+          </button>
         </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item" data-category="branding">
+            <img
+              src="Project1/Folder_Mockup_1.jpg"
+              alt="Brand Identity Project"
+            />
+            <div class="portfolio-overlay">
+              <h3>Brand Identity Design For Gourguex Real Estate Brand</h3>
+              <p>
+                The designed logo features a Sophisticated yet professional
+                mark, symbolizing Elegance.
+                <a
+                  href="Project1.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="branding">
+            <img
+              src="Project2/Free_Stationery_Mockup_4.jpg"
+              alt="Brand Identity Project"
+            />
+            <div class="portfolio-overlay">
+              <h3>Brand Identity Design For Emmanuel Creative & Co.</h3>
+              <p>
+                The bold and structured logo conveys professionalism and
+                creativity, combining modern typography with an abstract mark
+                representing layers of design expertise
+                <a
+                  href="Project2.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="branding">
+            <img src="Project3/pet (3).jpg" alt="Brand Identity Project" />
+            <div class="portfolio-overlay">
+              <h3>Brand Identity Design For Pawma Pet's</h3>
+              <p>
+                The designed logo features a playful yet professional mark—a
+                stylized "P" where the negative space form a silhouette of both
+                a dog and a cat, symbolizing our dedication to providing care
+                and products for all beloved pets.
+                <a
+                  href="Project3.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="branding">
+            <img
+              src="Project4/Free_Cap_Mockup.jpg"
+              alt="Brand Identity Project"
+            />
+            <div class="portfolio-overlay">
+              <h3>Brand Identity Design For Velour Luxe Perfume Brand</h3>
+              <p>
+                The new logo embodies elegance and exclusivity, with a sleek
+                monogram forming a perfume bottle, reinforcing the luxury
+                experience.
+                <a
+                  href="Project4.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="uiux">
+            <img src="IMG/thumb4.png" alt="UI/UX Project" />
+            <div class="portfolio-overlay">
+              <h3>Animated Landing Page Design For WaveX Audio Brand.</h3>
+              <p>
+                <a
+                  href="Project5.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="uiux">
+            <img src="IMG/thumb5.png" alt="UI/UX Project" />
+            <div class="portfolio-overlay">
+              <h3>Mobile Application UIUX Design For SOLANE</h3>
+              <p>
+                The app is 65 Screens, Easy to use, Modern and Luxurious,
+                Elegance and Exclusivity.
 
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="IMG/glow essence.png"
-              alt="Project Thumbnail 5"
-              class="thumbnail"
-            />
+                <a
+                  href="Project6.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
           </div>
-          <a href="Project7.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
-        </div>
-
-        <div class="portfolio-item">
-          <div class="image-container">
-            <img
-              src="IMG/thumb7.png"
-              alt="Project Thumbnail 7"
-              class="thumbnail"
-            />
+          <div class="portfolio-item" data-category="uiux">
+            <img src="project10/MacBook_Mockup_2.jpg" alt="UI/UX Project" />
+            <div class="portfolio-overlay">
+              <h3>Gourguex RealEstate Website UI Design</h3>
+              <p>
+                <a
+                  href="Project10.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
           </div>
-          <a href="Project8.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
-        </div>
-        <div class="portfolio-item">
-          <div class="image-container">
+          <div class="portfolio-item" data-category="uiux">
+            <img src="project7/Untitled design.png" alt="UI/UX Project" />
+            <div class="portfolio-overlay">
+              <h3>E-Commerce Website UI Design</h3>
+              <p>
+                <a
+                  href="Project7.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="web">
             <img
               src="project11/iPad-Proand-iPhone-Pro-Showcase-Screens-Free-psd-Mockup.jpg"
-              alt="Project Thumbnail 7"
-              class="thumbnail"
+              alt="Web Design Project"
             />
+            <div class="portfolio-overlay">
+              <h3>Front-End Development For Emmanuel Creative & Co.</h3>
+              <p>
+                <a
+                  href="Project11.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
           </div>
-          <a href="Project11.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
+          <div class="portfolio-item" data-category="graphic">
+            <img src="IMG/thumb8.png" alt="Graphic Design Project" />
+            <div class="portfolio-overlay">
+              <h3>Stationary Designs.</h3>
+              <p>
+                <a
+                  href="Project9.html"
+                  style="
+                    color: #ff4d4d;
+                    text-decoration: none;
+                    font-weight: bolder;
+                  "
+                  >View Project..</a
+                >
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="portfolio-item">
-          <div class="image-container">
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="section-title">Client <span>Testimonials</span></h2>
+        <div class="testimonials-container">
+          <div class="testimonial-slide active">
             <img
-              src="IMG/thumb8.png"
-              alt="Project Thumbnail 7"
-              class="thumbnail"
+              src="https://randomuser.me/api/portraits/women/32.jpg"
+              alt="Client"
+              class="client-img"
             />
+            <div class="client-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="client-testimonial">
+              "Excellent transformed our brand identity completely. His
+              attention to detail and strategic approach resulted in a visual
+              system that perfectly represents our values and resonates with our
+              target audience. The brand guidelines he created are so
+              comprehensive that our entire team can maintain consistency
+              effortlessly."
+            </p>
+            <div class="client-info">
+              <h4>Sarah Johnson</h4>
+              <p>CEO, NovaTech</p>
+            </div>
           </div>
-          <a href="Project9.html" class="view-project-button"
-            >View Project &rarr;</a
-          >
+          <div class="testimonial-slide">
+            <img
+              src="https://randomuser.me/api/portraits/men/45.jpg"
+              alt="Client"
+              class="client-img"
+            />
+            <div class="client-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="client-testimonial">
+              "The UI/UX redesign Excellent did for our mobile app increased our
+              user retention by 40%. He took the time to understand our users'
+              pain points and created intuitive solutions that made complex
+              financial data accessible. His prototyping process allowed us to
+              test concepts before development, saving us significant time and
+              resources."
+            </p>
+            <div class="client-info">
+              <h4>Michael Chen</h4>
+              <p>Product Manager, Finova</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              alt="Client"
+              class="client-img"
+            />
+            <div class="client-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="client-testimonial">
+              "Working with Excellent on our e-commerce website was a
+              game-changer. He not only delivered stunning visuals but also
+              implemented conversion-focused design principles that increased
+              our sales by 25%. His ability to balance aesthetic appeal with
+              functional optimization is truly remarkable. We continue to
+              consult him for all our design needs."
+            </p>
+            <div class="client-info">
+              <h4>Emily Rodriguez</h4>
+              <p>Marketing Director, UrbanCraft</p>
+            </div>
+          </div>
         </div>
-        
+        <div class="testimonial-nav">
+          <div class="testimonial-dot active" data-slide="0"></div>
+          <div class="testimonial-dot" data-slide="1"></div>
+          <div class="testimonial-dot" data-slide="2"></div>
+        </div>
+      </div>
+      <!-- Floating Shapes -->
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Let's Collaborate</h3>
+            <p>
+              Have a project in mind or want to discuss potential opportunities?
+              I'd love to hear from you. Reach out through the form or connect
+              with me directly via the contact details below.
+            </p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Location</h4>
+                  <p>Lagos, Nigeria</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Email</h4>
+                  <a href="mailto:emmanuelcreativecompany@gmail.com"
+                    >emmanuelcreativecompany@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Phone</h4>
+                  <a
+                    href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
+                    >+234 802 370 8056</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form" method="POST" data-netlify="true">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" class="form-control" required></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
-    <div class="btn1">
-      <a href="contact.html">
-        <button class="btn">Contact Me</button>
-      </a>
-    </div>
-    
-    <section class="about">
-      <!-- Top Section -->
-      <div class="about-top">
-        <div class="about-image">
-          <img src="IMG/My pic.jpg" alt="Preview Pic" class="my-image" />
-        </div>
-        <div class="about-text">
-          <h2>About Emmanuel Creative & Co.</h2>
-          <p style="width: 100%;"> I’m <strong>Excellent Emmanuel</strong> — the Founder and Lead
-            Creative at <strong>Emmanuel Creative & Co.</strong>, a
-            design-focused studio based in Nigeria. helping brands craft bold
-            visuals and intuitive user experiences that resonate deeply.</p>
 
-
-          <!-- Skills as button pills -->
-          <div class="skills-list">
-            <div class="skill-pill">Brand Identity</div>
-            <div class="skill-pill">Logo Design</div>
-            <div class="skill-pill">Web Development</div>
-            <div class="skill-pill">UI/UX Specialist</div>
-          </div>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/excellent-emmanuel-374255331"
+            class="social-link"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
+            class="social-link"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a href="https://facebook.com/share/1AeBcp45D4/" class="social-link"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://x.com/emmanuelcreate?s=09" class="social-link"
+            ><i class="fab fa-twitter"></i
+          ></a>
         </div>
-      </div>
-      <div class="the-whole-animation">
-        <div class="animation1">
-          <h3 class="h3-loadbar">Brand Identity 96% </h3>
-          <div class="Loadbar">
-            <div class="Loadbar-content"></div>
-          </div>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
         </div>
-        <div class="animation2">
-          <h3 class="h3-loadbar">Logo Design & Graphic Design 94% </h3>
-          <div class="Loadbar">
-            <div class="Loadbar-content"></div>
-          </div>
-        </div>
-        <div class="animation3">
-          <h3 class="h3-loadbar">UI/UX 91% </h3>
-          <div class="Loadbar">
-            <div class="Loadbar-content"></div>
-          </div>
-        </div>
-        <div class="animation4">
-          <h3 class="h3-loadbar">Web Development 84%</h3>
-          <div class="Loadbar">
-            <div class="Loadbar-content"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Bottom Section: Experiences -->
-      <div class="about-bottom">
-        <div class="card">
-          <h3>Freelance Brand Designer</h3>
-          <div class="date">2024 – Present</div>
-          <p>
-            Worked in UPWORK to design brand identities, strategy decks, and
-            visuals that connect with my clients audience. Focused on
-            simplicity, clarity, and style.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Manager and Design Intern at Top-Standard Ventures</h3>
-          <div class="date">2023 – 2024</div>
-          <p>
-            Collaborated with senior designers to create brand kits and assisted
-            in UI/UX layouts, learning industry workflows and fast execution.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Junior Graphics Volunteer</h3>
-          <div class="date">2022</div>
-          <p>
-            Created social media content, applied design principles practically, and gained hands-on experience in layout and typography and creative thinking.
-          </p>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Unique Process Section -->
-<section class="process-section-xyz">
-  <div class="process-container-xyz">
-    <div class="process-left-xyz">
-      <div class="process-text-xyz">
-        <h1 class="my-design">My Design <br />Process</h1>
-        <p class="process-description-xyz">
-          Crafting bold solutions that inspire and elevate brands through thoughtful process.
+        <p class="copyright">
+          © 2025 Emmanuel Creative & Co. | Designed and developed by Excellent
+          Emmanuel. All Rights Reserved.
         </p>
-        <a href="get-started.html" class="process-cta-link-xyz">
-          <button class="btn">Let's Work Together</button>
-        </a>
       </div>
+    </footer>
 
-      <div class="process-cards-xyz">
-        <div class="process-card-xyz">
-          <div class="process-card-icon-xyz icon-bell"></div>
-          <h3>Research & Discovery</h3>
-          <p>
-            Before diving into visuals, I take time to understand your brand, goals, audience, and competitors. This foundation helps ensure every design decision is strategic.
-          </p>
-        </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
 
-        <div class="process-card-xyz">
-          <div class="process-card-icon-xyz icon-strategy"></div>
-          <h3>Strategy & Concept Development</h3>
-          <p>
-            Using insights from research, I build a clear design strategy and brainstorm creative directions that align with your brand values and objectives.
-          </p>
-        </div>
+        hamburger.addEventListener("click", function () {
+          navLinks.classList.toggle("active");
+          hamburger.innerHTML = navLinks.classList.contains("active")
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+        });
 
-        <div class="process-card-xyz">
-          <div class="process-card-icon-xyz icon-design"></div>
-          <h3>Design Execution</h3>
-          <p>
-            I translate ideas into high-quality visuals — logos, brand elements, layouts, and more — ensuring consistency and attention to detail.
-          </p>
-        </div>
+        // Close mobile menu when clicking a link
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+          });
+        });
 
-        <div class="process-card-xyz">
-          <div class="process-card-icon-xyz icon-feedback"></div>
-          <h3>Feedback & Revisions</h3>
-          <p>
-            Your feedback is key. I offer rounds of revisions to refine and polish the designs until they meet your expectations.
-          </p>
-        </div>
-        <div class="process-card-xyz">
-          <div class="process-card-icon-xyz icon-delivery"></div>
-          <h3>Final Delivery</h3>
-          <p>
-             Once finalized, you receive all necessary files in organized formats — along with support or guidance to launch your brand confidently.  </p>
-        </div>
-         
-      </div>
-    </div>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
 
-    <div class="process-right-xyz">
-      <div class="process-image-wrapper-xyz">
-        <img src="IMG/hand.png" alt="Design process on tablet" />
-      </div>
-    </div>
-  </div>
-</section>
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
 
- 
-    <!-- What is needed -->
-    <section class="needed">
-      <!-- Top Section -->
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
 
-      <div class="what-i-need-top">
-        <div class="need">
-          <img src="IMG/Whatinees.png" alt="Preview Pic" class="need-image" />
-        </div>
-        <div class="about-text">
-          <h2>
-            What I Need<br />
-            From You
-          </h2>
-          <p>
-            To kick off your amazing project smoothly and ensure the best
-            results,<br />I’ll need the following:
-          </p>
+        // Header scroll effect
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 100) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
 
-          <!-- Skills as button pills -->
-          <div class="needed-list">
-            <div class="needed-list-in">
-              Your Vision
-              <p>
-                A clear idea of your brand's purpose, target audience, and
-                long-term goals.
-              </p>
-            </div>
-            <div class="needed-list-in">
-              Inspiration
-              <p>Any references, moodboards, or styles you admire.</p>
-            </div>
-            <div class="needed-list-in">
-              Brand Details
-              <p>
-                Existing logos, color codes, fonts (if any), or previous
-                materials.
-              </p>
-            </div>
-            <div class="needed-list-in">
-              Project Scope
-              <p>Exactly what you need designed.</p>
-            </div>
-            <div class="needed-list-in">
-              Timeline & Budget
-              <p>When you need it done and your budget range.</p>
-            </div>
-            <div class="needed-list-in">
-              Communication
-              <p>A way to keep in touch — email or preferred platform.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
- <section id="client-reviews">
-  
-  <h2 class="clientreviews">Client<br>Reviews</h2>
-  <p class="clientreviewspp">Feedback shared from completed design projects — highlighting the impact, satisfaction, and success achieved through thoughtful collaboration and creative problem-solving.</p>
-  <div class="client-reviews-btn">
-    <a href="get-started.html">
-    <button class="btn">Let's Work Together</button>
-   </a>
-<div class="review-container">
-    <img src="IMG/Reviewssss.png" class="reviews">
-  </div>
- </div>
-    <div class="scroll-container" id="scrollContainer">
-    <div class="scroll-content">
-      <img src="IMG/longimg.svg" alt="Long horizontal image">
-    </div>
-  </div>
-<section id="faq-section">
- <div class="faq-container">
-  <h2 class="faq-title">Frequently Asked Questions</h2>
+        // Testimonial slider
+        const testimonialSlides =
+          document.querySelectorAll(".testimonial-slide");
+        const testimonialDots = document.querySelectorAll(".testimonial-dot");
+        let currentSlide = 0;
 
-  <div class="faq-item">
-    <div class="faq-question">
-      <span class="faq-text">What is your design process like?</span>
-      <span class="faq-icon">+</span>
-    </div>
-    <div class="faq-answer">
-      My process includes discovery (research & briefing), strategy, concept development, design execution, revisions, and final delivery.
-    </div>
-  </div>
+        function showSlide(index) {
+          testimonialSlides.forEach((slide) =>
+            slide.classList.remove("active")
+          );
+          testimonialDots.forEach((dot) => dot.classList.remove("active"));
 
-  <div class="faq-item">
-    <div class="faq-question">
-      <span class="faq-text">How long does a typical project take?</span>
-      <span class="faq-icon">+</span>
-    </div>
-    <div class="faq-answer">
-      Depending on the project scope:<br />
-      Logos: 3–5 days<br />
-      Brand Identity: 1–2 weeks<br />
-      UI/UX Projects: 1–3 weeks<br />
-      Front-End Development: 1-9 weeks depending on complexity<br />
-      Full Branding + UI/UX: 2–4 weeks
-    </div>
-  </div>
+          testimonialSlides[index].classList.add("active");
+          testimonialDots[index].classList.add("active");
+          currentSlide = index;
+        }
 
-  <div class="faq-item">
-    <div class="faq-question">
-      <span class="faq-text">What do you need from me to get started?</span>
-      <span class="faq-icon">+</span>
-    </div>
-    <div class="faq-answer">
-      Complete brief: business goals, brand name, any references/inspiration, and content (text/images, if available).
-    </div>
-  </div>
+        testimonialDots.forEach((dot, index) => {
+          dot.addEventListener("click", () => showSlide(index));
+        });
 
-  <div class="faq-item">
-    <div class="faq-question">
-      <span class="faq-text">How many revisions are included?</span>
-      <span class="faq-icon">+</span>
-    </div>
-    <div class="faq-answer">
-      Up to 4 revisions are included on the final concept. Additional revisions can be discussed if needed.
-    </div>
-  </div>
+        // Auto slide change
+        setInterval(() => {
+          let nextSlide = (currentSlide + 1) % testimonialSlides.length;
+          showSlide(nextSlide);
+        }, 5000);
 
-  <div class="faq-item">
-    <div class="faq-question">
-      <span class="faq-text">Do you offer post-project support?</span>
-      <span class="faq-icon">+</span>
-    </div>
-    <div class="faq-answer">
-      I offer post-project support starting 5 weeks after completion. You’ll receive 14–21 days of free support, and extended help can be arranged.
-    </div>
-  </div>
-</div>
-</section>
- <section class="contact-section">
-  <H1 class="text-in-touch">Get In Touch</H1>
-  <div class="contact-wrapper">
-    <!-- Left side: Contact boxes -->
-    <div class="contact-info">
-      <div class="info-box">
-        <h3><a href="https://www.linkedin.com/in/excellent-emmanuel-374255331" target="_blank">LinkedIn</a></h3>
-        <p>Excellent Emmanuel</p>
-      </div>
-      <div class="info-box">
-        <h3><a href="mailto:emmanuelcreativecompany.com" target="_blank">Email</a></h3>
-        <p>emmanuelcreativecompany</p>
-      </div>
-      <div class="info-box">
-        <h3><a href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together.">WhatsApp</a></h3>
-        <p>+234 802 370 8056</p>
-      </div>
-    </div>
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-    <!-- Right side: Contact form -->
-    <form class="contact-form" name="contact" method="POST" data-netlify="true">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <input type="text" name="subject" placeholder="Subject" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btnn">Send Message</button>
-    </form>
-  </div>
-</section>
- 
-  <!-- banner Section -->
-   <div class="banner">
-      <!--  Background frame -->
-      <h1 class="banner-title">Hire Me Now</h1>
-       
-      <div class="hire-me-img"><img src="IMG/2149731381.jpg" class="hire-me"></div>
-      <div class="btn-head">
-        <a href="get-started.html"
-          ><button class="btn">Let's Work Together</button></a
-        >
-      </div>
-      <p style="text-align: center; margin-bottom: 3%;">You’re just one click away from building a great brand.</p>
-    </div>
-   
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Update active button
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
 
-      <!-- Left Column -->
-      <div class="footer-left">
-        <img src="IMG/Logo.svg" alt="Emmanuel Creative Logo" class="logo"/>
-        <p>
-          Emmanuel Creative & Co. is a strategic branding agency helping ambitious brands stand out through compelling design, clear messaging, and purposeful visual identities.
-        </p>
+            const filterValue = this.getAttribute("data-filter");
 
-        <div class="footer-social">
-          <a href="https://facebook.com/share/1AeBcp45D4/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."><i class="fab fa-whatsapp"></i></a>
-          <a href="https://x.com/emmanuelcreate?s=09"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/excellent-emmanuel-374255331"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
+            // Filter items
+            portfolioItems.forEach((item) => {
+              if (
+                filterValue === "all" ||
+                item.getAttribute("data-category") === filterValue
+              ) {
+                item.style.display = "block";
+              } else {
+                item.style.display = "none";
+              }
+            });
+          });
+        });
 
-      <!-- Middle Column -->
-      <div class="footer-center">
-        <h3>Section</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="service.html">Service</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+        // Form submission
+        const contactForm = document.getElementById("contactForm");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-      <!-- Right Column -->
-      <div class="footer-right">
-        <h3>Get In Touch</h3>
-        <ul>
-          <li><i class="fas fa-map-marker-alt"></i> Jatau Road, Kaduna, Nigeria 800104</li>
-          <li><i class="fas fa-phone"></i>+234 802 370 8056</li>
-          <li><i class="fas fa-mobile-alt"></i>+234 703 957 5837</li>
-          <li><i class="fas fa-envelope"></i> emmanuelcreativecompany@gmail.com</li> 
-        </ul>
-      </div>
-    </div>
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
 
-    <p class="footer-bottom">
-      &copy; 2025 Emmanuel Creative & Co. | Designed and developed by Excellent Emmanuel at Emmanuel Creative & Co.
-    </p>
-  </footer>
- 
-<script src="script.js"></script> 
-<script>
-  const scrollContainer = document.getElementById('scrollContainer');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+            // Here you would typically send the form data to a server
+            console.log({ name, email, subject, message });
 
-  scrollContainer.addEventListener('mousedown', (e) => {
-    isDown = true;
-    scrollContainer.classList.add('active');
-    startX = e.pageX - scrollContainer.offsetLeft;
-    scrollLeft = scrollContainer.scrollLeft;
-  });
+            // Show success message
+            alert("Thank you for your message! I will get back to you soon.");
+            contactForm.reset();
+          });
+        }
 
-  scrollContainer.addEventListener('mouseleave', () => {
-    isDown = false;
-    scrollContainer.classList.remove('active');
-  });
+        // 3D Cube Animation Enhancement
+        const cubes = document.querySelectorAll(".floating-cube, .about-cube");
 
-  scrollContainer.addEventListener('mouseup', () => {
-    isDown = false;
-    scrollContainer.classList.remove('active');
-  });
+        function animateCubes() {
+          cubes.forEach((cube, index) => {
+            const speed = index % 2 === 0 ? 0.2 : 0.1;
+            cube.style.transform = `rotateX(${
+              window.scrollY * speed
+            }deg) rotateY(${window.scrollY * speed}deg)`;
+          });
 
-  scrollContainer.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainer.offsetLeft;
-    const walk = (x - startX);
-    scrollContainer.scrollLeft = scrollLeft - walk;
-  });
+          requestAnimationFrame(animateCubes);
+        }
 
-  document.addEventListener("DOMContentLoaded", function () {
-  const faqItems = document.querySelectorAll(".faq-item");
+        animateCubes();
 
-  faqItems.forEach((item) => {
-    const question = item.querySelector(".faq-question");
+        // Floating shapes animation
+        const shapes = document.querySelectorAll(".floating-shape");
 
-    question.addEventListener("click", () => {
-      item.classList.toggle("active");
-    });
-  });
-});
+        function animateShapes() {
+          shapes.forEach((shape, index) => {
+            const time = Date.now() * 0.001;
+            const offset = index * 2;
+            const x = Math.sin(time + offset) * 20;
+            const y = Math.cos(time + offset) * 20;
+            shape.style.transform = `translate(${x}px, ${y}px)`;
+          });
 
-</script>
+          requestAnimationFrame(animateShapes);
+        }
+
+        animateShapes();
+
+        // Scroll reveal animation
+        const scrollReveal = ScrollReveal({
+          origin: "bottom",
+          distance: "60px",
+          duration: 1000,
+          delay: 200,
+          reset: true,
+        });
+
+        scrollReveal.reveal(".hero-content, .about-content, .section-title", {
+          origin: "left",
+          interval: 200,
+        });
+
+        scrollReveal.reveal(".service-card, .portfolio-item", {
+          interval: 200,
+          distance: "30px",
+        });
+
+        scrollReveal.reveal(".contact-container > *", {
+          origin: "bottom",
+          interval: 200,
+        });
+      });
+    </script>
+
+    <!-- ScrollReveal Library -->
+    <script src="https://unpkg.com/scrollreveal"></script>
   </body>
 </html>
