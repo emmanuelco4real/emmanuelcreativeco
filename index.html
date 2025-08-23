@@ -281,149 +281,6 @@
         color: var(--secondary-color);
       }
 
-      /* ========== HEADER/NAVIGATION ========== */
-      nav {
-        background-color: #ffffff00;
-        backdrop-filter: blur(15px);
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        z-index: 10000;
-      }
-      nav ul {
-        width: 100%;
-        list-style: none;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-      }
-      nav li {
-        height: 50px;
-      }
-      nav a {
-        height: 100%;
-        padding: 0 20px;
-        font-size: 0.8rem;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        color: rgb(255, 255, 255);
-      }
-      nav a:hover {
-        color: rgb(231, 139, 58);
-      }
-      nav li:first-child {
-        margin-right: auto;
-      }
-      .logo {
-        max-width: 120px;
-      }
-      .icon-close-menu {
-        height: 26px;
-        width: auto;
-      }
-      /* Mobile Responsive Styles for Navigation */
-      @media (max-width: 768px) {
-        .hideOnMoble {
-          display: none !important;
-        }
-
-        .showOnMoble {
-          display: block !important;
-        }
-
-        nav ul {
-          padding: 0 15px;
-        }
-
-        .sidebar {
-          display: none;
-          position: fixed;
-          top: 0;
-          right: 0;
-          height: 100vh;
-          width: 70%;
-          max-width: 300px;
-          background-color: var(--card-bg);
-          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-          z-index: 1000;
-          padding: 60px 20px 20px;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .sidebar.active {
-          display: flex;
-        }
-
-        .sidebar li {
-          width: 100%;
-          margin-bottom: 15px;
-        }
-
-        .sidebar a {
-          padding: 12px 0;
-          font-size: 1.1rem;
-          width: 100%;
-          display: block;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .sidebar li:first-child {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          width: auto;
-          margin-bottom: 0;
-        }
-
-        .sidebar li:first-child a {
-          border-bottom: none;
-          padding: 5px;
-        }
-
-        /* Overlay when sidebar is open */
-        .sidebar::before {
-          content: "";
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: -1;
-        }
-      }
-
-      @media (min-width: 769px) {
-        .showOnMoble {
-          display: none !important;
-        }
-
-        .sidebar {
-          display: none !important;
-        }
-      }
-
-      /* Active state for navigation links */
-      nav a.active {
-        color: rgb(231, 139, 58) !important;
-        font-weight: 600;
-      }
-      /* Main Header Area */
-      .header {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        justify-content: center; /* horizontal centering */
-        align-items: center; /* vertical centering */
-        text-align: center;
-      }
-
       /* ========== HERO SECTION ========== */
       #hero {
         position: relative;
@@ -2477,50 +2334,177 @@
           justify-content: center;
         }
       }
-      /* Sidebar Overlay */
-      .sidebar-overlay {
+      /* ========== HEADER/NAVIGATION ========== */
+      nav {
+        background-color: #ffffff00;
+        backdrop-filter: blur(15px);
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
         position: fixed;
-        top: 0;
         left: 0;
+        top: 0;
         width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        display: none;
+        z-index: 10000;
       }
+      nav ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      nav li {
+        height: 50px;
+      }
+      nav a {
+        height: 100%;
+        padding: 0 20px;
+        font-size: 0.8rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+      }
+      nav a:hover {
+        color: rgb(231, 139, 58);
+      }
+      nav li:first-child {
+        margin-right: auto;
+      }
+      .logo {
+        max-width: 120px;
+      }
+      .icon-close-menu {
+        height: 26px;
+        width: auto;
+      }
+      /* Mobile Responsive Styles for Navigation */
+      @media (max-width: 768px) {
+        .hideOnMoble {
+          display: none !important;
+        }
 
-      /* Update sidebar z-index to appear above overlay */
-      .sidebar {
-        z-index: 1000;
-        /* ... rest of your existing sidebar styles ... */
+        .showOnMoble {
+          display: block !important;
+        }
+
+        nav ul {
+          padding: 0 15px;
+        }
+
+        .sidebar {
+          display: none;
+          position: fixed;
+          top: 0;
+          right: 0;
+          height: 100vh;
+          width: 70%;
+          max-width: 300px;
+          background-color: var(--card-bg);
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+          padding: 60px 20px 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .sidebar.active {
+          display: flex;
+        }
+        /* Add overlay when sidebar is open */
+        .sidebar-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+        }
+
+        .sidebar-overlay.active {
+          display: block;
+        }
+        .sidebar li {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+
+        .sidebar a {
+          padding: 12px 0;
+          font-size: 1.1rem;
+          width: 100%;
+          display: block;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar li:first-child {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          width: auto;
+          margin-bottom: 0;
+        }
+
+        .sidebar li:first-child a {
+          border-bottom: none;
+          padding: 5px;
+        }
+
+        /* Overlay when sidebar is open */
+        .sidebar::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: -1;
+        }
       }
 
       @media (min-width: 769px) {
-        .sidebar-overlay {
+        .showOnMoble {
           display: none !important;
         }
+
+        .sidebar {
+          display: none !important;
+        }
+      }
+
+      /* Active state for navigation links */
+      nav a.active {
+        color: rgb(231, 139, 58) !important;
+        font-weight: 600;
+      }
+      /* Main Header Area */
+      .header {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center; /* horizontal centering */
+        align-items: center; /* vertical centering */
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-      <div class="loading-spinner"></div>
-    </div>
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay"></div>
 
     <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
-      <div
-        class="sidebar-overlay"
-        id="sidebarOverlay"
-        onclick="hideSidebar()"
-      ></div>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
       <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="javascript:void(0)">
+        <li>
+          <a href="javascript:void(0)" onclick="hideSidebar()">
             <img
               src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              alt=""
+              alt="Close menu"
             />
           </a>
         </li>
@@ -2555,7 +2539,7 @@
         <li class="hideOnMoble">
           <a href="index.html#contact-section">Contact Me</a>
         </li>
-        <li class="showOnMoble" id="mobile-menu-button">
+        <li class="showOnMoble" onclick="showSidebar()">
           <a href="javascript:void(0)">
             <img
               src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
@@ -3769,10 +3753,28 @@
     </button>
 
     <script>
-      // Mobile menu functionality
+      // Navigation functionality
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        const overlay = document.querySelector(".sidebar-overlay");
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        const overlay = document.querySelector(".sidebar-overlay");
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close sidebar when clicking on overlay
       document
-        .getElementById("mobile-menu-button")
-        .addEventListener("click", showSidebar);
+        .querySelector(".sidebar-overlay")
+        .addEventListener("click", hideSidebar);
+
       // Wait for the DOM to be fully loaded
       document.addEventListener("DOMContentLoaded", function () {
         // ========== LOADING SCREEN ==========
@@ -4074,24 +4076,9 @@
           });
         }, 1500);
       });
-      // ========== NAVIGATION & SIDEBAR FUNCTIONALITY ==========
-      function showSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        const overlay = document.getElementById("sidebarOverlay");
-        sidebar.style.display = "flex";
-        overlay.style.display = "block";
-        // Prevent body scrolling when sidebar is open
-        document.body.style.overflow = "hidden";
-      }
 
-      function hideSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        const overlay = document.getElementById("sidebarOverlay");
-        sidebar.style.display = "none";
-        overlay.style.display = "none";
-        // Re-enable body scrolling
-        document.body.style.overflow = "auto";
-      }
+      // ========== NAVIGATION & SIDEBAR FUNCTIONALITY ==========
+
       // Replace the entire carousel initialization code with this:
       document.addEventListener("DOMContentLoaded", function () {
         const track = document.querySelector(".testimonials-track");
