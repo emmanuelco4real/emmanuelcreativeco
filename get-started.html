@@ -1269,7 +1269,7 @@
                 <input
                   type="text"
                   name="full_name"
-                  placeholder="Your Full Name"
+                  placeholder="What Can I Call You"
                   required
                 />
                 <input
@@ -1282,12 +1282,7 @@
                 <input
                   type="text"
                   name="company"
-                  placeholder="Company/Organization Name"
-                />
-                <input
-                  type="url"
-                  name="website"
-                  placeholder="Current Website (if any)"
+                  placeholder="Company/Organization Name (optional)"
                 />
               </div>
             </div>
@@ -1523,7 +1518,16 @@
                   <option value="5000_10000">$5,000 - $10,000</option>
                   <option value="over_10000">Over $10,000</option>
                 </select>
-
+                <label>Selected Package:</label>
+                <select name="selected_package" id="selected-package" required>
+                  <option value="">Select a package</option>
+                  <option value="Starter Package">Starter Package</option>
+                  <option value="Professional Package">
+                    Professional Package
+                  </option>
+                  <option value="Enterprise Package">Enterprise Package</option>
+                  <option value="Negotiate">Negotiate/Custom Package</option>
+                </select>
                 <textarea
                   name="budget_notes"
                   placeholder="Any additional notes about budget or timeline..."
@@ -1754,7 +1758,12 @@
               <li>1-2 Week Turnaround</li>
               <li>Source Files Delivery</li>
             </ul>
-            <button class="btn btn-outline">Select Package</button>
+            <button
+              class="btn btn-outline"
+              onclick="selectPackage('Starter Package')"
+            >
+              Select Package
+            </button>
           </div>
 
           <div class="package-card featured">
@@ -1769,7 +1778,12 @@
               <li>2-3 Week Turnaround</li>
               <li>Source Files Delivery</li>
             </ul>
-            <button class="btn btn-primary">Select Package</button>
+            <button
+              class="btn btn-primary"
+              onclick="selectPackage('Professional Package')"
+            >
+              Select Package
+            </button>
           </div>
 
           <div class="package-card">
@@ -1786,7 +1800,12 @@
               <li>Priority Support</li>
               <li>Source Files Delivery</li>
             </ul>
-            <button class="btn btn-outline">Select Package</button>
+            <button
+              class="btn btn-outline"
+              onclick="selectPackage('Enterprise Package')"
+            >
+              Select Package
+            </button>
           </div>
         </div>
 
@@ -2085,15 +2104,12 @@
           <div class="footer-col">
             <h3>Contact Info</h3>
             <ul class="contact-info">
-              <li>
-                <i class="fas fa-map-marker-alt"></i> Jatau Road, Kaduna,
-                Nigeria 800104
-              </li>
+              <li><i class="fas fa-map-marker-alt"></i> Nigeria</li>
               <li><i class="fas fa-phone"></i> +234 802 370 8056</li>
               <li><i class="fas fa-mobile-alt"></i> +234 703 957 5837</li>
               <li>
                 <i class="fas fa-envelope"></i>
-                emmanuelcreativecompany@gmail.com
+                excel.emmy.work@gmail.com
               </li>
             </ul>
           </div>
@@ -2210,6 +2226,23 @@
           );
         }
       });
+      // Add this to your existing JavaScript
+      function selectPackage(packageName) {
+        // Set the package value
+        const packageSelect = document.getElementById("selected-package");
+        packageSelect.value = packageName;
+
+        // Scroll to form
+        document.getElementById("get-started-form").scrollIntoView({
+          behavior: "smooth",
+        });
+
+        // Open the Timeline & Budget section
+        const timelineSection = document.querySelector('[onclick*="Timeline"]');
+        if (timelineSection && !timelineSection.classList.contains("active")) {
+          toggleSection(timelineSection);
+        }
+      }
     </script>
   </body>
 </html>
