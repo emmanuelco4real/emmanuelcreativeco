@@ -357,21 +357,7 @@
         .sidebar.active {
           display: flex;
         }
-        /* Add overlay when sidebar is open */
-        .sidebar-overlay {
-          display: none;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 999;
-        }
 
-        .sidebar-overlay.active {
-          display: block;
-        }
         .sidebar li {
           width: 100%;
           margin-bottom: 15px;
@@ -2285,13 +2271,6 @@
         object-fit: cover;
       }
 
-      .requirements-image {
-        overflow: hidden;
-        max-width: 100%;
-        height: 20rem;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      }
       /* Specific fix for about section image */
       .about-image {
         height: 40rem;
@@ -2310,6 +2289,13 @@
 
       /* Fix for process visual on mobile */
       @media (max-width: 768px) {
+        .requirements-image {
+          overflow: hidden;
+          max-width: 100%;
+          height: 20rem;
+          border-radius: 20px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
         .process-visual {
           width: 100%;
           max-height: 300px;
@@ -2491,6 +2477,29 @@
           justify-content: center;
         }
       }
+      /* Sidebar Overlay */
+      .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+      }
+
+      /* Update sidebar z-index to appear above overlay */
+      .sidebar {
+        z-index: 1000;
+        /* ... rest of your existing sidebar styles ... */
+      }
+
+      @media (min-width: 769px) {
+        .sidebar-overlay {
+          display: none !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -2499,10 +2508,13 @@
       <div class="loading-spinner"></div>
     </div>
 
-    <!-- Sidebar Overlay (for mobile) -->
-    <div class="sidebar-overlay"></div>
     <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
+      <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        onclick="hideSidebar()"
+      ></div>
       <ul class="sidebar">
         <li onclick="hideSidebar()">
           <a href="javascript:void(0)">
@@ -2945,9 +2957,7 @@
             Here are some of the services I offer. If these look like what
             you're looking for, then let's work together.
           </p>
-          <a href="get-started.html" class="btn btn-primary"
-            >Let's Work Together</a
-          >
+          <a href="service.html" class="btn btn-primary">See Full Service</a>
         </div>
 
         <div class="services-grid">
@@ -2960,7 +2970,7 @@
               From logos to comprehensive visual systems that define and
               strengthen your brand's identity.
             </p>
-            <a href="service.html#branding" class="service-link"
+            <a href="service.html#brand-identity" class="service-link"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -2974,7 +2984,7 @@
               I design user-friendly digital interfaces that are both beautiful
               and easy to navigate, to enhance engagement and user satisfaction.
             </p>
-            <a href="service.html#uiux" class="service-link"
+            <a href="service.html#ui-ux-design" class="service-link"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -2988,7 +2998,7 @@
               From marketing banners to social posts, I design stunning visuals
               that attract and convert audiences.
             </p>
-            <a href="service.html#graphic" class="service-link"
+            <a href="service.html#graphic-design" class="service-link"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -3002,7 +3012,7 @@
               I build responsive, fast, and elegant websites using HTML, CSS,
               and JavaScript with pixel-perfect precision.
             </p>
-            <a href="service.html#development" class="service-link"
+            <a href="service.html#frontend-development" class="service-link"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -4066,15 +4076,22 @@
         }, 1500);
       });
       // ========== NAVIGATION & SIDEBAR FUNCTIONALITY ==========
-      // Navigation functions
       function showSidebar() {
         const sidebar = document.querySelector(".sidebar");
+        const overlay = document.getElementById("sidebarOverlay");
         sidebar.style.display = "flex";
+        overlay.style.display = "block";
+        // Prevent body scrolling when sidebar is open
+        document.body.style.overflow = "hidden";
       }
 
       function hideSidebar() {
         const sidebar = document.querySelector(".sidebar");
+        const overlay = document.getElementById("sidebarOverlay");
         sidebar.style.display = "none";
+        overlay.style.display = "none";
+        // Re-enable body scrolling
+        document.body.style.overflow = "auto";
       }
       // Replace the entire carousel initialization code with this:
       document.addEventListener("DOMContentLoaded", function () {

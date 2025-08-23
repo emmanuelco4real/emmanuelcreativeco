@@ -345,7 +345,7 @@
           max-width: 300px;
           background-color: var(--card-bg);
           box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-          z-index: 1000;
+          z-index: 10000;
           padding: 60px 20px 20px;
           flex-direction: column;
           align-items: flex-start;
@@ -1088,17 +1088,42 @@
           grid-template-columns: 1fr;
         }
       }
+      /* Sidebar Overlay */
+      .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+        cursor: pointer;
+      }
+
+      /* Update sidebar z-index to appear above overlay */
+      .sidebar {
+        z-index: 1000;
+        /* ... rest of your existing sidebar styles ... */
+      }
+
+      @media (min-width: 769px) {
+        .sidebar-overlay {
+          display: none !important;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
       <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="javascript:void(0)">
+        <li>
+          <a href="javascript:void(0)" onclick="hideSidebar()">
             <img
               src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              alt=""
+              alt="Close menu"
             />
           </a>
         </li>
@@ -2058,15 +2083,26 @@
 
     <!-- JavaScript -->
     <script>
-      // Navigation functions
       function showSidebar() {
         const sidebar = document.querySelector(".sidebar");
+        const overlay = document.getElementById("sidebarOverlay");
         sidebar.style.display = "flex";
+        overlay.style.display = "block";
+        // Add click event to overlay
+        overlay.onclick = hideSidebar;
+        // Prevent body scrolling when sidebar is open
+        document.body.style.overflow = "hidden";
       }
 
       function hideSidebar() {
         const sidebar = document.querySelector(".sidebar");
+        const overlay = document.getElementById("sidebarOverlay");
         sidebar.style.display = "none";
+        overlay.style.display = "none";
+        // Remove click event from overlay
+        overlay.onclick = null;
+        // Re-enable body scrolling
+        document.body.style.overflow = "auto";
       }
 
       // Form section toggle
