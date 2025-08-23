@@ -544,7 +544,7 @@
 
       .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
         gap: 30px;
         margin-top: 40px;
       }
@@ -556,7 +556,7 @@
 
       @media (max-width: 576px) {
         .projects-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)) !important;
         }
       }
 
@@ -2316,6 +2316,182 @@
         }
       }
     </style>
+    <style>
+      /* ========== GLOBAL RESPONSIVE FIXES ========== */
+      @media (max-width: 768px) {
+        /* Fix container padding for mobile */
+        .container {
+          padding: 0 15px;
+          width: 100%;
+        }
+
+        /* Prevent horizontal overflow */
+        body {
+          overflow-x: hidden;
+          width: 100%;
+        }
+
+        /* Ensure all images are responsive */
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        /* Adjust section padding for mobile */
+        section {
+          padding: 60px 0 !important;
+        }
+      }
+
+      /* ========== HERO SECTION MOBILE FIXES ========== */
+      @media (max-width: 768px) {
+        #hero {
+          height: auto;
+          min-height: 100vh;
+        }
+
+        .hero-content {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+
+        .hero-title {
+          margin-top: 2rem !important;
+          font-size: 2.2rem;
+          line-height: 1.3;
+        }
+
+        .hero-description {
+          margin-top: 0 !important;
+          font-size: 1rem !important;
+        }
+
+        .hero-cta {
+          margin-top: 1rem !important;
+        }
+      }
+
+      /* ========== ABOUT SECTION MOBILE FIXES ========== */
+      @media (max-width: 768px) {
+        .premium-about-content {
+          gap: 30px !important;
+        }
+
+        .premium-image-container {
+          height: 350px !important;
+        }
+
+        .premium-stats-container {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 15px;
+        }
+
+        .premium-stat-item {
+          padding: 20px 15px;
+        }
+
+        .premium-stat-number {
+          font-size: 2rem;
+        }
+      }
+
+      /* ========== TIMELINE MOBILE FIXES ========== */
+      @media (max-width: 992px) {
+        .timeline-item {
+          padding-left: 70px !important;
+          padding-right: 20px !important;
+          width: 100% !important;
+        }
+
+        .timeline-content {
+          width: 100% !important;
+        }
+      }
+
+      /* ========== PROCESS SECTION MOBILE FIXES ========== */
+      @media (max-width: 768px) {
+        .process-content {
+          grid-template-columns: 1fr !important;
+          gap: 30px;
+        }
+
+        .process-visual {
+          order: -1; /* Move image to top on mobile */
+          max-height: 250px !important;
+        }
+      }
+
+      /* ========== REQUIREMENTS SECTION MOBILE FIXES ========== */
+      @media (max-width: 768px) {
+        .requirements-content {
+          grid-template-columns: 1fr !important;
+        }
+
+        .requirements-image {
+          height: 300px !important;
+          margin-bottom: 30px;
+        }
+      }
+
+      /* ========== TESTIMONIALS MOBILE FIXES ========== */
+      @media (max-width: 768px) {
+        .testimonial-card {
+          flex: 0 0 calc(100% - 20px) !important;
+          min-height: auto;
+        }
+
+        .carousel-control {
+          display: none; /* Hide arrows on mobile for simplicity */
+        }
+      }
+
+      /* ========== CONTACT SECTION MOBILE FIXES ========== */
+      @media (max-width: 768px) {
+        .contact-content {
+          grid-template-columns: 1fr !important;
+          gap: 30px;
+        }
+      }
+
+      /* ========== UTILITY CLASSES FOR BETTER RESPONSIVE HANDLING ========== */
+      .mobile-hidden {
+        display: block;
+      }
+
+      .mobile-only {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-hidden {
+          display: none !important;
+        }
+
+        .mobile-only {
+          display: block !important;
+        }
+      }
+
+      /* Prevent horizontal scrolling */
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Ensure all interactive elements are touch-friendly on mobile */
+      @media (max-width: 768px) {
+        .btn,
+        .faq-question {
+          min-height: 44px; /* Minimum touch target size */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Loading Screen -->
@@ -2336,30 +2512,38 @@
             />
           </a>
         </li>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#featured-projects">Portfolio</a></li>
-        <li><a href="#about-section">About Me</a></li>
-        <li><a href="#services-section">Service</a></li>
-        <li><a href="#testimonials-section">Testimonials</a></li>
-        <li><a href="#faq-section">Faq</a></li>
-        <li><a href="#contact-section">Contact Me</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#featured-projects">Portfolio</a></li>
+        <li><a href="index.html#premium-about-section">About Me</a></li>
+        <li><a href="index.html#services-section">Service</a></li>
+        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+        <li><a href="index.html#faq-section">Faq</a></li>
+        <li><a href="index.html#contact-section">Contact Me</a></li>
       </ul>
       <ul>
         <li>
-          <a href="javascript:void(0)">
+          <a href="index.html">
             <img src="IMG/Logo.svg" class="logo" />
           </a>
         </li>
-        <li class="hideOnMoble"><a href="#hero">Home</a></li>
-        <li class="hideOnMoble"><a href="#featured-projects">Portfolio</a></li>
-        <li class="hideOnMoble"><a href="#about-section">About Me</a></li>
-        <li class="hideOnMoble"><a href="#services-section">Service</a></li>
+        <li class="hideOnMoble"><a href="index.html">Home</a></li>
         <li class="hideOnMoble">
-          <a href="#testimonials-section">Testimonials</a>
+          <a href="index.html#featured-projects">Portfolio</a>
         </li>
-        <li class="hideOnMoble"><a href="#faq-section">Faq</a></li>
-        <li class="hideOnMoble"><a href="#contact-section">Contact Me</a></li>
-        <li class="showOnMoble" onclick="showSidebar()">
+        <li class="hideOnMoble">
+          <a href="index.html#premium-about-section">About Me</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#services-section">Service</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#testimonials-section">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html#faq-section">Faq</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#contact-section">Contact Me</a>
+        </li>
+        <li class="showOnMoble" id="mobile-menu-button">
           <a href="javascript:void(0)">
             <img
               src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
@@ -2388,9 +2572,9 @@
         </h1>
         <p class="hero-description">
           Hi, I’m Excellent Emmanuel — a creative strategist in Brand Identity,
-          UI/UX, Graphic Design, and Front-End Development. I help ambitious
-          businesses turn ideas into powerful brands through strategic design,
-          intuitive experiences, and modern digital solutions.
+          UI/UX, Graphic Design, and Front-End Development. I help businesses
+          transform ideas into impactful brands with strategic design and modern
+          digital experiences.
         </p>
         <div class="hero-cta">
           <a href="get-started.html" class="btn btn-primary"
@@ -2832,7 +3016,7 @@
         <div class="process-content">
           <div class="process-text">
             <h2 class="section-title">My Design Process</h2>
-            <p>
+            <p style="margin-bottom: 1rem">
               Crafting bold solutions that inspire and elevate brands through
               thoughtful process.
             </p>
@@ -2908,7 +3092,7 @@
 
           <div class="requirements-text">
             <h2 class="section-title">What I Need From You</h2>
-            <p>
+            <p style="margin-bottom: 1rem">
               To kick off your amazing project smoothly and ensure the best
               results, I'll need the following:
             </p>
@@ -3462,8 +3646,13 @@
             Let's collaborate to create something remarkable that represents
             your brand authentically and resonates with your audience.
           </p>
-          <a href="get-started.html" class="btn btn-primary">Start a Project</a>
-          <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+          <a
+            href="get-started.html"
+            class="btn btn-primary"
+            style="margin-bottom: 1rem"
+            >Start a Project</a
+          >
+          <a href="#contact-section" class="btn btn-secondary">Contact Me</a>
         </div>
       </div>
     </section>
@@ -3486,16 +3675,18 @@
 
             <div class="social-links">
               <a
-                href="https://facebook.com/share/1AeBcp45D4/"
+                href="https://www.facebook.com/share/1B8eHpvRNb/"
                 aria-label="Facebook"
                 ><i class="fab fa-facebook-f"></i
               ></a>
               <a
-                href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
+                href="https://wa.me/2347039575837?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
                 aria-label="WhatsApp"
                 ><i class="fab fa-whatsapp"></i
               ></a>
-              <a href="https://x.com/emmanuelcreate?s=09" aria-label="Twitter"
+              <a
+                href="https://x.com/excel_emma_?t=CP7XMBUKgzYU2_ACw6_8cQ&s=08"
+                aria-label="Twitter"
                 ><i class="fab fa-twitter"></i
               ></a>
               <a
@@ -3504,7 +3695,7 @@
                 ><i class="fab fa-linkedin-in"></i
               ></a>
               <a
-                href="https://www.instagram.com/emmanuelcreativeco"
+                href="https://www.instagram.com/excel.emma.work?igsh=b2FuamVzMzV4dG1s"
                 aria-label="Instagram"
                 ><i class="fab fa-instagram"></i
               ></a>
@@ -3514,23 +3705,26 @@
           <div class="footer-col">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="service.html">Services</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#featured-projects">Portfolio</a></li>
+              <li><a href="#premium-about-section">About Me</a></li>
+              <li><a href="#services-section">Service</a></li>
+              <li><a href="#testimonials-section">Testimonials</a></li>
+              <li><a href="#faq-section">Faq</a></li>
+              <li><a href="#contact-section">Contact Me</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
             <h3>Services</h3>
             <ul>
-              <li><a href="service.html#branding">Brand Identity</a></li>
-              <li><a href="service.html#uiux">UI/UX Design</a></li>
-              <li><a href="service.html#graphic">Graphic Design</a></li>
-              <li><a href="service.html#development">Web Development</a></li>
-              <li><a href="service.html#packaging">Packaging Design</a></li>
+              <li>
+                <a href="index.html#services-section">Brand Identity Design</a>
+              </li>
+              <li><a href="index.html#services-section">UI/UX Design</a></li>
+              <li><a href="index.html#services-section">Graphic Design</a></li>
+              <li><a href="index.html#services-section">Web Design</a></li>
+              <li><a href="index.html#services-section">Print Design</a></li>
             </ul>
           </div>
 
@@ -3566,6 +3760,10 @@
     </button>
 
     <script>
+      // Mobile menu functionality
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", showSidebar);
       // Wait for the DOM to be fully loaded
       document.addEventListener("DOMContentLoaded", function () {
         // ========== LOADING SCREEN ==========
@@ -3576,47 +3774,6 @@
           setTimeout(() => {
             loadingScreen.classList.add("loaded");
           }, 1500);
-        });
-
-        // ========== NAVIGATION & SIDEBAR FUNCTIONALITY ==========
-        function showSidebar() {
-          const sidebar = document.querySelector(".sidebar");
-          const overlay =
-            document.querySelector(".sidebar-overlay") || createOverlay();
-          sidebar.style.display = "flex";
-          overlay.classList.add("active");
-          document.body.style.overflow = "hidden";
-        }
-
-        function hideSidebar() {
-          const sidebar = document.querySelector(".sidebar");
-          const overlay = document.querySelector(".sidebar-overlay");
-          sidebar.style.display = "none";
-          if (overlay) overlay.classList.remove("active");
-          document.body.style.overflow = "";
-        }
-
-        function createOverlay() {
-          const overlay = document.createElement("div");
-          overlay.className = "sidebar-overlay";
-          overlay.addEventListener("click", hideSidebar);
-          document.body.appendChild(overlay);
-          return overlay;
-        }
-
-        // Close sidebar when clicking outside
-        document.addEventListener("click", function (event) {
-          const sidebar = document.querySelector(".sidebar");
-          const menuButton = document.querySelector(".showOnMoble");
-
-          // Check if click is outside sidebar and menu button
-          if (
-            sidebar.style.display === "flex" &&
-            !sidebar.contains(event.target) &&
-            !menuButton.contains(event.target)
-          ) {
-            hideSidebar();
-          }
         });
 
         // Close sidebar when pressing Escape key
@@ -3908,7 +4065,17 @@
           });
         }, 1500);
       });
+      // ========== NAVIGATION & SIDEBAR FUNCTIONALITY ==========
+      // Navigation functions
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
 
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
       // Replace the entire carousel initialization code with this:
       document.addEventListener("DOMContentLoaded", function () {
         const track = document.querySelector(".testimonials-track");
