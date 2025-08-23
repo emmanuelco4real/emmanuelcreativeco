@@ -353,7 +353,24 @@
           flex-direction: column;
           align-items: flex-start;
         }
+        .sidebar.active {
+          display: flex;
+        }
+        /* Add overlay when sidebar is open */
+        .sidebar-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+        }
 
+        .sidebar-overlay.active {
+          display: block;
+        }
         .sidebar li {
           width: 100%;
           margin-bottom: 15px;
@@ -743,37 +760,81 @@
         transition: width 1.5s ease-out;
       }
 
-      /* ========== EXPERIENCE SECTION ========== */
+      /* ========== EXPERIENCE SECTION STYLES ========== */
       #experience-section {
-        padding: var(--section-padding);
+        padding: 100px 0;
+        background-color: #000;
         position: relative;
+        overflow: hidden;
+      }
+
+      #experience-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(163, 163, 163, 0.05) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .experience-container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .experience-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .experience-subtitle {
+        color: #a3a3a3;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       .timeline {
         position: relative;
-        max-width: 800px;
+        max-width: 1000px;
         margin: 0 auto;
-        padding: 20px 0;
+        padding: 40px 0;
       }
 
-      .timeline::after {
+      .timeline::before {
         content: "";
         position: absolute;
         width: 2px;
-        background-color: var(--primary-color);
+        background: linear-gradient(to bottom, #a3a3a3, transparent);
         top: 0;
         bottom: 0;
         left: 50%;
         margin-left: -1px;
+        height: 100%;
       }
 
       .timeline-item {
-        padding: 10px 40px;
         position: relative;
-        width: 50%;
+        margin-bottom: 60px;
         opacity: 0;
         transform: translateY(50px);
-        transition: opacity 1s ease, transform 1s ease;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding-right: 50%;
+      }
+
+      .timeline-item:nth-child(even) {
+        justify-content: flex-end;
+        padding-right: 0;
+        padding-left: 50%;
       }
 
       .timeline-item.animate {
@@ -781,90 +842,160 @@
         transform: translateY(0);
       }
 
-      .timeline-item:nth-child(odd) {
-        left: 0;
+      .timeline-content {
+        background-color: #111;
+        border-radius: 12px;
+        padding: 30px;
+        width: 90%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+        transition: all 0.3s ease;
       }
 
-      .timeline-item:nth-child(even) {
-        left: 50%;
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.15);
       }
 
-      .timeline-item::after {
+      .timeline-item:nth-child(odd) .timeline-content::before {
         content: "";
+        position: absolute;
+        top: 30px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        background-color: #111;
+        transform: rotate(45deg);
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .timeline-item:nth-child(even) .timeline-content::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        background-color: #111;
+        transform: rotate(-45deg);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .timeline-dot {
         position: absolute;
         width: 20px;
         height: 20px;
-        background-color: var(--bg-color);
-        border: 2px solid var(--primary-color);
+        background-color: #fff;
+        border: 4px solid #000;
         border-radius: 50%;
-        top: 15px;
-        z-index: 1;
+        top: 35px;
+        left: calc(50% - 10px);
+        z-index: 2;
+        transition: all 0.3s ease;
       }
 
-      .timeline-item:nth-child(odd)::after {
-        right: -10px;
-      }
-
-      .timeline-item:nth-child(even)::after {
-        left: -10px;
-      }
-
-      .timeline-content {
-        padding: 20px;
-        background-color: var(--card-bg);
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .timeline-content h3 {
-        margin-bottom: 10px;
-        font-size: 1.2rem;
-        color: var(--primary-color);
+      .timeline-item:hover .timeline-dot {
+        transform: scale(1.2);
+        background-color: #a3a3a3;
       }
 
       .timeline-date {
-        color: var(--accent-color);
+        display: inline-block;
+        background-color: #a3a3a3;
+        color: #000;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.85rem;
         font-weight: 600;
         margin-bottom: 15px;
-        font-size: 0.9rem;
+      }
+
+      .timeline-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .timeline-company {
+        color: #a3a3a3;
+        font-weight: 500;
+        margin-bottom: 15px;
+        font-size: 1rem;
       }
 
       .timeline-content p {
-        color: var(--text-color);
+        color: #a3a3a3;
         line-height: 1.6;
+        margin-bottom: 20px;
       }
 
-      /* Responsive timeline */
-      /* ========== EXPERIENCE SECTION FIX ========== */
-      @media (max-width: 768px) {
-        .timeline::after {
-          left: 31px;
+      .timeline-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+      }
+
+      .skill-tag {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #a3a3a3;
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 992px) {
+        .timeline::before {
+          left: 30px;
         }
 
         .timeline-item {
-          width: 100%;
           padding-left: 70px;
-          padding-right: 25px;
-          left: 0 !important; /* Force all items to align left */
+          padding-right: 20px;
+          justify-content: flex-start;
         }
 
         .timeline-item:nth-child(even) {
-          left: 0;
+          padding-left: 70px;
+          padding-right: 20px;
+          justify-content: flex-start;
         }
 
-        .timeline-item::after {
+        .timeline-dot {
           left: 20px;
-          right: auto; /* Ensure consistent positioning */
         }
 
-        .timeline-item:nth-child(odd)::after {
-          right: auto; /* Remove right positioning for odd items */
+        .timeline-item:nth-child(odd) .timeline-content::before,
+        .timeline-item:nth-child(even) .timeline-content::before {
+          left: -10px;
+          right: auto;
+          transform: rotate(-45deg);
         }
 
-        /* Additional fix for better alignment */
         .timeline-content {
-          margin-left: 0;
-          margin-right: 0;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .timeline-content {
+          padding: 20px;
+        }
+
+        .timeline-item {
+          margin-bottom: 40px;
+        }
+
+        .timeline-date {
+          font-size: 0.8rem;
+        }
+
+        .timeline-content h3 {
+          font-size: 1.2rem;
         }
       }
 
@@ -1853,9 +1984,61 @@
           grid-template-columns: 1fr;
         }
       }
+      /* Add to your existing CSS */
+      .project-image img,
+      .about-image img,
+      .process-visual img,
+      .requirements-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Specific fix for about section image */
+      .about-image {
+        height: 40rem;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: var(--transition);
+      }
+
+      /* Fix for process visual on mobile */
+      @media (max-width: 768px) {
+        .process-visual {
+          width: 100%;
+          max-height: 300px;
+        }
+      }
+
+      /* Fix for requirements image */
+      .requirements-image {
+        height: 50rem;
+        overflow: hidden;
+      }
+
+      .requirements-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     </style>
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay"></div>
     <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
       <ul class="sidebar">
@@ -2147,42 +2330,101 @@
     <!-- ========== EXPERIENCE SECTION ========== -->
     <section id="experience-section">
       <div class="container">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Freelance Brand Designer</h3>
-              <div class="timeline-date">2024 – Present</div>
-              <p>
-                Worked in UPWORK to design brand identities, strategy decks, and
-                visuals that connect with my clients audience. Focused on
-                simplicity, clarity, and style.
-              </p>
-            </div>
+        <div class="experience-container">
+          <div class="experience-header">
+            <h2 class="section-title">Professional Journey</h2>
+            <p class="experience-subtitle">
+              My career path and professional growth in design and development
+            </p>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Manager and Design Intern at Top-Standard Ventures</h3>
-              <div class="timeline-date">2023 – 2024</div>
-              <p>
-                Collaborated with senior designers to create brand kits and
-                assisted in UI/UX layouts, learning industry workflows and fast
-                execution.
-              </p>
+          <div class="timeline">
+            <!-- Experience 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2023 – 2025</span>
+                <h3>Freelance Brand Designer</h3>
+                <div class="timeline-company">Upwork & Independent Clients</div>
+                <p>
+                  Designed brand identities, strategy decks, and visuals that
+                  connect with clients' audiences. Focused on simplicity,
+                  clarity, and style while working with international clients
+                  across various industries.
+                </p>
+                <div class="timeline-skills">
+                  <span class="skill-tag">Brand Strategy</span>
+                  <span class="skill-tag">Logo Design</span>
+                  <span class="skill-tag">Visual Identity</span>
+                  <span class="skill-tag">Client Consulting</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Junior Graphics Volunteer</h3>
-              <div class="timeline-date">2022</div>
-              <p>
-                Created social media content, applied design principles
-                practically, and gained hands-on experience in layout and
-                typography and creative thinking.
-              </p>
+            <!-- Experience 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2021 – 2023</span>
+                <h3>Manager and Design Intern</h3>
+                <div class="timeline-company">Top-Standard Ventures</div>
+                <p>
+                  Collaborated with senior designers to create brand kits and
+                  assisted in UI/UX layouts, learning industry workflows and
+                  fast execution. Managed design projects and coordinated with
+                  clients to ensure timely delivery.
+                </p>
+                <div class="timeline-skills">
+                  <span class="skill-tag">Team Management</span>
+                  <span class="skill-tag">UI/UX Design</span>
+                  <span class="skill-tag">Project Coordination</span>
+                  <span class="skill-tag">Brand Development</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2019 – 2021</span>
+                <h3>Junior Graphics Volunteer</h3>
+                <div class="timeline-company">Various Organizations</div>
+                <p>
+                  Created social media content, applied design principles
+                  practically, and gained hands-on experience in layout and
+                  typography. Developed foundational skills in digital design
+                  while contributing to meaningful projects.
+                </p>
+                <div class="timeline-skills">
+                  <span class="skill-tag">Social Media Graphics</span>
+                  <span class="skill-tag">Typography</span>
+                  <span class="skill-tag">Layout Design</span>
+                  <span class="skill-tag">Digital Illustration</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 4 (New) -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2017 – 2019</span>
+                <h3>Design Apprentice</h3>
+                <div class="timeline-company">Local Creative Workshops</div>
+                <p>
+                  Began my design journey learning fundamentals of graphic
+                  design, color theory, and composition. Participated in
+                  workshops and built foundational skills through practical
+                  projects and mentorship from experienced designers.
+                </p>
+                <div class="timeline-skills">
+                  <span class="skill-tag">Color Theory</span>
+                  <span class="skill-tag">Design Fundamentals</span>
+                  <span class="skill-tag">Adobe Suite</span>
+                  <span class="skill-tag">Creative Thinking</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3018,14 +3260,27 @@
         // ========== NAVIGATION & SIDEBAR FUNCTIONALITY ==========
         function showSidebar() {
           const sidebar = document.querySelector(".sidebar");
+          const overlay =
+            document.querySelector(".sidebar-overlay") || createOverlay();
           sidebar.style.display = "flex";
-          document.body.style.overflow = "hidden"; // Prevent scrolling when sidebar is open
+          overlay.classList.add("active");
+          document.body.style.overflow = "hidden";
         }
 
         function hideSidebar() {
           const sidebar = document.querySelector(".sidebar");
+          const overlay = document.querySelector(".sidebar-overlay");
           sidebar.style.display = "none";
-          document.body.style.overflow = ""; // Re-enable scrolling
+          if (overlay) overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+
+        function createOverlay() {
+          const overlay = document.createElement("div");
+          overlay.className = "sidebar-overlay";
+          overlay.addEventListener("click", hideSidebar);
+          document.body.appendChild(overlay);
+          return overlay;
         }
 
         // Close sidebar when clicking outside
@@ -3067,9 +3322,9 @@
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-              // Get header height for offset
-              const header = document.querySelector("nav");
-              const headerHeight = header ? header.offsetHeight : 0;
+              // Get header height for offset - check if nav exists
+              const nav = document.querySelector("nav");
+              const headerHeight = nav ? nav.offsetHeight : 0;
 
               // Calculate target position
               const targetPosition =
@@ -3090,7 +3345,6 @@
             }
           });
         });
-
         // ========== ACTIVE NAV LINK HIGHLIGHTING ==========
         function setActiveNavLink() {
           const sections = document.querySelectorAll("section");
@@ -3282,16 +3536,59 @@
         }
       });
 
-      // Add this to your existing JavaScript
-      // Force show timeline items if animation doesn't trigger
-      setTimeout(() => {
+      // Enhanced timeline animation
+      document.addEventListener("DOMContentLoaded", function () {
         const timelineItems = document.querySelectorAll(".timeline-item");
-        timelineItems.forEach((item) => {
-          item.style.opacity = "1";
-          item.style.transform = "translateY(0)";
-        });
-      }, 1000);
 
+        // Intersection Observer for timeline items
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.3,
+            rootMargin: "0px 0px -50px 0px",
+          }
+        );
+
+        // Observe each timeline item
+        timelineItems.forEach((item) => {
+          observer.observe(item);
+        });
+
+        // Add hover effect to timeline dots
+        const timelineDots = document.querySelectorAll(".timeline-dot");
+        timelineDots.forEach((dot) => {
+          dot.addEventListener("mouseenter", () => {
+            dot.parentElement.querySelector(
+              ".timeline-content"
+            ).style.transform = "translateY(-8px)";
+          });
+
+          dot.addEventListener("mouseleave", () => {
+            dot.parentElement.querySelector(
+              ".timeline-content"
+            ).style.transform = "translateY(0)";
+          });
+        });
+
+        // Force show timeline items if animation doesn't trigger
+        setTimeout(() => {
+          timelineItems.forEach((item) => {
+            if (!item.classList.contains("animate")) {
+              item.style.opacity = "1";
+              item.style.transform = "translateY(0)";
+            }
+          });
+        }, 1500);
+      });
+
+      // Replace the entire carousel initialization code with this:
       document.addEventListener("DOMContentLoaded", function () {
         const track = document.querySelector(".testimonials-track");
         const cards = document.querySelectorAll(".testimonial-card");
@@ -3301,32 +3598,32 @@
 
         let currentIndex = 0;
         const cardCount = cards.length;
-        const cardsPerView =
-          window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+
+        // Function to calculate cards per view based on window width
+        function getCardsPerView() {
+          return window.innerWidth >= 1024
+            ? 3
+            : window.innerWidth >= 768
+            ? 2
+            : 1;
+        }
+
+        let cardsPerView = getCardsPerView();
 
         // Initialize carousel
         function initCarousel() {
           updateCarousel();
-
-          // Auto slide every 5 seconds
-          setInterval(() => {
-            nextSlide();
-          }, 5000);
         }
 
         // Update carousel position
         function updateCarousel() {
           const cardWidth = cards[0].offsetWidth + 20; // width + margin
-          track.style.transform = `translateX(-${
-            currentIndex * cardWidth * cardsPerView
-          }px)`;
+          track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
 
           // Update indicators
+          const activeIndicator = Math.floor(currentIndex / cardsPerView);
           indicators.forEach((indicator, index) => {
-            indicator.classList.toggle(
-              "active",
-              index === Math.floor(currentIndex / cardsPerView)
-            );
+            indicator.classList.toggle("active", index === activeIndicator);
           });
         }
 
@@ -3345,10 +3642,7 @@
           if (currentIndex > 0) {
             currentIndex--;
           } else {
-            currentIndex =
-              Math.floor(cardCount / cardsPerView) * cardsPerView -
-              cardsPerView;
-            if (currentIndex < 0) currentIndex = 0;
+            currentIndex = cardCount - cardsPerView;
           }
           updateCarousel();
         }
@@ -3367,17 +3661,21 @@
 
         // Handle window resize
         window.addEventListener("resize", function () {
-          const newCardsPerView =
-            window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+          const newCardsPerView = getCardsPerView();
           if (newCardsPerView !== cardsPerView) {
+            cardsPerView = newCardsPerView;
             currentIndex = 0;
             updateCarousel();
           }
+
+          // Force recalc of card width after resize
+          setTimeout(updateCarousel, 100);
         });
 
         // Initialize the carousel
         initCarousel();
       });
+
       // ========== PHILOSOPHY SECTION ANIMATION ==========
       const animatePhilosophyCards = () => {
         const philosophyCards = document.querySelectorAll(".philosophy-card");
