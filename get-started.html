@@ -8,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
-    <title>
-      Emmanuel Creative & Co. | Get Started
-    </title>
+    <title>Emmanuel Creative & Co. | Get Started</title>
     <meta
       name="title"
       content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design"
@@ -81,141 +79,1011 @@
     <link rel="stylesheet" href="phone.css" />
     <link rel="stylesheet" href="tablet.css" />
     <style>
-      #get-started form {
+      :root {
+        --primary-color: #ffffff;
+        --secondary-color: #000000;
+        --accent-color: #a3a3a3;
+        --text-color: #ffffff;
+        --bg-color: #000000;
+        --card-bg: #111111;
+        --section-padding: 100px 0;
+        --transition: 500ms;
+      }
+
+      /* Header with Spline Background */
+      .header {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        text-align: center;
       }
-      .form-group {
-        border: 1px solid #444;
-        border-radius: 5px;
 
+      .spline-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.7;
+      }
+
+      .text-header {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .header-title {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        font-weight: 800;
+      }
+
+      .title1 {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+        border: 2px solid transparent;
+        cursor: pointer;
+        text-align: center;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Navigation */
+      nav {
+        background-color: #ffffff00;
+        backdrop-filter: blur(15px);
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 10000;
+      }
+
+      nav ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      nav li {
+        height: 50px;
+      }
+
+      nav a {
+        height: 100%;
+        padding: 0 20px;
+        font-size: 0.8rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+      }
+
+      nav a:hover {
+        color: rgb(231, 139, 58);
+      }
+
+      nav li:first-child {
+        margin-right: auto;
+      }
+
+      .logo {
+        max-width: 120px;
+      }
+
+      .icon-close-menu {
+        height: 26px;
+        width: auto;
+      }
+
+      /* Mobile Responsive Styles for Navigation */
+      @media (max-width: 768px) {
+        .hideOnMoble {
+          display: none !important;
+        }
+
+        .showOnMoble {
+          display: block !important;
+        }
+
+        nav ul {
+          padding: 0 15px;
+        }
+
+        .sidebar {
+          display: none;
+          position: fixed;
+          top: 0;
+          right: 0;
+          height: 100vh;
+          width: 70%;
+          max-width: 300px;
+          background-color: var(--card-bg);
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+          padding: 60px 20px 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .sidebar li {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+
+        .sidebar a {
+          padding: 12px 0;
+          font-size: 1.1rem;
+          width: 100%;
+          display: block;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar li:first-child {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          width: auto;
+          margin-bottom: 0;
+        }
+
+        .sidebar li:first-child a {
+          border-bottom: none;
+          padding: 5px;
+        }
+
+        /* Overlay when sidebar is open */
+        .sidebar::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: -1;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .showOnMoble {
+          display: none !important;
+        }
+
+        .sidebar {
+          display: none !important;
+        }
+      }
+
+      /* Active state for navigation links */
+      nav a.active {
+        color: rgb(231, 139, 58) !important;
+        font-weight: 600;
+      }
+
+      /* Main Content Sections */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: var(--section-padding);
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--primary-color);
+      }
+
+      /* Why Work With Me Section */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .feature-card {
+        background-color: var(--card-bg);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+        font-size: 1.8rem;
+        transition: var(--transition);
+      }
+
+      .feature-card:hover .feature-icon {
+        transform: scale(1.1);
+      }
+
+      .feature-card h3 {
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .feature-card p {
+        color: var(--accent-color);
+        line-height: 1.6;
+      }
+
+      /* Process Overview */
+      .process-steps {
+        display: grid;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .process-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .process-step.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .step-number {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        opacity: 0.2;
+        line-height: 1;
+        min-width: 60px;
+      }
+
+      .process-content {
+        flex: 1;
+      }
+
+      .process-step h3 {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+
+      /* Project Packages */
+      .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .package-card {
+        background-color: var(--card-bg);
+        padding: 40px 30px;
+        border-radius: 15px;
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
         overflow: hidden;
       }
+
+      .package-card.featured {
+        border: 2px solid var(--primary-color);
+        transform: scale(1.05);
+      }
+
+      .package-card.featured::before {
+        content: "Most Popular";
+        position: absolute;
+        top: 15px;
+        right: -30px;
+        background: var(--primary-color);
+        color: var(--secondary-color);
+        padding: 5px 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        transform: rotate(45deg);
+      }
+
+      .package-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .package-card.featured:hover {
+        transform: scale(1.05) translateY(-10px);
+      }
+
+      .package-price {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 20px 0;
+        color: var(--primary-color);
+      }
+
+      .package-features {
+        list-style: none;
+        margin: 25px 0;
+        text-align: left;
+      }
+
+      .package-features li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+      }
+
+      .package-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+      }
+
+      /* Form Styles */
+      #get-started-form {
+        background-color: var(--card-bg);
+        padding: 50px;
+        border-radius: 20px;
+        margin-top: 40px;
+      }
+
+      #get-started-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .form-group {
+        border: 1px solid #444;
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--bg-color);
+      }
+
       .toggle {
         width: 100%;
         background: #111;
         color: white;
-        padding: 1rem;
+        padding: 1.2rem;
         text-align: left;
         font-weight: bold;
         border: none;
         cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
+
       .toggle:hover {
         background-color: rgb(255, 166, 0);
         color: black;
       }
+
+      .toggle i {
+        transition: transform 0.3s ease;
+      }
+
+      .toggle.active i {
+        transform: rotate(180deg);
+      }
+
       .content {
         display: none;
-        padding: 1rem;
+        padding: 1.5rem;
         background: #1a1a1a;
       }
+
+      .form-input {
+        margin-bottom: 1rem;
+      }
+
+      .form-input label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
       .content textarea,
       .content input[type="text"],
       .content input[type="email"],
-      .content input[type="date"] {
+      .content input[type="date"],
+      .content input[type="tel"],
+      .content input[type="url"],
+      .content select {
         width: 100%;
-        padding: 0.75rem;
-        margin-top: 0.5rem;
+        padding: 0.9rem;
         background: #000;
         color: rgb(255, 196, 0);
         border: 1px solid #333;
         border-radius: 5px;
+        font-family: inherit;
       }
+
       .content input[type="file"] {
         margin-top: 0.5rem;
         background: #111;
         color: #fff;
         border: none;
+        width: 100%;
+        padding: 0.5rem;
       }
-      #get-started button[type="submit"] {
-        padding: 0.75rem;
+
+      .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 1rem;
+      }
+
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .required::after {
+        content: " *";
+        color: #ff4d4d;
+      }
+
+      #get-started-form button[type="submit"] {
+        padding: 1rem 2rem;
         background: white;
         color: black;
         border: none;
         border-radius: 5px;
-        font-size: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
         cursor: pointer;
+        transition: var(--transition);
+        margin-top: 1rem;
+      }
+
+      #get-started-form button[type="submit"]:hover {
+        background: rgb(255, 166, 0);
+        transform: translateY(-3px);
+      }
+
+      /* FAQ Section */
+      .faq-container {
+        margin-top: 40px;
+      }
+
+      .faq-item {
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .faq-question {
+        padding: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+      }
+
+      .faq-answer {
+        padding: 0 1.2rem 1.2rem;
+        color: var(--accent-color);
+        display: none;
+      }
+
+      /* Footer */
+      .site-footer {
+        padding: 60px 0 30px;
+        background-color: var(--card-bg);
+        margin-top: 100px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        padding: 0 15px;
+      }
+
+      .footer-left img {
+        height: 40px;
+        margin-bottom: 20px;
+      }
+
+      .footer-left p {
+        margin-bottom: 20px;
+        opacity: 0.8;
+        line-height: 1.6;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+      }
+
+      .footer-social a {
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-social a:hover {
+        transform: translateY(-5px);
+      }
+
+      .footer-center h3,
+      .footer-right h3 {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+
+      .footer-center ul,
+      .footer-right ul {
+        list-style: none;
+      }
+
+      .footer-center ul li,
+      .footer-right ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-center ul li a,
+      .footer-right ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: var(--transition);
+        opacity: 0.8;
+      }
+
+      .footer-center ul li a:hover,
+      .footer-right ul li a:hover {
+        opacity: 1;
+        color: var(--primary-color);
+      }
+
+      .footer-right ul li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        opacity: 0.8;
+      }
+
+      .footer-right ul li i {
+        width: 20px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 1024px) {
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .header-title {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .header-title {
+          font-size: 2.2rem;
+        }
+
+        .title1 {
+          font-size: 1rem;
+        }
+
+        #get-started-form {
+          padding: 30px 20px;
+        }
+
+        .package-card.featured {
+          transform: scale(1);
+        }
+
+        .package-card.featured:hover {
+          transform: translateY(-10px);
+        }
+
+        .process-step {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .step-number {
+          align-self: flex-start;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .header-title {
+          font-size: 1.8rem;
+        }
+
+        .features-grid,
+        .packages-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-container {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
-    
-   <nav>
-  <ul class="sidebar">
-    <li onclick="hideSidebar()">
-      <a href="javascript:void(0)">
-        <img src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
-      </a>
-    </li>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
-    <li><a href="service.html">Service</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact Me</a></li>
-  </ul>
-  <ul>
-    <li>
-      <a href="javascript:void(0)">
-        <img src="IMG/Logo.svg" class="logo" />
-      </a>
-    </li>
-    <li class="hideOnMoble"><a href="index.html">Home</a></li>
-    <li class="hideOnMoble"><a href="about.html">About Me</a></li>
-    <li class="hideOnMoble"><a href="service.html">Service</a></li>
-    <li class="hideOnMoble">
-      <a href="testimonials.html">Testimonials</a>
-    </li>
-    <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
-    <li class="showOnMoble" onclick="showSidebar()">
-      <a href="javascript:void(0)">
-        <img
-          src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-          class="icon-close-menu"
-        />
-      </a>
-    </li>
-  </ul>
-</nav>
+    <!-- Navigation -->
+    <nav>
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a href="javascript:void(0)">
+            <img
+              src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+              alt=""
+            />
+          </a>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="javascript:void(0)">
+            <img src="IMG/Logo.svg" class="logo" />
+          </a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html">Home</a></li>
+        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
+        <li class="hideOnMoble"><a href="service.html">Service</a></li>
+        <li class="hideOnMoble">
+          <a href="testimonials.html">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+        <li class="showOnMoble" onclick="showSidebar()">
+          <a href="javascript:void(0)">
+            <img
+              src="menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+              class="icon-close-menu"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header with Spline Background -->
     <div class="header">
-  <!-- Background iframe -->
-  <div class="spline-background">
-    <iframe
-      src="https://my.spline.design/claritystream-Mi908C93Y6g8aSV5eDeUEItA/"
-      frameborder="0"
-      width="100%"
-      height="100%"
-    ></iframe>
-  </div>
+      <div class="spline-background">
+        <iframe
+          src="https://my.spline.design/claritystream-Mi908C93Y6g8aSV5eDeUEItA/"
+          frameborder="0"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </div>
 
-  <!-- Centered Content Wrapper -->
-  <div class="text-header">
-    <h1 class="header-title">Get Started</h1>
+      <div class="text-header">
+        <h1 class="header-title">Let's Create Something Amazing Together</h1>
 
-    <p class="title1">
-      Let's work together! To get your amazing project started, please fill out the form and I’ll get back to you shortly.
-      <br />
-      <i>Remember, every great brand today started by taking a step.</i>
-    </p>
+        <p class="title1">
+          Ready to transform your vision into a powerful brand identity? I'm
+          here to guide you through every step of the process. Let's build
+          something remarkable that truly represents your business and resonates
+          with your audience.
+          <br />
+          <i
+            >Every great brand started with a single step—let's take yours
+            today.</i
+          >
+        </p>
 
-    <div class="btn1">
-      <a href="contact.html">
-        <button class="btn">Contact Me</button>
-      </a>
+        <div class="btn1">
+          <a href="#get-started-form">
+            <button class="btn">Start Your Project</button>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-  
+    <!-- Why Work With Me Section -->
+    <section id="why-work-with-me">
+      <div class="container">
+        <h2 class="section-title">Why Work With Me</h2>
+        <p>
+          I don't just design logos and websites—I build brands that tell
+          stories, connect with audiences, and drive business growth.
+        </p>
 
-    <section
-      id="get-started"
-      style="padding: 4rem 1rem; background: (209, 208, 208); color: #fff"
-    >
-      <div style="max-width: 700px; margin: 0 auto">
-        <h2 style="text-align: center; margin-bottom: 2rem">Get Started</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Strategic Approach</h3>
+            <p>
+              Every design decision is backed by strategy and purpose, ensuring
+              your brand communicates effectively with your target audience.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-pencil-alt"></i>
+            </div>
+            <h3>Attention to Detail</h3>
+            <p>
+              From typography to color psychology, I sweat the small stuff so
+              your brand makes a polished, professional impression.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Timely Delivery</h3>
+            <p>
+              I respect deadlines and understand the importance of launching
+              your project on schedule without compromising quality.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Clear Communication</h3>
+            <p>
+              Regular updates, responsive communication, and collaborative
+              feedback ensure we're always on the same page.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Results-Driven</h3>
+            <p>
+              My designs aren't just pretty—they're crafted to achieve your
+              business objectives and deliver measurable results.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Passion for Excellence</h3>
+            <p>
+              I'm genuinely passionate about creating exceptional work that both
+              you and I can be proud of for years to come.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Process Section -->
+    <section id="my-process" style="background-color: var(--card-bg)">
+      <div class="container">
+        <h2 class="section-title">My Design Process</h2>
+        <p>
+          Transparent, collaborative, and structured—here's how we'll work
+          together to bring your vision to life.
+        </p>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">01</div>
+            <div class="process-content">
+              <h3>Discovery & Strategy</h3>
+              <p>
+                We'll start with an in-depth discussion about your business,
+                goals, target audience, and competitors. This foundation ensures
+                every design decision is strategic and purposeful.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">02</div>
+            <div class="process-content">
+              <h3>Concept Development</h3>
+              <p>
+                I'll translate our strategy into initial concepts and present
+                them for your feedback. This is where we explore different
+                creative directions.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">03</div>
+            <div class="process-content">
+              <h3>Design & Refinement</h3>
+              <p>
+                Based on your feedback, I'll refine the selected concept into a
+                polished design solution. We'll iterate until every detail is
+                perfect.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">04</div>
+            <div class="process-content">
+              <h3>Final Delivery</h3>
+              <p>
+                You'll receive all final files in organized formats, along with
+                guidance on implementation and any necessary support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Packages Section -->
+    <section id="project-packages">
+      <div class="container">
+        <h2 class="section-title">Project Packages</h2>
+        <p>
+          Choose the package that best fits your needs, or let's discuss a
+          custom solution for your unique requirements.
+        </p>
+
+        <div class="packages-grid">
+          <div class="package-card">
+            <h3>Basic Brand Identity</h3>
+            <div class="package-price">$500+</div>
+            <ul class="package-features">
+              <li>Logo Design (2 concepts)</li>
+              <li>Color Palette</li>
+              <li>Typography Selection</li>
+              <li>Basic Brand Guidelines</li>
+              <li>2 Rounds of Revisions</li>
+              <li>7-10 Day Delivery</li>
+            </ul>
+            <a href="#get-started-form" class="btn btn-outline"
+              >Select This Package</a
+            >
+          </div>
+
+          <div class="package-card featured">
+            <h3>Complete Brand System</h3>
+            <div class="package-price">$900+</div>
+            <ul class="package-features">
+              <li>Logo Design (3 concepts)</li>
+              <li>Full Color System</li>
+              <li>Typography System</li>
+              <li>Comprehensive Brand Guidelines</li>
+              <li>Business Card Design</li>
+              <li>Letterhead & Email Signature</li>
+              <li>4 Rounds of Revisions</li>
+              <li>10-14 Day Delivery</li>
+            </ul>
+            <a href="#get-started-form" class="btn">Select This Package</a>
+          </div>
+
+          <div class="package-card">
+            <h3>Brand + UI/UX Package</h3>
+            <div class="package-price">$1500+</div>
+            <ul class="package-features">
+              <li>Complete Brand System</li>
+              <li>Website UI Design (5 pages)</li>
+              <li>Mobile Responsive Design</li>
+              <li>Interactive Prototype</li>
+              <li>User Experience Planning</li>
+              <li>6 Rounds of Revisions</li>
+              <li>3-4 Week Delivery</li>
+            </ul>
+            <a href="#get-started-form" class="btn btn-outline"
+              >Select This Package</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Started Form Section -->
+    <section id="get-started-form">
+      <div class="container">
+        <h2 class="section-title">Start Your Project</h2>
+        <p>
+          Please provide as much detail as possible about your project. The more
+          I understand your vision, the better I can bring it to life.
+        </p>
 
         <form
           name="get-started"
@@ -227,225 +1095,562 @@
         >
           <input type="hidden" name="form-name" value="get-started" />
           <p style="display: none">
-            <label>Don’t fill this out: <input name="bot-field" /></label>
+            <label>Don't fill this out: <input name="bot-field" /></label>
           </p>
 
-          <!-- Collapsible Field Template -->
+          <!-- Contact Information -->
           <div class="form-group">
             <button type="button" class="toggle" onclick="toggleSection(this)">
-              Your Vision
+              Contact Information <i class="fas fa-chevron-down"></i>
             </button>
             <div class="content">
-              <p>
-                A clear idea of your brand's purpose, target audience, and
-                long-term goals.
-              </p>
-              <textarea name="vision" required></textarea>
-            </div>
-          </div>
+              <div class="form-input">
+                <label for="name" class="required">Full Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
 
-          <div class="form-group">
-            <button type="button" class="toggle" onclick="toggleSection(this)">
-              Inspiration
-            </button>
-            <div class="content">
-              <p>Any references, moodboards, or styles you admire.</p>
-              <textarea name="inspiration" required></textarea>
-              <label style="margin-top: 0.5rem; display: block"
-                >Upload image or moodboard (optional):
+              <div class="form-input">
+                <label for="email" class="required">Email Address</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-input">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+
+              <div class="form-input">
+                <label for="company">Company/Organization Name</label>
+                <input type="text" id="company" name="company" />
+              </div>
+
+              <div class="form-input">
+                <label for="website">Current Website (if applicable)</label>
                 <input
-                  type="file"
-                  name="inspiration_file"
-                  accept="image/*,.pdf,.zip"
+                  type="url"
+                  id="website"
+                  name="website"
+                  placeholder="https://"
                 />
-              </label>
+              </div>
             </div>
           </div>
+
+          <!-- Project Overview -->
           <div class="form-group">
             <button type="button" class="toggle" onclick="toggleSection(this)">
-              Brand Details
+              Project Overview <i class="fas fa-chevron-down"></i>
             </button>
             <div class="content">
-              <p>
-                Existing logos, color codes, fonts (if any), or previous
-                materials.
-              </p>
-              <textarea name="brand_details" required></textarea>
-              <label style="margin-top: 0.5rem; display: block"
-                >Upload existing brand materials (optional):
+              <div class="form-input">
+                <label for="project-type" class="required"
+                  >What type of project do you need?</label
+                >
+                <select id="project-type" name="project_type" required>
+                  <option value="">Select an option</option>
+                  <option value="brand-identity">Brand Identity</option>
+                  <option value="logo-design">Logo Design</option>
+                  <option value="ui-ux-design">UI/UX Design</option>
+                  <option value="website-design">Website Design</option>
+                  <option value="graphic-design">Graphic Design</option>
+                  <option value="packaging-design">Packaging Design</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-input">
+                <label for="project-description" class="required"
+                  >Project Description</label
+                >
+                <textarea
+                  id="project-description"
+                  name="project_description"
+                  rows="4"
+                  required
+                  placeholder="Please describe your project in detail..."
+                ></textarea>
+              </div>
+
+              <div class="form-input">
+                <label for="project-goals" class="required"
+                  >Project Goals & Objectives</label
+                >
+                <textarea
+                  id="project-goals"
+                  name="project_goals"
+                  rows="4"
+                  required
+                  placeholder="What do you hope to achieve with this project?"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Target Audience -->
+          <div class="form-group">
+            <button type="button" class="toggle" onclick="toggleSection(this)">
+              Target Audience <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="content">
+              <div class="form-input">
+                <label for="target-audience" class="required"
+                  >Who is your target audience?</label
+                >
+                <textarea
+                  id="target-audience"
+                  name="target_audience"
+                  rows="3"
+                  required
+                  placeholder="Describe your ideal customers/clients..."
+                ></textarea>
+              </div>
+
+              <div class="form-input">
+                <label for="age-group">Age Group</label>
                 <input
-                  type="file"
-                  name="brand_file"
-                  accept="image/*,.pdf,.zip"
+                  type="text"
+                  id="age-group"
+                  name="age_group"
+                  placeholder="e.g., 25-45"
                 />
-              </label>
+              </div>
+
+              <div class="form-input">
+                <label for="audience-interests">Interests/Behaviors</label>
+                <textarea
+                  id="audience-interests"
+                  name="audience_interests"
+                  rows="3"
+                  placeholder="What are their interests, values, behaviors?"
+                ></textarea>
+              </div>
             </div>
           </div>
 
+          <!-- Design Preferences -->
           <div class="form-group">
             <button type="button" class="toggle" onclick="toggleSection(this)">
-              Project Scope
+              Design Preferences <i class="fas fa-chevron-down"></i>
             </button>
             <div class="content">
-              <p>What exactly you need designed.</p>
-              <textarea name="project_scope" required></textarea>
+              <div class="form-input">
+                <label>What style are you looking for?</label>
+                <div class="checkbox-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="style-minimalist"
+                      name="style[]"
+                      value="minimalist"
+                    />
+                    <label for="style-minimalist">Minimalist</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="style-modern"
+                      name="style[]"
+                      value="modern"
+                    />
+                    <label for="style-modern">Modern</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="style-vintage"
+                      name="style[]"
+                      value="vintage"
+                    />
+                    <label for="style-vintage">Vintage/Retro</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="style-playful"
+                      name="style[]"
+                      value="playful"
+                    />
+                    <label for="style-playful">Playful/Fun</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="style-luxury"
+                      name="style[]"
+                      value="luxury"
+                    />
+                    <label for="style-luxury">Luxury/Elegant</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="style-bold"
+                      name="style[]"
+                      value="bold"
+                    />
+                    <label for="style-bold">Bold/Colorful</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="style-corporate"
+                      name="style[]"
+                      value="corporate"
+                    />
+                    <label for="style-corporate">Corporate/Professional</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="style-other"
+                      name="style[]"
+                      value="other"
+                    />
+                    <label for="style-other">Other</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-input">
+                <label for="color-preferences">Color Preferences</label>
+                <textarea
+                  id="color-preferences"
+                  name="color_preferences"
+                  rows="2"
+                  placeholder="Do you have specific colors in mind?"
+                ></textarea>
+              </div>
+
+              <div class="form-input">
+                <label for="color-avoid">Colors to Avoid</label>
+                <textarea
+                  id="color-avoid"
+                  name="color_avoid"
+                  rows="2"
+                  placeholder="Any colors you specifically want to avoid?"
+                ></textarea>
+              </div>
+
+              <div class="form-input">
+                <label for="inspiration">Examples of designs you like</label>
+                <textarea
+                  id="inspiration"
+                  name="inspiration"
+                  rows="3"
+                  placeholder="Please share links to websites, designs, or brands you admire"
+                ></textarea>
+              </div>
             </div>
           </div>
 
+          <!-- Project Details -->
           <div class="form-group">
             <button type="button" class="toggle" onclick="toggleSection(this)">
-              Timeline & Budget
+              Project Details <i class="fas fa-chevron-down"></i>
             </button>
             <div class="content">
-              <p>When you need it done and your budget range.</p>
-              <input type="date" name="timeline" required />
-              <input
-                type="text"
-                name="budget"
-                placeholder="e.g. $500 - $1000"
-                required
-              />
+              <div class="form-input">
+                <label for="budget" class="required"
+                  >What is your budget for this project?</label
+                >
+                <select id="budget" name="budget" required>
+                  <option value="">Select an option</option>
+                  <option value="under-500">Under $500</option>
+                  <option value="500-1000">$500 - $1,000</option>
+                  <option value="1000-2000">$1,000 - $2,000</option>
+                  <option value="2000-5000">$2,000 - $5,000</option>
+                  <option value="5000+">$5,000+</option>
+                </select>
+              </div>
+
+              <div class="form-input">
+                <label for="timeline" class="required"
+                  >What is your timeline for this project?</label
+                >
+                <select id="timeline" name="timeline" required>
+                  <option value="">Select an option</option>
+                  <option value="asap">ASAP</option>
+                  <option value="1-2-weeks">1-2 weeks</option>
+                  <option value="2-4-weeks">2-4 weeks</option>
+                  <option value="1-2-months">1-2 months</option>
+                  <option value="flexible">Flexible</option>
+                </select>
+              </div>
+
+              <div class="form-input">
+                <label for="deliverables">Specific Deliverables Needed</label>
+                <textarea
+                  id="deliverables"
+                  name="deliverables"
+                  rows="3"
+                  placeholder="What specific files or formats do you need?"
+                ></textarea>
+              </div>
             </div>
           </div>
 
+          <!-- Additional Information -->
           <div class="form-group">
             <button type="button" class="toggle" onclick="toggleSection(this)">
-              Communication
+              Additional Information <i class="fas fa-chevron-down"></i>
             </button>
             <div class="content">
-              <p>A way to keep in touch — email or preferred platform.</p>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email address"
-                required
-              />
-              <input
-                type="text"
-                name="platform"
-                placeholder="Preferred contact method (e.g. WhatsApp, Email)"
-              />
+              <div class="form-input">
+                <label for="competitors">Main Competitors</label>
+                <textarea
+                  id="competitors"
+                  name="competitors"
+                  rows="2"
+                  placeholder="Who are your main competitors?"
+                ></textarea>
+              </div>
+
+              <div class="form-input">
+                <label for="differentiators">What makes you different?</label>
+                <textarea
+                  id="differentiators"
+                  name="differentiators"
+                  rows="3"
+                  placeholder="What sets you apart from your competitors?"
+                ></textarea>
+              </div>
+
+              <div class="form-input">
+                <label for="additional-info"
+                  >Anything else I should know?</label
+                >
+                <textarea
+                  id="additional-info"
+                  name="additional_info"
+                  rows="3"
+                  placeholder="Any other information that might be helpful"
+                ></textarea>
+              </div>
+
+              <div class="form-input">
+                <label for="files">Upload any relevant files</label>
+                <input type="file" id="files" name="files" multiple />
+                <small
+                  >You can upload logos, images, documents, or any other
+                  relevant files (Max 10MB each)</small
+                >
+              </div>
             </div>
           </div>
 
-          <button type="submit" id="get-started-btn">Submit</button>
+          <button type="submit">Submit Project Request</button>
         </form>
+      </div>
+    </section>
 
-   <!-- Footer -->
-  <footer class="site-footer" style="margin-top: 100px; margin-bottom: -100%;">
-    <div class="footer-container">
+    <!-- FAQ Section -->
+    <section id="faq" style="background-color: var(--card-bg)">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
 
-      <!-- Left Column -->
-      <div class="footer-left">
-        <img src="IMG/Logo.svg" alt="Emmanuel Creative Logo" class="logo"/>
-        <p>
-          Emmanuel Creative & Co. is a strategic branding agency helping ambitious brands stand out through compelling design, clear messaging, and purposeful visual identities.
-        </p>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              How long does a typical project take?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                The timeline varies depending on the project scope and
+                complexity. A basic logo design might take 1-2 weeks, while a
+                complete brand identity system could take 3-4 weeks. Website
+                design projects typically take 4-6 weeks. I'll provide a
+                detailed timeline after our initial discussion.
+              </p>
+            </div>
+          </div>
 
-        <div class="footer-social">
-          <a href="https://facebook.com/share/1AeBcp45D4/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/2348023708056?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."><i class="fab fa-whatsapp"></i></a>
-          <a href="https://x.com/emmanuelcreate?s=09"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/excellent-emmanuel-374255331"><i class="fab fa-linkedin-in"></i></a>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              What's included in your branding packages?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                My branding packages include logo design, color palette,
+                typography system, and brand guidelines. More comprehensive
+                packages include additional items like business cards,
+                letterheads, social media assets, and style guides. All packages
+                include multiple concepts and revision rounds.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              How do revisions work? <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Each package includes a specific number of revision rounds.
+                After I present the initial concepts, you'll provide feedback,
+                and I'll refine the selected concept. We'll continue this
+                process until you're completely satisfied with the result
+                (within the agreed number of revisions).
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              What file formats will I receive?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                You'll receive all final designs in the appropriate formats for
+                both print and digital use. This typically includes
+                high-resolution PDF, PNG, JPEG, and vector files (AI, EPS, SVG).
+                For web projects, you'll receive optimized image files and any
+                necessary code files.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              Do you offer ongoing support after project completion?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, I offer ongoing support packages for clients who need
+                regular design work or occasional updates. I also provide a
+                30-day period of complimentary support for any minor adjustments
+                needed after project delivery.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Middle Column -->
-      <div class="footer-center">
-        <h3>Section</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="service.html">Service</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-left">
+            <img src="IMG/Logo.svg" alt="Emmanuel Creative & Co." />
+            <p>
+              Creating meaningful brand experiences through strategic design and
+              thoughtful execution. Let's build something remarkable together.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-behance"></i></a>
+              <a href="#"><i class="fab fa-dribbble"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-center">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-right">
+            <h3>Get In Touch</h3>
+            <ul>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:hello@emmanuelcreativeco.com"
+                  >hello@emmanuelcreativeco.com</a
+                >
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Lagos, Nigeria</span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span>Mon - Fri: 9AM - 6PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 Emmanuel Creative & Co. All Rights Reserved.</p>
+        </div>
       </div>
+    </footer>
 
-      <!-- Right Column -->
-      <div class="footer-right">
-        <h3>Get In Touch</h3>
-        <ul>
-          <li><i class="fas fa-map-marker-alt"></i> Jatau Road, Kaduna, Nigeria 800104</li>
-          <li><i class="fas fa-phone"></i>+234 802 370 8056</li>
-          <li><i class="fas fa-mobile-alt"></i>+234 703 957 5837</li>
-          <li><i class="fas fa-envelope"></i> emmanuelcreativecompany@gmail.com</li> 
-        </ul>
-      </div>
-    </div>
-
-    <p class="footer-bottom">
-      &copy; 2025 Emmanuel Creative & Co. | Designed and developed by Excellent Emmanuel at Emmanuel Creative & Co.
-    </p>
-  </footer>
-    <script src="script.js"></script>
+    <!-- JavaScript -->
     <script>
-  // FAQ toggle logic
-  document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-      const answer = question.nextElementSibling;
-      const icon = question.querySelector('.faq-icon');
-
-      // Toggle answer open class
-      const isOpen = answer.classList.contains('open');
-
-      if (isOpen) {
-        answer.classList.remove('open');
-        icon.classList.remove('open');
-      } else {
-        answer.classList.add('open');
-        icon.classList.add('open');
+      // Navigation functions
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
       }
-    });
-  });
- 
-  const scrollContainer = document.getElementById('scrollContainer');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
 
-  scrollContainer.addEventListener('mousedown', (e) => {
-    isDown = true;
-    scrollContainer.classList.add('active');
-    startX = e.pageX - scrollContainer.offsetLeft;
-    scrollLeft = scrollContainer.scrollLeft;
-  });
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
 
-  scrollContainer.addEventListener('mouseleave', () => {
-    isDown = false;
-    scrollContainer.classList.remove('active');
-  });
+      // Form section toggles
+      function toggleSection(button) {
+        const content = button.nextElementSibling;
+        button.classList.toggle("active");
 
-  scrollContainer.addEventListener('mouseup', () => {
-    isDown = false;
-    scrollContainer.classList.remove('active');
-  });
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      }
 
-  scrollContainer.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainer.offsetLeft;
-    const walk = (x - startX);
-    scrollContainer.scrollLeft = scrollLeft - walk;
-  });
-</script>
-<!-- JS (script.js) -->
-<script>
-function toggleSection(button) {
-  const content = button.nextElementSibling;
-  const allToggles = document.querySelectorAll('.toggle');
-  const allContents = document.querySelectorAll('.content');
+      // FAQ toggles
+      function toggleFAQ(question) {
+        const answer = question.nextElementSibling;
+        question.classList.toggle("active");
 
-  if (button.classList.contains('active')) {
-    button.classList.remove('active');
-    content.style.display = 'none';
-  } else {
-    allToggles.forEach(btn => btn.classList.remove('active'));
-    allContents.forEach(div => (div.style.display = 'none'));
-    button.classList.add('active');
-    content.style.display = 'block';
-  }
-}
-</script>
-<script src="script.js"></script>
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      }
+
+      // Form submission handling
+      function handleGetStartedSubmit(event) {
+        // You can add form validation here
+        console.log("Form submitted");
+        // In a real implementation, you might want to add form validation
+        // and potentially prevent default submission to handle with AJAX
+      }
+
+      // Animate process steps on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const processSteps = document.querySelectorAll(".process-step");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+
+        processSteps.forEach((step) => {
+          observer.observe(step);
+        });
+      });
+    </script>
   </body>
 </html>
