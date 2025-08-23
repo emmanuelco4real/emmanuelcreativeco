@@ -108,6 +108,7 @@
         --text-color: #ffffff;
         --bg-color: #000000;
         --card-bg: #111111;
+        --gold-accent: #d4af37;
         --section-padding: 100px 0;
         --transition: 500ms;
       }
@@ -520,7 +521,7 @@
           margin-top: 0;
           grid-column: 1;
           align-self: center;
-          font-size: 1rem;
+          font-size: 0.8rem !important;
         }
 
         .hero-cta {
@@ -635,11 +636,6 @@
         background-color: var(--card-bg);
       }
 
-      .project-title {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-      }
-
       .project-category {
         color: var(--accent-color);
         margin-bottom: 15px;
@@ -663,103 +659,398 @@
       }
 
       /* ========== ABOUT SECTION ========== */
-      #about-section {
+
+      #premium-about-section {
         padding: var(--section-padding);
-        background-color: var(--card-bg);
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        position: relative;
+        overflow: hidden;
       }
 
-      .about-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: center;
+      #premium-about-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(212, 175, 55, 0.05) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .premium-about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .premium-section-header {
+        text-align: center;
         margin-bottom: 60px;
       }
 
-      .about-image {
-        border-radius: 20px;
-        height: 40rem;
-        overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      .premium-section-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--gold-accent) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        display: inline-block;
       }
 
-      .about-image img {
-        filter: grayscale(100);
+      .premium-section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--gold-accent);
+      }
+
+      .premium-section-subtitle {
+        color: var(--accent-color);
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .premium-about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+
+      .premium-image-container {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        height: 500px;
+      }
+
+      .premium-image {
         width: 100%;
-        height: auto;
-        display: block;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+        filter: grayscale(30%) contrast(110%);
+        transform: scale(1.02); /* Reduced initial scale */
+      }
+
+      .premium-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.1) 0%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+        opacity: 0;
         transition: var(--transition);
       }
 
-      .about-image:hover img {
-        transform: scale(1.1);
-        filter: grayscale(0);
+      .premium-image-container:hover .premium-image {
+        transform: scale(1.05); /* Reduced scale on hover */
+        filter: grayscale(0%) contrast(120%);
       }
 
-      .about-text p {
+      .premium-image-container:hover .premium-image-overlay {
+        opacity: 1;
+      }
+
+      .premium-image-border {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid var(--gold-accent);
+        opacity: 0;
+        transition: var(--transition);
+        transform: scale(0.95);
+      }
+
+      .premium-image-container:hover .premium-image-border {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+
+      .premium-about-text {
+        position: relative;
+      }
+
+      .premium-about-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        color: var(--primary-color);
+      }
+
+      .premium-about-text p {
         margin-bottom: 25px;
         font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--accent-color);
       }
 
-      .skills-container {
+      .premium-highlight {
+        color: var(--gold-accent);
+        font-weight: 600;
+      }
+
+      .premium-skills-container {
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
         margin-bottom: 30px;
       }
 
-      .skill-pill {
-        background-color: var(--primary-color);
+      .premium-skill-pill {
+        background: linear-gradient(
+          135deg,
+          var(--gold-accent) 0%,
+          #b8941d 100%
+        );
         color: var(--secondary-color);
-        padding: 8px 20px;
+        padding: 10px 25px;
         border-radius: 30px;
         font-size: 0.9rem;
+        font-weight: 600;
+        transition: var(--transition);
+        cursor: default;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+      }
+
+      .premium-skill-pill:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+      }
+
+      /* Premium Stats Section */
+      .premium-stats-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-top: 60px;
+      }
+
+      .premium-stat-item {
+        text-align: center;
+        padding: 30px;
+        background: rgba(17, 17, 17, 0.7);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .premium-stat-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.05) 0%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      .premium-stat-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        border-color: rgba(212, 175, 55, 0.2);
+      }
+
+      .premium-stat-item:hover::before {
+        opacity: 1;
+      }
+
+      .premium-stat-icon {
+        font-size: 2.5rem;
+        color: var(--gold-accent);
+        margin-bottom: 15px;
+      }
+
+      .premium-stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--gold-accent) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .premium-stat-label {
+        color: var(--accent-color);
+        font-size: 1rem;
         font-weight: 500;
       }
 
-      /* Skills Progress Bars */
-      .skills-progress {
+      /* Premium Skills Progress */
+      .premium-skills-progress {
         display: grid;
-        gap: 25px;
+        gap: 30px;
+        margin-top: 60px;
       }
 
-      .skill-item {
+      .premium-skill-item {
         opacity: 0;
         transform: translateX(-50px);
         transition: opacity 1s ease, transform 1s ease;
       }
 
-      .skill-item.animate {
+      .premium-skill-item.animate {
         opacity: 1;
         transform: translateX(0);
       }
 
-      .skill-info {
+      .premium-skill-header {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
+        align-items: center;
+        margin-bottom: 15px;
       }
 
-      .skill-info h3 {
+      .premium-skill-title {
+        font-size: 1.1rem;
+        color: var(--primary-color);
         margin-bottom: 0;
-        font-size: 1rem;
       }
 
-      .progress-bar {
-        height: 6px;
-        background-color: rgba(0, 0, 0, 0.1);
+      .premium-skill-percentage {
+        color: var(--gold-accent);
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .premium-progress-container {
+        height: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .premium-progress-bar {
+        height: 100%;
+        border-radius: 10px;
+        width: 0;
+        transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+        background: linear-gradient(90deg, var(--gold-accent) 0%, #b8941d 100%);
+        position: relative;
         overflow: hidden;
       }
 
-      .progress-fill {
+      .premium-progress-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
-        background-color: var(--primary-color);
-        border-radius: 10px;
-        width: 0;
-        transition: width 1.5s ease-out;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.2) 50%,
+          transparent 100%
+        );
+        animation: shimmer 2s infinite;
       }
 
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .premium-about-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .premium-stats-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .premium-image-container {
+          height: 400px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .premium-section-title {
+          font-size: 2.5rem;
+        }
+
+        .premium-stats-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .premium-stat-item {
+          padding: 20px;
+        }
+
+        .premium-image-container {
+          height: 350px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .premium-section-title {
+          font-size: 2rem;
+        }
+
+        .premium-about-text h2 {
+          font-size: 2rem;
+        }
+
+        .premium-skills-container {
+          justify-content: center;
+        }
+
+        .premium-image-container {
+          height: 300px;
+        }
+      }
       /* ========== EXPERIENCE SECTION STYLES ========== */
       #experience-section {
         padding: 100px 0;
@@ -1994,6 +2285,13 @@
         object-fit: cover;
       }
 
+      .requirements-image {
+        overflow: hidden;
+        max-width: 100%;
+        height: 20rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
       /* Specific fix for about section image */
       .about-image {
         height: 40rem;
@@ -2016,18 +2314,6 @@
           width: 100%;
           max-height: 300px;
         }
-      }
-
-      /* Fix for requirements image */
-      .requirements-image {
-        height: 50rem;
-        overflow: hidden;
-      }
-
-      .requirements-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
       }
     </style>
   </head>
@@ -2101,11 +2387,10 @@
           Building Brands
         </h1>
         <p class="hero-description">
-          Hi, I'm Excellent Emmanuel — a seasoned creative strategist
-          specializing in Brand Identity, UI/UX & Graphic Design, and Front-End
-          Development. I partner with ambitious businesses to fuel their growth
-          through strategic visuals, user-centered design, and modern digital
-          experiences.
+          Hi, I’m Excellent Emmanuel — a creative strategist in Brand Identity,
+          UI/UX, Graphic Design, and Front-End Development. I help ambitious
+          businesses turn ideas into powerful brands through strategic design,
+          intuitive experiences, and modern digital solutions.
         </p>
         <div class="hero-cta">
           <a href="get-started.html" class="btn btn-primary"
@@ -2127,9 +2412,6 @@
               <img src="IMG/Folder_Mockup_1.jpg" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">
-                Brand Identity Design For Gourguex Real Estate Brand
-              </h3>
               <p class="project-category">Brand Identity</p>
               <a href="Project1.html"
                 ><button class="project-link">View Project</button></a
@@ -2142,9 +2424,6 @@
               <img src="IMG/thumb1.png" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">
-                Brand Identity Design For Emmanuel Creative & Co.
-              </h3>
               <p class="project-category">Brand Identity</p>
               <a href="Project2.html"
                 ><button class="project-link">View Project</button></a
@@ -2157,9 +2436,6 @@
               <img src="IMG/pawma.jpg" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">
-                Brand Identity Design For Pawma Pet's
-              </h3>
               <p class="project-category">Brand Identity</p>
               <a href="Project3.html"
                 ><button class="project-link">View Project</button></a
@@ -2172,9 +2448,6 @@
               <img src="IMG/thumb 3.png" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">
-                Brand Identity Design For Velour Luxe Perfume Brand
-              </h3>
               <p class="project-category">Brand Identity</p>
               <a href="Project4.html"
                 ><button class="project-link">View Project</button></a
@@ -2186,9 +2459,6 @@
               <img src="IMG/thumb4.png" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">
-                Landing Page Design For WaveX Audio Brand.
-              </h3>
               <p class="project-category">UI/UX Design</p>
               <a href="Project5.html"
                 ><button class="project-link">View Project</button></a
@@ -2201,9 +2471,6 @@
               <img src="IMG/thumb5.png" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">
-                Mobile Application UIUX Design For SOLANE
-              </h3>
               <p class="project-category">UI/UX Design</p>
               <a href="Project6.html"
                 ><button class="project-link">View Project</button></a
@@ -2216,7 +2483,6 @@
               <img src="IMG/glow essence.png" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">E-Commerce Website UI Design</h3>
               <p class="project-category">UI/UX Design</p>
               <a href="Project7.html"
                 ><button class="project-link">View Project</button></a
@@ -2228,7 +2494,6 @@
               <img src="IMG/thumb7.png" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">Brand Guidlines</h3>
               <p class="project-category">Brand Guide</p>
               <a href="Project8.html"
                 ><button class="project-link">View Project</button></a
@@ -2241,9 +2506,6 @@
               <img src="IMG/MacBook_Mockup_2.jpg" alt="Project Thumbnail 1" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">
-                Gourguex RealEstate Website UI Design
-              </h3>
               <p class="project-category">UI/UX Design</p>
               <a href="Project9.html"
                 ><button class="project-link">View Project</button></a
@@ -2255,72 +2517,131 @@
     </section>
 
     <!-- ========== ABOUT SECTION ========== -->
-    <section id="about-section">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-image">
-            <img src="IMG/My pic.jpg" alt="Excellent Emmanuel" />
+    <section id="premium-about-section">
+      <div class="premium-about-container">
+        <div class="premium-section-header">
+          <h2 class="premium-section-title">About Emmanuel Creative & Co.</h2>
+          <p class="premium-section-subtitle">
+            Crafting exceptional brand experiences with precision and passion
+          </p>
+        </div>
+
+        <div class="premium-about-content">
+          <div class="premium-image-container">
+            <img
+              src="IMG/My pic.jpg"
+              alt="Excellent Emmanuel"
+              class="premium-image"
+            />
+            <div class="premium-image-overlay"></div>
+            <div class="premium-image-border"></div>
           </div>
 
-          <div class="about-text">
-            <h2 class="section-title">About Emmanuel Creative & Co.</h2>
+          <div class="premium-about-text">
+            <h2>Designing With Purpose, Crafting With Passion</h2>
             <p>
-              I'm <strong>Excellent Emmanuel</strong> — the Founder and Lead
-              Creative at <strong>Emmanuel Creative & Co.</strong>, a
+              I'm <span class="premium-highlight">Excellent Emmanuel</span> —
+              the Founder and Lead Creative at
+              <span class="premium-highlight">Emmanuel Creative & Co.</span>, a
               design-focused studio based in Nigeria. I help brands craft bold
-              visuals and intuitive user experiences that resonate deeply.
+              visuals and intuitive user experiences that resonate deeply and
+              drive meaningful engagement and
+              <a href="get-started.html"
+                ><span class="premium-highlight"
+                  >would love to do that for you.</span
+                ></a
+              >
             </p>
 
-            <div class="skills-container">
-              <div class="skill-pill">Brand Identity</div>
-              <div class="skill-pill">Logo Design</div>
-              <div class="skill-pill">Web Development</div>
-              <div class="skill-pill">UI/UX Specialist</div>
-            </div>
+            <p>
+              With a keen eye for detail and a passion for storytelling through
+              design, I bridge the gap between aesthetic appeal and functional
+              excellence, creating brands that not only look exceptional but
+              perform brilliantly in the market.
+            </p>
 
-            <a href="get-started.html" class="btn btn-outline">Get Started</a>
+            <div class="premium-skills-container">
+              <div class="premium-skill-pill">Brand Identity & Logo Design</div>
+              <div class="premium-skill-pill">UI/UX Specialist</div>
+              <div class="premium-skill-pill">Web Development</div>
+            </div>
           </div>
         </div>
 
-        <!-- Skills Progress Bars -->
-        <div class="skills-progress">
-          <div class="skill-item">
-            <div class="skill-info">
-              <h3>Brand Identity</h3>
-              <span>96%</span>
+        <!-- Premium Stats -->
+        <div class="premium-stats-container">
+          <div class="premium-stat-item">
+            <div class="premium-stat-icon">
+              <i class="fas fa-project-diagram"></i>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="96%"></div>
+            <div class="premium-stat-number" data-count="150">0</div>
+            <div class="premium-stat-label">Projects Completed</div>
+          </div>
+
+          <div class="premium-stat-item">
+            <div class="premium-stat-icon">
+              <i class="fas fa-smile"></i>
+            </div>
+            <div class="premium-stat-number" data-count="98">0</div>
+            <div class="premium-stat-label">Happy Clients</div>
+          </div>
+
+          <div class="premium-stat-item">
+            <div class="premium-stat-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="premium-stat-number" data-count="12">0</div>
+            <div class="premium-stat-label">Awards Received</div>
+          </div>
+
+          <div class="premium-stat-item">
+            <div class="premium-stat-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="premium-stat-number" data-count="5">0</div>
+            <div class="premium-stat-label">Years Experience</div>
+          </div>
+        </div>
+
+        <!-- Premium Skills Progress Bars -->
+        <div class="premium-skills-progress">
+          <div class="premium-skill-item">
+            <div class="premium-skill-header">
+              <h3 class="premium-skill-title">Brand Identity</h3>
+              <span class="premium-skill-percentage">96%</span>
+            </div>
+            <div class="premium-progress-container">
+              <div class="premium-progress-bar" data-width="96%"></div>
             </div>
           </div>
 
-          <div class="skill-item">
-            <div class="skill-info">
-              <h3>Logo Design & Graphic Design</h3>
-              <span>94%</span>
+          <div class="premium-skill-item">
+            <div class="premium-skill-header">
+              <h3 class="premium-skill-title">Logo & Graphic Design</h3>
+              <span class="premium-skill-percentage">94%</span>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="94%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item">
-            <div class="skill-info">
-              <h3>UI/UX</h3>
-              <span>91%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="91%"></div>
+            <div class="premium-progress-container">
+              <div class="premium-progress-bar" data-width="94%"></div>
             </div>
           </div>
 
-          <div class="skill-item">
-            <div class="skill-info">
-              <h3>Web Development</h3>
-              <span>84%</span>
+          <div class="premium-skill-item">
+            <div class="premium-skill-header">
+              <h3 class="premium-skill-title">UI/UX Design</h3>
+              <span class="premium-skill-percentage">91%</span>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="84%"></div>
+            <div class="premium-progress-container">
+              <div class="premium-progress-bar" data-width="91%"></div>
+            </div>
+          </div>
+
+          <div class="premium-skill-item">
+            <div class="premium-skill-header">
+              <h3 class="premium-skill-title">Web Development</h3>
+              <span class="premium-skill-percentage">84%</span>
+            </div>
+            <div class="premium-progress-container">
+              <div class="premium-progress-bar" data-width="84%"></div>
             </div>
           </div>
         </div>
@@ -3696,6 +4017,94 @@
       // Run on load and scroll
       window.addEventListener("load", animatePhilosophyCards);
       window.addEventListener("scroll", animatePhilosophyCards);
+      document.addEventListener("DOMContentLoaded", function () {
+        // Image hover effect enhancement
+        const imageContainer = document.querySelector(
+          ".premium-image-container"
+        );
+        const image = document.querySelector(".premium-image");
+
+        // Animated counter for stats
+        const counters = document.querySelectorAll(".premium-stat-number");
+        const speed = 200; // The lower the slower
+
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target = +counter.getAttribute("data-count");
+            const count = +counter.innerText;
+
+            // Calculate increment value
+            const inc = target / speed;
+
+            // If count is less than target, continue animation
+            if (count < target) {
+              counter.innerText = Math.ceil(count + inc);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+            }
+          };
+
+          // Start counter when element is in viewport
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  updateCount();
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          observer.observe(counter);
+        });
+
+        // Animate progress bars
+        const progressBars = document.querySelectorAll(".premium-progress-bar");
+
+        progressBars.forEach((bar) => {
+          const width = bar.getAttribute("data-width");
+
+          // Animate when element is in viewport
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  bar.style.width = width;
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          observer.observe(bar);
+        });
+
+        // Animate skill items
+        const skillItems = document.querySelectorAll(".premium-skill-item");
+
+        skillItems.forEach((item, index) => {
+          // Animate when element is in viewport
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setTimeout(() => {
+                    entry.target.classList.add("animate");
+                  }, index * 150);
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.3 }
+          );
+
+          observer.observe(item);
+        });
+      });
     </script>
   </body>
 </html>

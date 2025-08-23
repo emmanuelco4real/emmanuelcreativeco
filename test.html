@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium About Me Section</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* ========== PREMIUM ABOUT SECTION STYLES ========== */
+      :root {
+        --primary-color: #ffffff;
+        --secondary-color: #000000;
+        --accent-color: #a3a3a3;
+        --gold-accent: #d4af37;
+        --text-color: #ffffff;
+        --bg-color: #000000;
+        --card-bg: #111111;
+        --section-padding: 100px 0;
+        --transition: 500ms;
+      }
+
+      #premium-about-section {
+        padding: var(--section-padding);
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      #premium-about-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(212, 175, 55, 0.05) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .premium-about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .premium-section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .premium-section-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--gold-accent) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        display: inline-block;
+      }
+
+      .premium-section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--gold-accent);
+      }
+
+      .premium-section-subtitle {
+        color: var(--accent-color);
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .premium-about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+
+      .premium-image-container {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        height: 500px;
+      }
+
+      .premium-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        filter: grayscale(30%) contrast(110%);
+        transform: scale(1.05);
+      }
+
+      .premium-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.1) 0%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      .premium-image-container:hover .premium-image {
+        transform: scale(1.1);
+        filter: grayscale(0%) contrast(120%);
+      }
+
+      .premium-image-container:hover .premium-image-overlay {
+        opacity: 1;
+      }
+
+      .premium-image-border {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid var(--gold-accent);
+        opacity: 0;
+        transition: var(--transition);
+        transform: scale(0.95);
+      }
+
+      .premium-image-container:hover .premium-image-border {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+
+      .premium-about-text {
+        position: relative;
+      }
+
+      .premium-about-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        color: var(--primary-color);
+      }
+
+      .premium-about-text p {
+        margin-bottom: 25px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--accent-color);
+      }
+
+      .premium-highlight {
+        color: var(--gold-accent);
+        font-weight: 600;
+      }
+
+      .premium-skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .premium-skill-pill {
+        background: linear-gradient(
+          135deg,
+          var(--gold-accent) 0%,
+          #b8941d 100%
+        );
+        color: var(--secondary-color);
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: var(--transition);
+        cursor: default;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+      }
+
+      .premium-skill-pill:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+      }
+
+      .premium-cta-button {
+        display: inline-block;
+        padding: 15px 35px;
+        background: linear-gradient(
+          135deg,
+          var(--gold-accent) 0%,
+          #b8941d 100%
+        );
+        color: var(--secondary-color);
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .premium-cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: var(--secondary-color);
+        transition: var(--transition);
+        z-index: -1;
+      }
+
+      .premium-cta-button:hover {
+        color: var(--gold-accent);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+      }
+
+      .premium-cta-button:hover::before {
+        width: 100%;
+      }
+
+      /* Premium Stats Section */
+      .premium-stats-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-top: 60px;
+      }
+
+      .premium-stat-item {
+        text-align: center;
+        padding: 30px;
+        background: rgba(17, 17, 17, 0.7);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .premium-stat-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.05) 0%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      .premium-stat-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        border-color: rgba(212, 175, 55, 0.2);
+      }
+
+      .premium-stat-item:hover::before {
+        opacity: 1;
+      }
+
+      .premium-stat-icon {
+        font-size: 2.5rem;
+        color: var(--gold-accent);
+        margin-bottom: 15px;
+      }
+
+      .premium-stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--gold-accent) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .premium-stat-label {
+        color: var(--accent-color);
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      /* Premium Skills Progress */
+      .premium-skills-progress {
+        display: grid;
+        gap: 30px;
+        margin-top: 60px;
+      }
+
+      .premium-skill-item {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .premium-skill-item.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .premium-skill-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .premium-skill-title {
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        margin-bottom: 0;
+      }
+
+      .premium-skill-percentage {
+        color: var(--gold-accent);
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .premium-progress-container {
+        height: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .premium-progress-bar {
+        height: 100%;
+        border-radius: 10px;
+        width: 0;
+        transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+        background: linear-gradient(90deg, var(--gold-accent) 0%, #b8941d 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .premium-progress-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.2) 50%,
+          transparent 100%
+        );
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .premium-about-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .premium-stats-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .premium-image-container {
+          height: 400px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .premium-section-title {
+          font-size: 2.5rem;
+        }
+
+        .premium-stats-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .premium-stat-item {
+          padding: 20px;
+        }
+
+        .premium-image-container {
+          height: 350px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .premium-section-title {
+          font-size: 2rem;
+        }
+
+        .premium-about-text h2 {
+          font-size: 2rem;
+        }
+
+        .premium-skills-container {
+          justify-content: center;
+        }
+
+        .premium-image-container {
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ========== PREMIUM ABOUT SECTION ========== -->
+    <section id="premium-about-section">
+      <div class="premium-about-container">
+        <div class="premium-section-header">
+          <h2 class="premium-section-title">About Emmanuel Creative & Co.</h2>
+          <p class="premium-section-subtitle">
+            Crafting exceptional brand experiences with precision and passion
+          </p>
+        </div>
+
+        <div class="premium-about-content">
+          <div class="premium-image-container">
+            <img
+              src="IMG/My pic.jpg"
+              alt="Excellent Emmanuel"
+              class="premium-image"
+            />
+            <div class="premium-image-overlay"></div>
+            <div class="premium-image-border"></div>
+          </div>
+
+          <div class="premium-about-text">
+            <h2>Designing With Purpose, Crafting With Passion</h2>
+            <p>
+              I'm <span class="premium-highlight">Excellent Emmanuel</span> —
+              the Founder and Lead Creative at
+              <span class="premium-highlight">Emmanuel Creative & Co.</span>, a
+              design-focused studio based in Nigeria. I help brands craft bold
+              visuals and intuitive user experiences that resonate deeply and
+              drive meaningful engagement.
+            </p>
+
+            <p>
+              With a keen eye for detail and a passion for storytelling through
+              design, I bridge the gap between aesthetic appeal and functional
+              excellence, creating brands that not only look exceptional but
+              perform brilliantly in the market.
+            </p>
+
+            <div class="premium-skills-container">
+              <div class="premium-skill-pill">Brand Identity</div>
+              <div class="premium-skill-pill">Logo Design</div>
+              <div class="premium-skill-pill">Web Development</div>
+              <div class="premium-skill-pill">UI/UX Specialist</div>
+            </div>
+
+            <a href="get-started.html" class="premium-cta-button"
+              >Start Your Project</a
+            >
+          </div>
+        </div>
+
+        <!-- Premium Stats -->
+        <div class="premium-stats-container">
+          <div class="premium-stat-item">
+            <div class="premium-stat-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="premium-stat-number" data-count="150">0</div>
+            <div class="premium-stat-label">Projects Completed</div>
+          </div>
+
+          <div class="premium-stat-item">
+            <div class="premium-stat-icon">
+              <i class="fas fa-smile"></i>
+            </div>
+            <div class="premium-stat-number" data-count="98">0</div>
+            <div class="premium-stat-label">Happy Clients</div>
+          </div>
+
+          <div class="premium-stat-item">
+            <div class="premium-stat-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="premium-stat-number" data-count="12">0</div>
+            <div class="premium-stat-label">Awards Received</div>
+          </div>
+
+          <div class="premium-stat-item">
+            <div class="premium-stat-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="premium-stat-number" data-count="5">0</div>
+            <div class="premium-stat-label">Years Experience</div>
+          </div>
+        </div>
+
+        <!-- Premium Skills Progress Bars -->
+        <div class="premium-skills-progress">
+          <div class="premium-skill-item">
+            <div class="premium-skill-header">
+              <h3 class="premium-skill-title">Brand Identity</h3>
+              <span class="premium-skill-percentage">96%</span>
+            </div>
+            <div class="premium-progress-container">
+              <div class="premium-progress-bar" data-width="96%"></div>
+            </div>
+          </div>
+
+          <div class="premium-skill-item">
+            <div class="premium-skill-header">
+              <h3 class="premium-skill-title">Logo & Graphic Design</h3>
+              <span class="premium-skill-percentage">94%</span>
+            </div>
+            <div class="premium-progress-container">
+              <div class="premium-progress-bar" data-width="94%"></div>
+            </div>
+          </div>
+
+          <div class="premium-skill-item">
+            <div class="premium-skill-header">
+              <h3 class="premium-skill-title">UI/UX Design</h3>
+              <span class="premium-skill-percentage">91%</span>
+            </div>
+            <div class="premium-progress-container">
+              <div class="premium-progress-bar" data-width="91%"></div>
+            </div>
+          </div>
+
+          <div class="premium-skill-item">
+            <div class="premium-skill-header">
+              <h3 class="premium-skill-title">Web Development</h3>
+              <span class="premium-skill-percentage">84%</span>
+            </div>
+            <div class="premium-progress-container">
+              <div class="premium-progress-bar" data-width="84%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Image hover effect enhancement
+        const imageContainer = document.querySelector(
+          ".premium-image-container"
+        );
+        const image = document.querySelector(".premium-image");
+
+        imageContainer.addEventListener("mousemove", function (e) {
+          const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+          const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+
+          image.style.transform = `scale(1.1) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        imageContainer.addEventListener("mouseenter", function () {
+          image.style.transition = "none";
+        });
+
+        imageContainer.addEventListener("mouseleave", function () {
+          image.style.transition = "all 0.8s cubic-bezier(0.23, 1, 0.32, 1)";
+          image.style.transform = "scale(1.05) rotateY(0deg) rotateX(0deg)";
+        });
+
+        // Animated counter for stats
+        const counters = document.querySelectorAll(".premium-stat-number");
+        const speed = 200; // The lower the slower
+
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target = +counter.getAttribute("data-count");
+            const count = +counter.innerText;
+
+            // Calculate increment value
+            const inc = target / speed;
+
+            // If count is less than target, continue animation
+            if (count < target) {
+              counter.innerText = Math.ceil(count + inc);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+            }
+          };
+
+          // Start counter when element is in viewport
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  updateCount();
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          observer.observe(counter);
+        });
+
+        // Animate progress bars
+        const progressBars = document.querySelectorAll(".premium-progress-bar");
+
+        progressBars.forEach((bar) => {
+          const width = bar.getAttribute("data-width");
+
+          // Animate when element is in viewport
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  bar.style.width = width;
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          observer.observe(bar);
+        });
+
+        // Animate skill items
+        const skillItems = document.querySelectorAll(".premium-skill-item");
+
+        skillItems.forEach((item, index) => {
+          // Animate when element is in viewport
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setTimeout(() => {
+                    entry.target.classList.add("animate");
+                  }, index * 150);
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.3 }
+          );
+
+          observer.observe(item);
+        });
+      });
+    </script>
+  </body>
+</html>
