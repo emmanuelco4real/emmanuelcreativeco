@@ -18,7 +18,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 body {
   font-family: "Inter", "Satoshi", sans-serif;
   background-color: var(--bg-color);
@@ -268,12 +273,12 @@ body {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(95%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80%, 1fr));
   gap: 20px;
 }
 
 .gallery-item {
-  border-radius: 0px;
+  border-radius: 15px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -426,9 +431,8 @@ body {
   }
 
   .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .gallery-item {
