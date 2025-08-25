@@ -3,41 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emmanuel Creative & Co.</title>
+    <title>Velour Luxe Perfume Brand | Emmanuel Creative & Co.</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project.css" />
     <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Z+z0UZRX..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon" />
   </head>
   <body>
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
       <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="javascript:void(0)">
+        <li>
+          <a href="javascript:void(0)" onclick="hideSidebar()">
             <img
               src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              alt=""
+              alt="Close menu"
             />
           </a>
         </li>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="index.html#featured-projects">Portfolio</a></li>
+        <li><a href="index.html#premium-about-section">About Me</a></li>
+        <li><a href="index.html#services-section">Service</a></li>
+        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+        <li><a href="index.html#faq-section">Faq</a></li>
+        <li><a href="index.html#contact-section">Contact Me</a></li>
       </ul>
       <ul>
         <li>
-          <a href="javascript:void(0)">
+          <a href="index.html">
             <img src="IMG/Logo.svg" class="logo" />
           </a>
         </li>
         <li class="hideOnMoble"><a href="index.html">Home</a></li>
-        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
-        <li class="hideOnMoble"><a href="service.html">Service</a></li>
         <li class="hideOnMoble">
-          <a href="testimonials.html">Testimonials</a>
+          <a href="index.html#featured-projects">Portfolio</a>
         </li>
-        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#premium-about-section">About Me</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#services-section">Service</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#testimonials-section">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html#faq-section">Faq</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#contact-section">Contact Me</a>
+        </li>
         <li class="showOnMoble" onclick="showSidebar()">
           <a href="javascript:void(0)">
             <img
@@ -48,72 +81,321 @@
         </li>
       </ul>
     </nav>
-    <section id="all-project">
-      <div class="lines"></div>
-      <h1 class="project-title">
-        Brand Identity Design For Velour Luxe Perfume Brand
-      </h1>
-      <div class="lines"></div>
-      <p class="project-discription">
-        Problem:<br />Veloura Luxe, a high-end perfume brand, struggled to
-        establish itself as a premium fragrance house. The brand lacked a
-        sophisticated and memorable identity that reflected its luxurious
-        essence. Consumers couldn't differentiate it from mass-market perfumes.
-        <br />Solution:<br />
-        The new logo embodies elegance and exclusivity, with a sleek monogram
-        forming a perfume bottle, reinforcing the luxury experience. The deep
-        burgundy color exudes sophistication, while the refined serif typography
-        enhances the premium feel. The brand now visually communicates class,
-        making it appealing to high-end clientele.
-      </p>
-      <div class="lines"></div>
-      <div class="numberonne">
-        <a href="contact.html"><button class="btn">Contact Me</button></a>
-      </div>
-      <div class="project-container">
-        <img src="Project4/building mockup.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project4/Perfume Bottle on Rocks Mockup.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project4/03 Free Floating Oversized T-Shirt Mockup.jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img src="Project4/Free_Cap_Mockup.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project4/Free_Stationery_Mockup_1.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project4/Free_Pen_Mockup_2.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project4/Mockup 1 HAND BAND (3).png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project4/scene-with-mug-mockups-v7-isometric.jpg"
-          class="p1"
-        />
-      </div>
 
-      <div class="project-container">
-        <img
-          src="Project4/Free Roadside City Billboard Mockup.jpg"
-          class="p1"
-        />
+    <!-- ========== PROJECT HERO SECTION ========== -->
+    <section class="project-hero">
+      <div class="project-hero-bg" style="background-color: #3a0e2d"></div>
+      <div class="container">
+        <div class="project-hero-content">
+          <span class="project-category animate-in">Brand Identity Design</span>
+          <h1 class="project-title animate-in delay-1">
+            Velour Luxe Perfume Brand Identity
+          </h1>
+          <p class="project-description animate-in delay-2">
+            A sophisticated brand identity for a luxury perfume house, designed
+            to evoke elegance, exclusivity, and sensory delight through refined
+            visual elements and premium aesthetics.
+          </p>
+
+          <div class="project-meta animate-in delay-3">
+            <div class="meta-item">
+              <span class="meta-value">4 Weeks</span>
+              <span class="meta-label">Duration</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">Luxury Branding</span>
+              <span class="meta-label">Category</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">Complete</span>
+              <span class="meta-label">Status</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <p class="footer-bottom">
-      &copy; 2025 Emmanuel Creative & Co. | Designed and developed by Excellent
-      Emmanuel at Emmanuel Creative & Co.
-    </p>
+    <!-- ========== PROJECT OVERVIEW SECTION ========== -->
+    <section class="project-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-content">
+            <h2>Project Overview</h2>
+            <p class="overview-text">
+              Velour Luxe is a premium fragrance brand specializing in
+              exclusive, handcrafted perfumes for discerning clients. They
+              needed a complete brand identity that would position them as an
+              elite, sophisticated choice in the competitive luxury fragrance
+              market.
+            </p>
+
+            <div class="problem-solution">
+              <h3>Challenge</h3>
+              <p>
+                Velour Luxe aimed to establish itself as a premium fragrance
+                house but struggled with an inconsistent brand identity. The
+                company needed a sophisticated visual system that communicated
+                elegance, exclusivity, and sensory luxury to differentiate from
+                mass-market perfumes.
+              </p>
+
+              <h3>Solution</h3>
+              <p>
+                The redesigned logo features an elegant monogram forming a
+                subtle perfume bottle silhouette, symbolizing sophistication and
+                luxury. The deep burgundy color palette evokes richness and
+                exclusivity, while refined serif typography enhances the premium
+                feel. A comprehensive brand guidelines system ensures consistent
+                application across all touchpoints, from packaging to digital
+                presence, creating a cohesive luxury experience that resonates
+                with high-end clientele.
+              </p>
+            </div>
+
+            <div class="skills-container">
+              <h3 class="skills-title">Skills & Technologies</h3>
+              <div class="skills-grid">
+                <span class="skill-tag">Brand Strategy</span>
+                <span class="skill-tag">Logo Design</span>
+                <span class="skill-tag">Packaging Design</span>
+                <span class="skill-tag">Color Theory</span>
+                <span class="skill-tag">Typography</span>
+                <span class="skill-tag">Luxury Branding</span>
+                <span class="skill-tag">Visual Identity</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-image">
+            <img
+              src="Project4/Perfume Bottle on Rocks Mockup.jpg"
+              alt="Velour Luxe Perfume Brand Presentation"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECT GALLERY SECTION ========== -->
+    <section class="project-gallery">
+      <div class="container">
+        <h2 class="gallery-title">Project Gallery</h2>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="Project4/building mockup.jpg"
+              alt="Velour Luxe Building Signage"
+            />
+            <div class="gallery-caption">
+              <h3>Retail Presence</h3>
+              <p>Elegant building signage for boutique locations</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project4/Perfume Bottle on Rocks Mockup.jpg"
+              alt="Velour Luxe Product Presentation"
+            />
+            <div class="gallery-caption">
+              <h3>Premium Packaging</h3>
+              <p>Luxury perfume bottle design and presentation</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project4/03 Free Floating Oversized T-Shirt Mockup.jpg"
+              alt="Velour Luxe Apparel Merchandise"
+            />
+            <div class="gallery-caption">
+              <h3>Branded Apparel</h3>
+              <p>Premium merchandise for brand ambassadors</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project4/Free_Cap_Mockup.jpg"
+              alt="Velour Luxe Headwear"
+            />
+            <div class="gallery-caption">
+              <h3>Headwear Collection</h3>
+              <p>Exclusive caps for staff and special events</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project4/Free_Stationery_Mockup_1.jpg"
+              alt="Velour Luxe Stationery"
+            />
+            <div class="gallery-caption">
+              <h3>Corporate Stationery</h3>
+              <p>Elegant stationery suite for business communications</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project4/Free_Pen_Mockup_2.jpg"
+              alt="Velour Luxe Writing Instruments"
+            />
+            <div class="gallery-caption">
+              <h3>Executive Pens</h3>
+              <p>Luxury writing instruments for corporate gifting</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project4/Mockup 1 HAND BAND (3).png"
+              alt="Velour Luxe Wristbands"
+            />
+            <div class="gallery-caption">
+              <h3>Event Accessories</h3>
+              <p>Premium wristbands for launch events and exclusives</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project4/scene-with-mug-mockups-v7-isometric.jpg"
+              alt="Velour Luxe Drinkware"
+            />
+            <div class="gallery-caption">
+              <h3>Branded Drinkware</h3>
+              <p>Elegant mugs for corporate hospitality</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project4/Free Roadside City Billboard Mockup.jpg"
+              alt="Velour Luxe Outdoor Advertising"
+            />
+            <div class="gallery-caption">
+              <h3>Outdoor Campaigns</h3>
+              <p>Strategic billboard advertising in premium locations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <img
+              src="IMG/Logo.svg"
+              alt="Emmanuel Creative Logo"
+              class="footer-logo"
+            />
+            <p>
+              Emmanuel Creative & Co. is a strategic branding agency helping
+              ambitious brands stand out through compelling design, clear
+              messaging, and purposeful visual identities.
+            </p>
+
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/share/1B8eHpvRNb/"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/2347039575837?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
+                aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://x.com/excel_emma_?t=CP7XMBUKgzYU2_ACw6_8cQ&s=08"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/excellent-emmanuel-374255331"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/excel.emma.work?igsh=b2FuamVzMzV4dG1s"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#featured-projects">Portfolio</a></li>
+              <li><a href="index.html#premium-about-section">About Me</a></li>
+              <li><a href="index.html#services-section">Service</a></li>
+              <li>
+                <a href="index.html#testimonials-section">Testimonials</a>
+              </li>
+              <li><a href="index.html#faq-section">Faq</a></li>
+              <li><a href="index.html#contact-section">Contact Me</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li>
+                <a href="index.html#services-section">Brand Identity Design</a>
+              </li>
+              <li><a href="index.html#services-section">UI/UX Design</a></li>
+              <li><a href="index.html#services-section">Graphic Design</a></li>
+              <li><a href="index.html#services-section">Web Design</a></li>
+              <li><a href="index.html#services-section">Print Design</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+              <li><i class="fas fa-map-marker-alt"></i> Nigeria</li>
+              <li><i class="fas fa-phone"></i> +234 802 370 8056</li>
+              <li><i class="fas fa-mobile-alt"></i> +234 703 957 5837</li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                excel.emmy.work@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Emmanuel Creative & Co. | Designed and developed by
+            Excellent Emmanuel
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Animation on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(".animate-in");
+
+        animatedElements.forEach((element) => {
+          element.style.opacity = "0";
+        });
+
+        setTimeout(() => {
+          animatedElements.forEach((element) => {
+            element.style.opacity = "1";
+          });
+        }, 100);
+      });
+    </script>
   </body>
 </html>
