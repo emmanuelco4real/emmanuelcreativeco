@@ -3,41 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emmanuel Creative & Co.</title>
+    <title>Gourguex Real Estate Brand | Emmanuel Creative & Co.</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project.css" />
     <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Z+z0UZRX..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon" />
   </head>
   <body>
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
       <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="javascript:void(0)">
+        <li>
+          <a href="javascript:void(0)" onclick="hideSidebar()">
             <img
               src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              alt=""
+              alt="Close menu"
             />
           </a>
         </li>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="index.html#featured-projects">Portfolio</a></li>
+        <li><a href="index.html#premium-about-section">About Me</a></li>
+        <li><a href="index.html#services-section">Service</a></li>
+        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+        <li><a href="index.html#faq-section">Faq</a></li>
+        <li><a href="index.html#contact-section">Contact Me</a></li>
       </ul>
       <ul>
         <li>
-          <a href="javascript:void(0)">
+          <a href="index.html">
             <img src="IMG/Logo.svg" class="logo" />
           </a>
         </li>
         <li class="hideOnMoble"><a href="index.html">Home</a></li>
-        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
-        <li class="hideOnMoble"><a href="service.html">Service</a></li>
         <li class="hideOnMoble">
-          <a href="testimonials.html">Testimonials</a>
+          <a href="index.html#featured-projects">Portfolio</a>
         </li>
-        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#premium-about-section">About Me</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#services-section">Service</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#testimonials-section">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html#faq-section">Faq</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#contact-section">Contact Me</a>
+        </li>
         <li class="showOnMoble" onclick="showSidebar()">
           <a href="javascript:void(0)">
             <img
@@ -48,77 +81,342 @@
         </li>
       </ul>
     </nav>
-    <section id="all-project">
-      <div class="lines"></div>
-      <h1 class="project-title">
-        Brand Identity Design For Gourguex Real Estate Brand
-      </h1>
-      <div class="lines"></div>
-      <p class="project-discription">
-        Problem:<br />
-        Gourguex aimed to create an elegant trusted Real Estate brand but
-        struggled with inconsistency in it's branding. The company needed a
-        strong brand identity that communicated Elegnce, Sophistication, Luxury,
-        and reliability to clients.<br />
-        Solution:<br />The designed logo features a Sophisticated yet
-        professional mark, symbolizing Elegance. The Green and Golden reflects
-        Elegance, Luxury, and Sophistication, making the brand approachable. A
-        full 35-page brand guidelines ensures consistent brand communication
-        across all platforms, and advertising. This structured branding approach
-        allows Gourguex to build a strong emotional connection with it's
-        Clients.
-      </p>
-      <div class="lines"></div>
 
-      <div class="numberonne">
-        <a href="contact.html"><button class="btn">Contact Me</button></a>
-      </div>
-      <div class="project-container">
-        <img src="Project1/Folder_Mockup_1.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Free_Keychain_Mockup_4.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Free_Pen_Mockup_2.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Free_Stationery_Mockup_2.png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Free Warehouse Building Mockup.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Apple Watch on Desk Mockup.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project1/Free Vertical Billboard on th Brick Wall Mockup.jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Free_Bag_Mockup_on_the_Wall111.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Mug_Mockup_5.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Mockup 2.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/Free_Outdoor_Banner_Mockup.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project1/COLOR PALETTE.png" class="p1" />
+    <!-- ========== PROJECT HERO SECTION ========== -->
+    <section class="project-hero">
+      <div class="project-hero-bg" style="background-color: #0a2a1d"></div>
+      <div class="container">
+        <div class="project-hero-content">
+          <span class="project-category animate-in">Brand Identity Design</span>
+          <h1 class="project-title animate-in delay-1">
+            Gourguex Real Estate Brand Identity
+          </h1>
+          <p class="project-description animate-in delay-2">
+            A sophisticated brand identity system for a luxury real estate
+            company, designed to communicate elegance, trust, and exclusivity in
+            the competitive property market.
+          </p>
+
+          <div class="project-meta animate-in delay-3">
+            <div class="meta-item">
+              <span class="meta-value">3 Weeks</span>
+              <span class="meta-label">Duration</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">Brand Identity</span>
+              <span class="meta-label">Category</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">Complete</span>
+              <span class="meta-label">Status</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <p class="footer-bottom">
-      &copy; 2025 Emmanuel Creative & Co. | Designed and developed by Excellent
-      Emmanuel at Emmanuel Creative & Co.
-    </p>
+    <!-- ========== PROJECT OVERVIEW SECTION ========== -->
+    <section class="project-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-content">
+            <h2>Project Overview</h2>
+            <p class="overview-text">
+              Gourguex is a premium real estate brand specializing in luxury
+              properties and exclusive developments. They needed a complete
+              brand identity that would position them as a trusted,
+              sophisticated leader in the high-end real estate market.
+            </p>
+
+            <div class="problem-solution">
+              <h3>Challenge</h3>
+              <p>
+                Gourguex aimed to create an elegant trusted Real Estate brand
+                but struggled with inconsistency in its branding. The company
+                needed a strong brand identity that communicated Elegance,
+                Sophistication, Luxury, and reliability to clients.
+              </p>
+
+              <h3>Solution</h3>
+              <p>
+                The designed logo features a Sophisticated yet professional
+                mark, symbolizing Elegance. The Green and Golden reflects
+                Elegance, Luxury, and Sophistication, making the brand
+                approachable. A full 35-page brand guidelines ensures consistent
+                brand communication across all platforms, and advertising. This
+                structured branding approach allows Gourguex to build a strong
+                emotional connection with its Clients.
+              </p>
+            </div>
+
+            <div class="skills-container">
+              <h3 class="skills-title">Skills & Technologies</h3>
+              <div class="skills-grid">
+                <span class="skill-tag">Brand Strategy</span>
+                <span class="skill-tag">Logo Design</span>
+                <span class="skill-tag">Typography</span>
+                <span class="skill-tag">Color Theory</span>
+                <span class="skill-tag">Print Design</span>
+                <span class="skill-tag">Brand Guidelines</span>
+                <span class="skill-tag">Visual Identity</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-image">
+            <img
+              src="Project1/Folder_Mockup_1.jpg"
+              alt="Gourguex Brand Identity Presentation"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECT GALLERY SECTION ========== -->
+    <section class="project-gallery">
+      <div class="container">
+        <h2 class="gallery-title">Project Gallery</h2>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="Project1/Free_Keychain_Mockup_4.jpg"
+              alt="Gourguex Keychain Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Branded Merchandise</h3>
+              <p>Premium keychain for clients and partners</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/Free_Pen_Mockup_2.jpg"
+              alt="Gourguex Pen Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Executive Writing Instruments</h3>
+              <p>Luxury pen design with brand identity</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/Free_Stationery_Mockup_2.png"
+              alt="Gourguex Stationery Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Corporate Stationery</h3>
+              <p>Complete stationery suite for professional communications</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/Free Warehouse Building Mockup.jpg"
+              alt="Gourguex Building Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Building Signage</h3>
+              <p>Exterior branding for corporate headquarters</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/Apple Watch on Desk Mockup.jpg"
+              alt="Gourguex Digital Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Digital Presence</h3>
+              <p>Brand application on digital platforms and devices</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/Free Vertical Billboard on th Brick Wall Mockup.jpg"
+              alt="Gourguex Billboard Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Outdoor Advertising</h3>
+              <p>Billboard design for high-impact marketing campaigns</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/Free_Bag_Mockup_on_the_Wall111.jpg"
+              alt="Gourguex Bag Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Promotional Materials</h3>
+              <p>Premium tote bag for client gifts and events</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="Project1/Mug_Mockup_5.jpg" alt="Gourguex Mug Mockup" />
+            <div class="gallery-caption">
+              <h3>Office Branding</h3>
+              <p>Custom mugs for office use and client meetings</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/Mockup 2.jpg"
+              alt="Gourguex Business Card Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Business Cards</h3>
+              <p>Premium business cards with special finishes</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/Free_Outdoor_Banner_Mockup.jpg"
+              alt="Gourguex Banner Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Event Branding</h3>
+              <p>Banner design for property launches and events</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project1/COLOR PALETTE.png"
+              alt="Gourguex Color Palette"
+            />
+            <div class="gallery-caption">
+              <h3>Color System</h3>
+              <p>Strategic color palette for brand consistency</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <img
+              src="IMG/Logo.svg"
+              alt="Emmanuel Creative Logo"
+              class="footer-logo"
+            />
+            <p>
+              Emmanuel Creative & Co. is a strategic branding agency helping
+              ambitious brands stand out through compelling design, clear
+              messaging, and purposeful visual identities.
+            </p>
+
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/share/1B8eHpvRNb/"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/2347039575837?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
+                aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://x.com/excel_emma_?t=CP7XMBUKgzYU2_ACw6_8cQ&s=08"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/excellent-emmanuel-374255331"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/excel.emma.work?igsh=b2FuamVzMzV4dG1s"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#featured-projects">Portfolio</a></li>
+              <li><a href="index.html#premium-about-section">About Me</a></li>
+              <li><a href="index.html#services-section">Service</a></li>
+              <li>
+                <a href="index.html#testimonials-section">Testimonials</a>
+              </li>
+              <li><a href="index.html#faq-section">Faq</a></li>
+              <li><a href="index.html#contact-section">Contact Me</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li>
+                <a href="index.html#services-section">Brand Identity Design</a>
+              </li>
+              <li><a href="index.html#services-section">UI/UX Design</a></li>
+              <li><a href="index.html#services-section">Graphic Design</a></li>
+              <li><a href="index.html#services-section">Web Design</a></li>
+              <li><a href="index.html#services-section">Print Design</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+              <li><i class="fas fa-map-marker-alt"></i> Nigeria</li>
+              <li><i class="fas fa-phone"></i> +234 802 370 8056</li>
+              <li><i class="fas fa-mobile-alt"></i> +234 703 957 5837</li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                excel.emmy.work@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Emmanuel Creative & Co. | Designed and developed by
+            Excellent Emmanuel
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
+    <script>
+      // Animation on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(".animate-in");
+
+        animatedElements.forEach((element) => {
+          element.style.opacity = "0";
+        });
+
+        setTimeout(() => {
+          animatedElements.forEach((element) => {
+            element.style.opacity = "1";
+          });
+        }, 100);
+      });
+    </script>
   </body>
 </html>
