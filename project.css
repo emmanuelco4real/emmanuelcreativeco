@@ -273,7 +273,7 @@ body {
 }
 
 .gallery-item {
-  border-radius: 10px;
+  border-radius: 0px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
