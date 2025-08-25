@@ -3,41 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emmanuel Creative & Co.</title>
+    <title>Pawma Pet's Brand Identity | Emmanuel Creative & Co.</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project.css" />
     <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Z+z0UZRX..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon" />
   </head>
   <body>
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
       <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="javascript:void(0)">
+        <li>
+          <a href="javascript:void(0)" onclick="hideSidebar()">
             <img
               src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              alt=""
+              alt="Close menu"
             />
           </a>
         </li>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="index.html#featured-projects">Portfolio</a></li>
+        <li><a href="index.html#premium-about-section">About Me</a></li>
+        <li><a href="index.html#services-section">Service</a></li>
+        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+        <li><a href="index.html#faq-section">Faq</a></li>
+        <li><a href="index.html#contact-section">Contact Me</a></li>
       </ul>
       <ul>
         <li>
-          <a href="javascript:void(0)">
+          <a href="index.html">
             <img src="IMG/Logo.svg" class="logo" />
           </a>
         </li>
         <li class="hideOnMoble"><a href="index.html">Home</a></li>
-        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
-        <li class="hideOnMoble"><a href="service.html">Service</a></li>
         <li class="hideOnMoble">
-          <a href="testimonials.html">Testimonials</a>
+          <a href="index.html#featured-projects">Portfolio</a>
         </li>
-        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#premium-about-section">About Me</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#services-section">Service</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#testimonials-section">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html#faq-section">Faq</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#contact-section">Contact Me</a>
+        </li>
         <li class="showOnMoble" onclick="showSidebar()">
           <a href="javascript:void(0)">
             <img
@@ -48,93 +81,350 @@
         </li>
       </ul>
     </nav>
-    <section id="all-project">
-      <div class="lines"></div>
-      <h1 class="project-title">Brand Identity Design For Pawma Pet's</h1>
-      <div class="lines"></div>
-      <p class="project-discription">
-        Problem:<br />
-        Pawma aimed to create a trusted pet brand but struggled with
-        inconsistency in its branding. The company needed a strong brand
-        identity that communicated warmth, care, fun, and reliability to pet
-        owners. <br />Solution:<br />
-        The designed logo features a playful yet professional mark—a stylized
-        "P" where the negative space form a silhouette of both a dog and a cat,
-        symbolizing our dedication to providing care and products for all
-        beloved pets. The vibrant golden-yellow color reflects warmth,
-        friendliness, and joy, making the brand approachable. A full 30-page
-        brand guideline ensures consistent brand communication across packaging,
-        digital presence, and advertising. This structured branding approach
-        allows Pawma to build a strong emotional connection with pet owners
-      </p>
-      <div class="lines"></div>
-      <div class="numberonne">
-        <a href="contact.html"><button class="btn">Contact Me</button></a>
-      </div>
 
-      <div class="project-container">
-        <img src="Project3/Studio Building Logo Mockup (2).jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project3/Free_Food_Bag_Mockup.png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project3/BOXES.png" class="p1" />
-      </div>
+    <!-- ========== PROJECT HERO SECTION ========== -->
+    <section class="project-hero">
+      <div class="project-hero-bg" style="background-color: #fef9e7"></div>
+      <div class="container">
+        <div class="project-hero-content">
+          <span class="project-category animate-in">Brand Identity Design</span>
+          <h1 class="project-title animate-in delay-1">
+            Pawma Pet's Brand Identity
+          </h1>
+          <p class="project-description animate-in delay-2">
+            A vibrant and playful brand identity for a pet care company,
+            designed to communicate warmth, care, and reliability to pet owners
+            while maintaining a professional appearance.
+          </p>
 
-      <div class="project-container">
-        <img src="Project3/pet (3).jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project3/Free_Stationery_Mockup_1.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project3/Free_Pen_Mockup_5.png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project3/Free Employee ID Card Holder Mockup.jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img src="Project3/MAN.png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project3/Free_Cap_Mockup.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project3/Mockup 1 HAND BAND (3).png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project3/scene-with-mug-mockups-v7-isometric.jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img src="Project3/Free_Billboard_Mockup.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project3/Cotton Canvas Bag Mockup.jpg" class="p1" />
-      </div>
-
-      <div class="project-container">
-        <img
-          src="Project3/Free Roadside City Billboard Mockup - Copy.jpg"
-          class="p1"
-        />
-        <div class="project-container">
-          <img src="Project3/COLOR PALETT.png" class="p1" />
+          <div class="project-meta animate-in delay-3">
+            <div class="meta-item">
+              <span class="meta-value">5 Weeks</span>
+              <span class="meta-label">Duration</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">Brand Identity</span>
+              <span class="meta-label">Category</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">Complete</span>
+              <span class="meta-label">Status</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <p class="footer-bottom">
-      &copy; 2025 Emmanuel Creative & Co. | Designed and developed by Excellent
-      Emmanuel at Emmanuel Creative & Co.
-    </p>
+    <!-- ========== PROJECT OVERVIEW SECTION ========== -->
+    <section class="project-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-content">
+            <h2>Project Overview</h2>
+            <p class="overview-text">
+              Pawma is a pet care brand specializing in premium pet products and
+              services. They needed a complete brand identity that would appeal
+              to pet owners while communicating trust, care, and quality for
+              their furry family members.
+            </p>
+
+            <div class="problem-solution">
+              <h3>Challenge</h3>
+              <p>
+                Pawma aimed to create a trusted pet brand but struggled with
+                inconsistency in its branding. The company needed a strong brand
+                identity that communicated warmth, care, fun, and reliability to
+                pet owners while standing out in the competitive pet care
+                market.
+              </p>
+
+              <h3>Solution</h3>
+              <p>
+                The designed logo features a playful yet professional mark—a
+                stylized "P" where the negative space forms a silhouette of both
+                a dog and a cat, symbolizing dedication to providing care and
+                products for all beloved pets. The vibrant golden-yellow color
+                reflects warmth, friendliness, and joy, making the brand
+                approachable. A full 30-page brand guideline ensures consistent
+                brand communication across packaging, digital presence, and
+                advertising. This structured branding approach allows Pawma to
+                build a strong emotional connection with pet owners.
+              </p>
+            </div>
+
+            <div class="skills-container">
+              <h3 class="skills-title">Skills & Technologies</h3>
+              <div class="skills-grid">
+                <span class="skill-tag">Brand Strategy</span>
+                <span class="skill-tag">Logo Design</span>
+                <span class="skill-tag">Typography</span>
+                <span class="skill-tag">Color Theory</span>
+                <span class="skill-tag">Packaging Design</span>
+                <span class="skill-tag">Brand Guidelines</span>
+                <span class="skill-tag">Visual Identity</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-image">
+            <img
+              src="Project3/Studio Building Logo Mockup (2).jpg"
+              alt="Pawma Pet's Brand Identity Presentation"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECT GALLERY SECTION ========== -->
+    <section class="project-gallery">
+      <div class="container">
+        <h2 class="gallery-title">Project Gallery</h2>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="Project3/Free_Food_Bag_Mockup.png"
+              alt="Pawma Pet Food Packaging"
+            />
+            <div class="gallery-caption">
+              <h3>Pet Food Packaging</h3>
+              <p>Vibrant packaging design for premium pet food products</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="Project3/BOXES.png" alt="Pawma Product Boxes" />
+            <div class="gallery-caption">
+              <h3>Product Packaging</h3>
+              <p>Complete packaging system for various pet care products</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project3/Free_Stationery_Mockup_1.jpg"
+              alt="Pawma Stationery Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Corporate Stationery</h3>
+              <p>Professional stationery suite for business communications</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project3/Free Employee ID Card Holder Mockup.jpg"
+              alt="Pawma Employee ID Cards"
+            />
+            <div class="gallery-caption">
+              <h3>Employee Identification</h3>
+              <p>Staff ID cards with consistent brand application</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="Project3/pet (3).jpg" alt="Pawma Brand Applications" />
+            <div class="gallery-caption">
+              <h3>Brand Applications</h3>
+              <p>Various applications of the brand across different mediums</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="Project3/Free_Pen_Mockup_5.png" alt="Pawma Pen Mockup" />
+            <div class="gallery-caption">
+              <h3>Promotional Materials</h3>
+              <p>Branded writing instruments for marketing and giveaways</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="Project3/Free_Cap_Mockup.jpg" alt="Pawma Cap Mockup" />
+            <div class="gallery-caption">
+              <h3>Merchandise</h3>
+              <p>Branded caps for staff and promotional events</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project3/Mockup 1 HAND BAND (3).png"
+              alt="Pawma Wristband Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Event Materials</h3>
+              <p>Promotional wristbands for pet events and campaigns</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project3/scene-with-mug-mockups-v7-isometric.jpg"
+              alt="Pawma Mug Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Office Branding</h3>
+              <p>Custom mugs for office use and client meetings</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project3/Free_Billboard_Mockup.jpg"
+              alt="Pawma Billboard Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Outdoor Advertising</h3>
+              <p>Billboard design for high-impact marketing campaigns</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project3/Cotton Canvas Bag Mockup.jpg"
+              alt="Pawma Tote Bag Mockup"
+            />
+            <div class="gallery-caption">
+              <h3>Promotional Bags</h3>
+              <p>Eco-friendly tote bags for customer purchases and events</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project3/Free Roadside City Billboard Mockup - Copy.jpg"
+              alt="Pawma City Billboard"
+            />
+            <div class="gallery-caption">
+              <h3>Urban Advertising</h3>
+              <p>City billboard placement for maximum brand visibility</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="Project3/COLOR PALETT.png" alt="Pawma Color Palette" />
+            <div class="gallery-caption">
+              <h3>Color System</h3>
+              <p>Strategic color palette for brand consistency</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <img
+              src="IMG/Logo.svg"
+              alt="Emmanuel Creative Logo"
+              class="footer-logo"
+            />
+            <p>
+              Emmanuel Creative & Co. is a strategic branding agency helping
+              ambitious brands stand out through compelling design, clear
+              messaging, and purposeful visual identities.
+            </p>
+
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/share/1B8eHpvRNb/"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/2347039575837?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
+                aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://x.com/excel_emma_?t=CP7XMBUKgzYU2_ACw6_8cQ&s=08"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/excellent-emmanuel-374255331"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/excel.emma.work?igsh=b2FuamVzMzV4dG1s"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#featured-projects">Portfolio</a></li>
+              <li><a href="index.html#premium-about-section">About Me</a></li>
+              <li><a href="index.html#services-section">Service</a></li>
+              <li>
+                <a href="index.html#testimonials-section">Testimonials</a>
+              </li>
+              <li><a href="index.html#faq-section">Faq</a></li>
+              <li><a href="index.html#contact-section">Contact Me</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li>
+                <a href="index.html#services-section">Brand Identity Design</a>
+              </li>
+              <li><a href="index.html#services-section">UI/UX Design</a></li>
+              <li><a href="index.html#services-section">Graphic Design</a></li>
+              <li><a href="index.html#services-section">Web Design</a></li>
+              <li><a href="index.html#services-section">Print Design</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+              <li><i class="fas fa-map-marker-alt"></i> Nigeria</li>
+              <li><i class="fas fa-phone"></i> +234 802 370 8056</li>
+              <li><i class="fas fa-mobile-alt"></i> +234 703 957 5837</li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                excel.emmy.work@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Emmanuel Creative & Co. | Designed and developed by
+            Excellent Emmanuel
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Animation on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(".animate-in");
+
+        animatedElements.forEach((element) => {
+          element.style.opacity = "0";
+        });
+
+        setTimeout(() => {
+          animatedElements.forEach((element) => {
+            element.style.opacity = "1";
+          });
+        }, 100);
+      });
+    </script>
   </body>
 </html>
