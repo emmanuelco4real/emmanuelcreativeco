@@ -93,7 +93,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="style.css" />
     <!-- Your custom CSS -->
     <style>
       /* ========== IMPROVED BASE STYLES ========== */
@@ -277,162 +277,6 @@
         color: var(--secondary-color);
       }
 
-      /* ========== HEADER/NAVIGATION ========== */
-      nav {
-        background-color: #ffffff00;
-        backdrop-filter: blur(15px);
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        z-index: 10000;
-      }
-      nav ul {
-        width: 100%;
-        list-style: none;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-      }
-      nav li {
-        height: 50px;
-      }
-      nav a {
-        height: 100%;
-        padding: 0 20px;
-        font-size: 0.8rem;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        color: rgb(255, 255, 255);
-      }
-      nav a:hover {
-        color: rgb(231, 139, 58);
-      }
-      nav li:first-child {
-        margin-right: auto;
-      }
-      .logo {
-        max-width: 120px;
-      }
-      .icon-close-menu {
-        height: 26px;
-        width: auto;
-      }
-      /* Mobile Responsive Styles for Navigation */
-      @media (max-width: 768px) {
-        .hideOnMoble {
-          display: none !important;
-        }
-
-        .showOnMoble {
-          display: block !important;
-        }
-
-        nav ul {
-          padding: 0 15px;
-        }
-
-        .sidebar {
-          display: none;
-          position: fixed;
-          top: 0;
-          right: 0;
-          height: 100vh;
-          width: 70%;
-          max-width: 300px;
-          background-color: var(--card-bg);
-          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-          z-index: 1000;
-          padding: 60px 20px 20px;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .sidebar.active {
-          display: flex;
-        }
-        /* Add overlay when sidebar is open */
-        .sidebar-overlay {
-          display: none;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 999;
-        }
-
-        .sidebar-overlay.active {
-          display: block;
-        }
-        .sidebar li {
-          width: 100%;
-          margin-bottom: 15px;
-        }
-
-        .sidebar a {
-          padding: 12px 0;
-          font-size: 1.1rem;
-          width: 100%;
-          display: block;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .sidebar li:first-child {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          width: auto;
-          margin-bottom: 0;
-        }
-
-        .sidebar li:first-child a {
-          border-bottom: none;
-          padding: 5px;
-        }
-
-        /* Overlay when sidebar is open */
-        .sidebar::before {
-          content: "";
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: -1;
-        }
-      }
-
-      @media (min-width: 769px) {
-        .showOnMoble {
-          display: none !important;
-        }
-
-        .sidebar {
-          display: none !important;
-        }
-      }
-
-      /* Active state for navigation links */
-      nav a.active {
-        color: rgb(231, 139, 58) !important;
-        font-weight: 600;
-      }
-      /* Main Header Area */
-      .header {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        justify-content: center; /* horizontal centering */
-        align-items: center; /* vertical centering */
-        text-align: center;
-      }
       /* ========== HERO SECTION ========== */
       #hero {
         position: relative;
@@ -949,96 +793,6 @@
         gap: 20px;
         margin-top: 40px;
         flex-wrap: wrap;
-      }
-
-      /* ========== FOOTER ========== */
-      .site-footer {
-        padding: 60px 0 30px;
-        background-color: var(--card-bg);
-      }
-
-      .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        margin-bottom: 40px;
-      }
-
-      .footer-logo {
-        height: 40px;
-        margin-bottom: 20px;
-      }
-
-      .footer-col p {
-        margin-bottom: 20px;
-        opacity: 0.8;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 15px;
-      }
-
-      .social-links a {
-        width: 40px;
-        height: 40px;
-        background-color: var(--primary-color);
-        color: var(--secondary-color);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        transition: var(--transition);
-      }
-
-      .social-links a:hover {
-        transform: translateY(-5px);
-      }
-
-      .footer-col h3 {
-        margin-bottom: 20px;
-        font-size: 1.2rem;
-      }
-
-      .footer-col ul {
-        list-style: none;
-      }
-
-      .footer-col ul li {
-        margin-bottom: 10px;
-      }
-
-      .footer-col ul li a {
-        color: var(--text-color);
-        text-decoration: none;
-        transition: var(--transition);
-        opacity: 0.8;
-      }
-
-      .footer-col ul li a:hover {
-        opacity: 1;
-        color: var(--primary-color);
-      }
-
-      .contact-info li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
-        opacity: 0.8;
-      }
-
-      .contact-info li i {
-        width: 20px;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        padding-top: 30px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        opacity: 0.7;
-        font-size: 0.9rem;
       }
 
       /* ========== RESPONSIVE STYLES ========== */
@@ -2120,7 +1874,7 @@
     <button class="scroll-to-top" id="scrollToTop">
       <i class="fas fa-arrow-up"></i>
     </button>
-
+    <script src="script.js"></script>
     <!-- JavaScript -->
     <script>
       // Navigation functionality
