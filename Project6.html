@@ -3,41 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emmanuel Creative & Co.</title>
+    <title>Solane Mobile App UI/UX | Emmanuel Creative & Co.</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project.css" />
     <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Z+z0UZRX..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon" />
   </head>
   <body>
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
       <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="javascript:void(0)">
+        <li>
+          <a href="javascript:void(0)" onclick="hideSidebar()">
             <img
               src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              alt=""
+              alt="Close menu"
             />
           </a>
         </li>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="index.html#featured-projects">Portfolio</a></li>
+        <li><a href="index.html#premium-about-section">About Me</a></li>
+        <li><a href="index.html#services-section">Service</a></li>
+        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+        <li><a href="index.html#faq-section">Faq</a></li>
+        <li><a href="index.html#contact-section">Contact Me</a></li>
       </ul>
       <ul>
         <li>
-          <a href="javascript:void(0)">
+          <a href="index.html">
             <img src="IMG/Logo.svg" class="logo" />
           </a>
         </li>
         <li class="hideOnMoble"><a href="index.html">Home</a></li>
-        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
-        <li class="hideOnMoble"><a href="service.html">Service</a></li>
         <li class="hideOnMoble">
-          <a href="testimonials.html">Testimonials</a>
+          <a href="index.html#featured-projects">Portfolio</a>
         </li>
-        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#premium-about-section">About Me</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#services-section">Service</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#testimonials-section">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html#faq-section">Faq</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#contact-section">Contact Me</a>
+        </li>
         <li class="showOnMoble" onclick="showSidebar()">
           <a href="javascript:void(0)">
             <img
@@ -48,115 +81,341 @@
         </li>
       </ul>
     </nav>
-    <section id="all-project">
-      <div class="lines"></div>
-      <h1 class="project-title">Mobile Application UIUX Design For SOLANE</h1>
-      <div class="lines"></div>
-      <p class="project-discription">
-        Problem:<br />
-        Problem: SOLANE wanted a 65 Screens e-commerce app where they can sell
-        their product. They wanted the app to stand out, feel modern, and easy
-        to navigate, and professional.<br />
-        Solution:<br />
-        The app is 65 Screens, Easy to use, Modern and Luxurious, Elegance and
-        Exclusivity.
-      </p>
-      <div class="lines"></div>
-      <div class="numberonne">
-        <button class="btn">Contact Me</button>
-      </div>
-      <div class="project-container">
-        <img src="Project6/Frame 3.png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project6/01 Free iPhone 15 Pro On Rock Mockup.jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project6/03 Free iPhone 15 Pro On Rock Mockup.jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project6/03 Free iPhone 15 Pro On Rock Mockup (1).jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img src="Project6/Free_K_Mockups_iPhone_15_Pro.jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project6/Free_K_Mockups_iPhone_15_Pro (1).jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project6/Free_K_Mockups_iPhone_15_Pro (3).jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project6/02 Free iPhone 15 Pro On Rock Mockup.jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project6/01 Free iPhone 15 Pro On Rock Mockup (1).jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project6/01 Free iPhone 15 Pro On Rock Mockup (2).jpg"
-          class="p1"
-        />
-      </div>
 
-      <div class="project-container">
-        <img
-          src="Project6/01 Free iPhone 15 Pro On Rock Mockup (5).jpg"
-          class="p1"
-        />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project6/01 Free iPhone 15 Pro On Rock Mockup (6).jpg"
-          class="p1"
-        />
-      </div>
+    <!-- ========== PROJECT HERO SECTION ========== -->
+    <section class="project-hero">
+      <div class="project-hero-bg" style="background-color: #1a1f2e"></div>
+      <div class="container">
+        <div class="project-hero-content">
+          <span class="project-category animate-in">UI/UX Design</span>
+          <h1 class="project-title animate-in delay-1">
+            Solane Mobile Application UI/UX Design
+          </h1>
+          <p class="project-description animate-in delay-2">
+            A comprehensive 65-screen e-commerce mobile application for Solane,
+            designed to deliver a modern, luxurious shopping experience with
+            intuitive navigation and elegant aesthetics.
+          </p>
 
-      <div class="project-container">
-        <img
-          src="Project6/03 Free iPhone 15 Pro On Rock Mockup (3).jpg"
-          class="p1"
-        />
-      </div>
-
-      <div class="project-container">
-        <img src="Project6/Free_K_Mockups_iPhone_15_Pro (4).jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="Project6/Free_K_Mockups_iPhone_15_Pro (5).jpg" class="p1" />
-      </div>
-
-      <div class="project-container">
-        <img src="Project6/Free_K_Mockups_iPhone_15_Pro (7).jpg" class="p1" />
-      </div>
-      <div class="project-container">
-        <img
-          src="Project6/01 Free iPhone 15 Pro On Rock Mockup (4).jpg"
-          class="p1"
-        />
+          <div class="project-meta animate-in delay-3">
+            <div class="meta-item">
+              <span class="meta-value">65 Screens</span>
+              <span class="meta-label">Scope</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">UI/UX Design</span>
+              <span class="meta-label">Category</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">Complete</span>
+              <span class="meta-label">Status</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <p class="footer-bottom">
-      &copy; 2025 Emmanuel Creative & Co. | Designed and developed by Excellent
-      Emmanuel at Emmanuel Creative & Co.
-    </p>
+    <!-- ========== PROJECT OVERVIEW SECTION ========== -->
+    <section class="project-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-content">
+            <h2>Project Overview</h2>
+            <p class="overview-text">
+              Solane is a premium e-commerce brand that needed a sophisticated
+              mobile application to showcase and sell their products. The goal
+              was to create an app that not only functions seamlessly but also
+              reflects the brand's commitment to luxury, elegance, and
+              exclusivity.
+            </p>
+
+            <div class="problem-solution">
+              <h3>Challenge</h3>
+              <p>
+                Solane required a comprehensive 65-screen e-commerce application
+                that would stand out in a competitive market. They needed the
+                app to feel modern, luxurious, and professional while
+                maintaining intuitive navigation and a seamless user experience
+                across all functions from browsing to checkout.
+              </p>
+
+              <h3>Solution</h3>
+              <p>
+                I designed a complete 65-screen mobile application with a focus
+                on modern aesthetics, luxurious feel, and exceptional user
+                experience. The interface features elegant design elements,
+                intuitive navigation patterns, and a cohesive visual language
+                that communicates Solane's premium brand positioning. The app
+                includes all essential e-commerce functionalities while
+                maintaining a clean, sophisticated appearance that enhances the
+                shopping experience.
+              </p>
+            </div>
+
+            <div class="skills-container">
+              <h3 class="skills-title">Skills & Technologies</h3>
+              <div class="skills-grid">
+                <span class="skill-tag">UI Design</span>
+                <span class="skill-tag">UX Research</span>
+                <span class="skill-tag">Wireframing</span>
+                <span class="skill-tag">Prototyping</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Mobile Design</span>
+                <span class="skill-tag">User Testing</span>
+                <span class="skill-tag">E-commerce</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-image">
+            <img src="Project6/Frame 3.png" alt="Solane Mobile App UI Design" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECT GALLERY SECTION ========== -->
+    <section class="project-gallery">
+      <div class="container">
+        <h2 class="gallery-title">Project Gallery</h2>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="Project6/01 Free iPhone 15 Pro On Rock Mockup.jpg"
+              alt="Solane App Home Screen"
+            />
+            <div class="gallery-caption">
+              <h3>Home Screen Design</h3>
+              <p>Elegant homepage with featured products and promotions</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/03 Free iPhone 15 Pro On Rock Mockup.jpg"
+              alt="Solane App Product Listing"
+            />
+            <div class="gallery-caption">
+              <h3>Product Catalog</h3>
+              <p>Organized product listing with filtering options</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/03 Free iPhone 15 Pro On Rock Mockup (1).jpg"
+              alt="Solane App Product Detail"
+            />
+            <div class="gallery-caption">
+              <h3>Product Details</h3>
+              <p>Comprehensive product information and image gallery</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/Free_K_Mockups_iPhone_15_Pro.jpg"
+              alt="Solane App Shopping Cart"
+            />
+            <div class="gallery-caption">
+              <h3>Shopping Cart</h3>
+              <p>Streamlined cart management with easy editing options</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/Free_K_Mockups_iPhone_15_Pro (1).jpg"
+              alt="Solane App Checkout Process"
+            />
+            <div class="gallery-caption">
+              <h3>Checkout Flow</h3>
+              <p>Simplified multi-step checkout process</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/Free_K_Mockups_iPhone_15_Pro (3).jpg"
+              alt="Solane App User Profile"
+            />
+            <div class="gallery-caption">
+              <h3>User Profile</h3>
+              <p>Personal account management and order history</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/02 Free iPhone 15 Pro On Rock Mockup.jpg"
+              alt="Solane App Search Functionality"
+            />
+            <div class="gallery-caption">
+              <h3>Search Interface</h3>
+              <p>Advanced search with filters and suggestions</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/01 Free iPhone 15 Pro On Rock Mockup (1).jpg"
+              alt="Solane App Categories"
+            />
+            <div class="gallery-caption">
+              <h3>Category Navigation</h3>
+              <p>Intuitive category browsing with visual cues</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/01 Free iPhone 15 Pro On Rock Mockup (2).jpg"
+              alt="Solane App Wishlist"
+            />
+            <div class="gallery-caption">
+              <h3>Wishlist Feature</h3>
+              <p>Save favorite items for later purchase</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/01 Free iPhone 15 Pro On Rock Mockup (5).jpg"
+              alt="Solane App Notifications"
+            />
+            <div class="gallery-caption">
+              <h3>Notification Center</h3>
+              <p>Personalized alerts and promotions</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="Project6/01 Free iPhone 15 Pro On Rock Mockup (6).jpg"
+              alt="Solane App Order Tracking"
+            />
+            <div class="gallery-caption">
+              <h3>Order Tracking</h3>
+              <p>Real-time order status and delivery updates</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <img
+              src="IMG/Logo.svg"
+              alt="Emmanuel Creative Logo"
+              class="footer-logo"
+            />
+            <p>
+              Emmanuel Creative & Co. is a strategic branding agency helping
+              ambitious brands stand out through compelling design, clear
+              messaging, and purposeful visual identities.
+            </p>
+
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/share/1B8eHpvRNb/"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/2347039575837?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
+                aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://x.com/excel_emma_?t=CP7XMBUKgzYU2_ACw6_8cQ&s=08"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/excellent-emmanuel-374255331"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/excel.emma.work?igsh=b2FuamVzMzV4dG1s"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#featured-projects">Portfolio</a></li>
+              <li><a href="index.html#premium-about-section">About Me</a></li>
+              <li><a href="index.html#services-section">Service</a></li>
+              <li>
+                <a href="index.html#testimonials-section">Testimonials</a>
+              </li>
+              <li><a href="index.html#faq-section">Faq</a></li>
+              <li><a href="index.html#contact-section">Contact Me</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li>
+                <a href="index.html#services-section">Brand Identity Design</a>
+              </li>
+              <li><a href="index.html#services-section">UI/UX Design</a></li>
+              <li><a href="index.html#services-section">Graphic Design</a></li>
+              <li><a href="index.html#services-section">Web Design</a></li>
+              <li><a href="index.html#services-section">Print Design</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+              <li><i class="fas fa-map-marker-alt"></i> Nigeria</li>
+              <li><i class="fas fa-phone"></i> +234 802 370 8056</li>
+              <li><i class="fas fa-mobile-alt"></i> +234 703 957 5837</li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                excel.emmy.work@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Emmanuel Creative & Co. | Designed and developed by
+            Excellent Emmanuel
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Animation on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(".animate-in");
+
+        animatedElements.forEach((element) => {
+          element.style.opacity = "0";
+        });
+
+        setTimeout(() => {
+          animatedElements.forEach((element) => {
+            element.style.opacity = "1";
+          });
+        }, 100);
+      });
+    </script>
   </body>
 </html>
