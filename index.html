@@ -37,7 +37,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://xemmy.netlify.app/" />
+    <meta property="og:url" content="https://emmanuelcreativeco.netlify.app/" />
     <meta
       property="og:title"
       content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design"
@@ -48,12 +48,15 @@
     />
     <meta
       property="og:image"
-      content="https://xemmy.netlify.app/IMG/social-preview.png"
+      content="https://emmanuelcreativeco.netlify.app/IMG/social-preview.png"
     />
 
     <!-- Twitter Meta Tags -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://xemmy.netlify.app/" />
+    <meta
+      property="twitter:url"
+      content="https://emmanuelcreativeco.netlify.app/"
+    />
     <meta
       property="twitter:title"
       content="Emmanuel Creative & Co. | Brand Identity, UI/UX, Graphic Design"
@@ -64,7 +67,7 @@
     />
     <meta
       property="twitter:image"
-      content="https://xemmy.netlify.app/IMG/social-preview.png"
+      content="https://emmanuelcreativeco.netlify.app/IMG/social-preview.png"
     />
 
     <!-- Mobile Responsiveness -->
@@ -3576,7 +3579,9 @@
               </div>
               <div class="info-details">
                 <h3>Email</h3>
-                <a href="mailto:excel.emma.work@gmail.com">My-Gmai@gmail.com</a>
+                <a href="mailto:excel.emma.work@gmail.com"
+                  >excel.emma.work@gmail.com</a
+                >
               </div>
             </div>
 
@@ -3623,7 +3628,14 @@
             name="contact"
             method="POST"
             data-netlify="true"
+            netlify-honeypot="bot-field"
+            enctype="multipart/form-data"
           >
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display: none">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required />
             </div>
@@ -3804,16 +3816,6 @@
 
       // Wait for the DOM to be fully loaded
       document.addEventListener("DOMContentLoaded", function () {
-        // ========== LOADING SCREEN ==========
-        const loadingScreen = document.querySelector(".loading-screen");
-
-        // Hide loading screen after page loads
-        window.addEventListener("load", () => {
-          setTimeout(() => {
-            loadingScreen.classList.add("loaded");
-          }, 1500);
-        });
-
         // Close sidebar when pressing Escape key
         document.addEventListener("keydown", function (event) {
           if (event.key === "Escape") {
@@ -3861,6 +3863,7 @@
             }
           });
         });
+
         // ========== ACTIVE NAV LINK HIGHLIGHTING ==========
         function setActiveNavLink() {
           const sections = document.querySelectorAll("section");
@@ -3913,13 +3916,14 @@
 
         window.addEventListener("scroll", handleStickyNav);
 
-        // Add this CSS for sticky navigation (add to your existing CSS)
+        // Add this CSS for sticky navigation
         const stickyNavCSS = `
-        nav.sticky {
+      nav.sticky {
         background-color: rgba(0, 0, 0, 0.9) !important;
         backdrop-filter: blur(10px);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        } `;
+      }
+    `;
 
         // Inject the CSS
         const style = document.createElement("style");
@@ -3947,7 +3951,7 @@
         // ========== ANIMATE ON SCROLL ==========
         const animateOnScroll = () => {
           const elements = document.querySelectorAll(
-            ".project-card, .skill-item, .service-card, .process-step, .requirement-item, .testimonial-card, .blog-card"
+            ".project-card, .service-card, .process-step, .requirement-item, .testimonial-card"
           );
 
           elements.forEach((el) => {
@@ -3964,23 +3968,6 @@
         window.addEventListener("load", animateOnScroll);
         window.addEventListener("scroll", animateOnScroll);
 
-        // ========== PROGRESS BARS ANIMATION ==========
-        const animateProgressBars = () => {
-          const progressBars = document.querySelectorAll(".progress-fill");
-
-          progressBars.forEach((bar) => {
-            const width = bar.getAttribute("data-width");
-            const elementTop = bar.getBoundingClientRect().top;
-
-            if (elementTop < window.innerHeight - 100) {
-              bar.style.width = width;
-            }
-          });
-        };
-
-        window.addEventListener("load", animateProgressBars);
-        window.addEventListener("scroll", animateProgressBars);
-
         // ========== FAQ TOGGLE ==========
         const faqItems = document.querySelectorAll(".faq-item");
 
@@ -3992,68 +3979,7 @@
           });
         });
 
-        // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute("href");
-            if (targetId === "#") return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              const headerHeight = header.offsetHeight;
-              const targetPosition =
-                targetElement.getBoundingClientRect().top +
-                window.pageYOffset -
-                headerHeight;
-
-              window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth",
-              });
-            }
-          });
-        });
-
-        // ========== FORM SUBMISSION ==========
-        const contactForm = document.querySelector(".contact-form");
-
-        if (contactForm) {
-          contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Simple form validation
-            const formData = new FormData(this);
-            let isValid = true;
-
-            for (let [key, value] of formData.entries()) {
-              if (!value.trim()) {
-                isValid = false;
-                const input = this.querySelector(`[name="${key}"]`);
-                input.style.borderColor = "red";
-
-                input.addEventListener("input", function () {
-                  if (this.value.trim()) {
-                    this.style.borderColor = "";
-                  }
-                });
-              }
-            }
-
-            if (isValid) {
-              // Show success message (in a real scenario, you'd submit to Netlify)
-              alert("Message sent successfully! I'll get back to you soon.");
-              this.reset();
-            } else {
-              alert("Please fill in all required fields.");
-            }
-          });
-        }
-      });
-
-      // Enhanced timeline animation
-      document.addEventListener("DOMContentLoaded", function () {
+        // Enhanced timeline animation
         const timelineItems = document.querySelectorAll(".timeline-item");
 
         // Intersection Observer for timeline items
@@ -4104,9 +4030,7 @@
         }, 1500);
       });
 
-      // ========== NAVIGATION & SIDEBAR FUNCTIONALITY ==========
-
-      // Replace the entire carousel initialization code with this:
+      // Testimonials carousel functionality
       document.addEventListener("DOMContentLoaded", function () {
         const track = document.querySelector(".testimonials-track");
         const cards = document.querySelectorAll(".testimonial-card");
@@ -4214,13 +4138,8 @@
       // Run on load and scroll
       window.addEventListener("load", animatePhilosophyCards);
       window.addEventListener("scroll", animatePhilosophyCards);
-      document.addEventListener("DOMContentLoaded", function () {
-        // Image hover effect enhancement
-        const imageContainer = document.querySelector(
-          ".premium-image-container"
-        );
-        const image = document.querySelector(".premium-image");
 
+      document.addEventListener("DOMContentLoaded", function () {
         // Animated counter for stats
         const counters = document.querySelectorAll(".premium-stat-number");
         const speed = 200; // The lower the slower
