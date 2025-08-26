@@ -3,41 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emmanuel Creative & Co.</title>
+    <title>Modern E-Commerce UI Design | Emmanuel Creative & Co.</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="project.css" />
     <link rel="shortcut icon" href="IMG/Favicon.svg" type="svg" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Z+z0UZRX..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon" />
   </head>
   <body>
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ========== HEADER/NAVIGATION ========== -->
     <nav>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
       <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="javascript:void(0)">
+        <li>
+          <a href="javascript:void(0)" onclick="hideSidebar()">
             <img
               src="close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              alt=""
+              alt="Close menu"
             />
           </a>
         </li>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="index.html#featured-projects">Portfolio</a></li>
+        <li><a href="index.html#premium-about-section">About Me</a></li>
+        <li><a href="index.html#services-section">Service</a></li>
+        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+        <li><a href="index.html#faq-section">Faq</a></li>
+        <li><a href="index.html#contact-section">Contact Me</a></li>
       </ul>
       <ul>
         <li>
-          <a href="javascript:void(0)">
+          <a href="index.html">
             <img src="IMG/Logo.svg" class="logo" />
           </a>
         </li>
         <li class="hideOnMoble"><a href="index.html">Home</a></li>
-        <li class="hideOnMoble"><a href="about.html">About Me</a></li>
-        <li class="hideOnMoble"><a href="service.html">Service</a></li>
         <li class="hideOnMoble">
-          <a href="testimonials.html">Testimonials</a>
+          <a href="index.html#featured-projects">Portfolio</a>
         </li>
-        <li class="hideOnMoble"><a href="contact.html">Contact Me</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#premium-about-section">About Me</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#services-section">Service</a>
+        </li>
+        <li class="hideOnMoble">
+          <a href="index.html#testimonials-section">Testimonials</a>
+        </li>
+        <li class="hideOnMoble"><a href="index.html#faq-section">Faq</a></li>
+        <li class="hideOnMoble">
+          <a href="index.html#contact-section">Contact Me</a>
+        </li>
         <li class="showOnMoble" onclick="showSidebar()">
           <a href="javascript:void(0)">
             <img
@@ -48,32 +81,253 @@
         </li>
       </ul>
     </nav>
-    <section id="all-project">
-      <div class="lines"></div>
-      <h1 class="project-title">E-Commerce Website UI Design</h1>
-      <div class="lines"></div>
 
-      <div class="numberonne">
-        <a href="contact.html">
-          <button class="btn">Contact Me</button>
-        </a>
-      </div>
-      <div class="project-container">
-        <img src="project7/Untitled design (1).png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="project7/Untitled design.png" class="p1" />
-      </div>
-      <div class="project-container">
-        <img src="project7/hd.png" class="p1" />
+    <!-- ========== PROJECT HERO SECTION ========== -->
+    <section class="project-hero">
+      <div class="project-hero-bg" style="background-color: #1a1a2e"></div>
+      <div class="container">
+        <div class="project-hero-content">
+          <span class="project-category animate-in">UI/UX Design</span>
+          <h1 class="project-title animate-in delay-1">
+            Modern E-Commerce Website UI Design
+          </h1>
+          <p class="project-description animate-in delay-2">
+            A sleek, user-friendly e-commerce interface designed to enhance
+            customer experience, increase conversions, and showcase products in
+            an aesthetically pleasing digital environment.
+          </p>
+
+          <div class="project-meta animate-in delay-3">
+            <div class="meta-item">
+              <span class="meta-value">4 Weeks</span>
+              <span class="meta-label">Duration</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">UI/UX Design</span>
+              <span class="meta-label">Category</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-value">Complete</span>
+              <span class="meta-label">Status</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <p class="footer-bottom">
-      &copy; 2025 Emmanuel Creative & Co. | Designed and developed by Excellent
-      Emmanuel at Emmanuel Creative & Co.
-    </p>
+    <!-- ========== PROJECT OVERVIEW SECTION ========== -->
+    <section class="project-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-content">
+            <h2>Project Overview</h2>
+            <p class="overview-text">
+              This e-commerce platform was designed for a modern fashion
+              retailer looking to establish a strong online presence. The goal
+              was to create an intuitive shopping experience that balances
+              aesthetic appeal with functional design to drive engagement and
+              sales.
+            </p>
+
+            <div class="problem-solution">
+              <h3>Challenge</h3>
+              <p>
+                The client needed a visually appealing e-commerce site that
+                could effectively showcase their products while maintaining fast
+                load times and intuitive navigation. They struggled with high
+                cart abandonment rates and wanted a design that would guide
+                users seamlessly from browsing to purchase.
+              </p>
+
+              <h3>Solution</h3>
+              <p>
+                I designed a clean, modern interface with a focus on visual
+                hierarchy and user flow. The design incorporates strategic
+                product placement, intuitive filtering systems, and a simplified
+                checkout process. A cohesive color scheme and typography system
+                create brand consistency while maintaining optimal readability
+                and accessibility across all device types.
+              </p>
+            </div>
+
+            <div class="skills-container">
+              <h3 class="skills-title">Skills & Technologies</h3>
+              <div class="skills-grid">
+                <span class="skill-tag">UI Design</span>
+                <span class="skill-tag">UX Research</span>
+                <span class="skill-tag">Wireframing</span>
+                <span class="skill-tag">Prototyping</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Adobe XD</span>
+                <span class="skill-tag">Responsive Design</span>
+                <span class="skill-tag">User Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-image">
+            <img
+              src="project7/Untitled design.png"
+              alt="E-Commerce Website Dashboard View"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECT GALLERY SECTION ========== -->
+    <section class="project-gallery">
+      <div class="container">
+        <h2 class="gallery-title">Project Gallery</h2>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="project7/Untitled design (1).png"
+              alt="E-Commerce Homepage Design"
+            />
+            <div class="gallery-caption">
+              <h3>Homepage Design</h3>
+              <p>Welcoming interface with featured products and promotions</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="project7/Untitled design.png"
+              alt="Product Listing Page"
+            />
+            <div class="gallery-caption">
+              <h3>Product Catalog</h3>
+              <p>Organized product display with filtering options</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="project7/hd.png" alt="Product Detail Page" />
+            <div class="gallery-caption">
+              <h3>Product Details</h3>
+              <p>
+                Comprehensive product view with image gallery and specifications
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <img
+              src="IMG/Logo.svg"
+              alt="Emmanuel Creative Logo"
+              class="footer-logo"
+            />
+            <p>
+              Emmanuel Creative & Co. is a strategic branding agency helping
+              ambitious brands stand out through compelling design, clear
+              messaging, and purposeful visual identities.
+            </p>
+
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/share/1B8eHpvRNb/"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/2347039575837?text=Hi%20Excellent%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20us%20to%20work%20together."
+                aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://x.com/excel_emma_?t=CP7XMBUKgzYU2_ACw6_8cQ&s=08"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/excellent-emmanuel-374255331"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/excel.emma.work?igsh=b2FuamVzMzV4dG1s"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#featured-projects">Portfolio</a></li>
+              <li><a href="index.html#premium-about-section">About Me</a></li>
+              <li><a href="index.html#services-section">Service</a></li>
+              <li>
+                <a href="index.html#testimonials-section">Testimonials</a>
+              </li>
+              <li><a href="index.html#faq-section">Faq</a></li>
+              <li><a href="index.html#contact-section">Contact Me</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li>
+                <a href="index.html#services-section">Brand Identity Design</a>
+              </li>
+              <li><a href="index.html#services-section">UI/UX Design</a></li>
+              <li><a href="index.html#services-section">Graphic Design</a></li>
+              <li><a href="index.html#services-section">Web Design</a></li>
+              <li><a href="index.html#services-section">Print Design</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+              <li><i class="fas fa-map-marker-alt"></i> Nigeria</li>
+              <li><i class="fas fa-phone"></i> +234 802 370 8056</li>
+              <li><i class="fas fa-mobile-alt"></i> +234 703 957 5837</li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                excel.emmy.work@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Emmanuel Creative & Co. | Designed and developed by
+            Excellent Emmanuel
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Animation on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(".animate-in");
+
+        animatedElements.forEach((element) => {
+          element.style.opacity = "0";
+        });
+
+        setTimeout(() => {
+          animatedElements.forEach((element) => {
+            element.style.opacity = "1";
+          });
+        }, 100);
+      });
+    </script>
   </body>
 </html>
